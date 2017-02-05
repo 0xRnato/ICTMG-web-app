@@ -1,3 +1,6 @@
+//SERVER CONSTANTS
+exports.SV_PORT = 8080;
+
 //DATABASE CONSTANTS
 exports.DB_NAME = 'db_newUser';
 exports.DB_TABLE = 'tbl_user';
