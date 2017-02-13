@@ -1,5 +1,92 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  //- h1= title
+  //- p Welcome to #{title}
+  nav(class="navbar navbar-default navbar-fixed-top" role="navigation")
+    div(class="container")
+      div(class="navbar-header page-scroll")
+        button(type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse")
+          span(class="sr-only") Toggle navigation
+          span(class="icon-bar")
+          span(class="icon-bar")
+          span(class="icon-bar")
+        a(class="navbar-brand page-scroll" href="#page-top")
+          img(src="images/banner_ictmg.png" alt="ICTMG" style="margin-top: -15px; margin-left: -50px; width: 150px;")
+      
+      div(class="collapse navbar-collapse navbar-ex1-collapse")
+        ul(class="nav navbar-nav")
+          //- Hidden li included to remove active class from about link when scrolled up past about section
+          li(class="hidden")
+            a(class="page-scroll" href="#page-top")
+          li
+            a(class="page-scroll" href="#about") About
+          li
+            a(class="page-scroll" href="#services") Services
+          li
+            a(class="page-scroll" href="#contact") Contact
+      //- /.navbar-collapse
+    //- /.counteiner
+  
+  //- Intro Section
+  section(id="intro" class="intro-section")
+    div(class="container")
+      div(class="row")
+        div(class="col-lg-8")
+          h2 What is Lorem Ipsum?
+          p
+            //- bootstrap carousel for images slides
+            strong Lorem Ipsum
+            |  is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        div(class="col-lg-4")
+          hr
+          h4 Cursos
+          select(class='selectpicker', data-live-search='true')
+            option(data-tokens='primeiro') categoria 1
+            option(data-tokens='segundo') categoria 2
+            option(data-tokens='terceiro') categoria 3
+          
+          select(class='selectpicker', data-live-search='true')
+            option(data-tokens='primeiro') curso 1
+            option(data-tokens='segundo') curso 2
+            option(data-tokens='terceiro') curso 3
+          hr
+          h4 Acesso Rápido
+          div(class="list-group")
+            a(class='list-group-item', href="#") Quero me cadastrar
+            a(class='list-group-item', href="http://50.112.26.194:80/moodle/login/index.php") Já sou aluno/funcionário
+          hr
+          
+  //- About Section
+  section(id="about" class="about-section")
+    div(class="counteiner")
+      div(class="row")
+        div(class="col-lg-12")
+          h1 About Section
+  
+  //- Services Section
+  section(id="services" class="services-section")
+    div(class="counteiner")
+      div(class="row")
+        div(class="col-lg-12")
+          h1 Services Section
+
+  //- Contact Section
+  section(id="contact" class="contact-section")
+    div(class="counteiner")
+      div(class="row")
+        div(class="col-lg-12")
+          h1 Contact Section
+  
+  //- jQuery
+  script(src="javascripts/jquery.js")
+
+  //- Bootstrap Code JavaScript
+  script(src="javascripts/bootstrap.min.js")
+
+  //- Bootstrap select JavaScript
+  script(src='/javascripts/bootstrap-select.min.js')
+
+  //- Scrolling Nav JavaScript
+  script(src="javascripts/jquery.easing.min.js")
+  script(src="javascripts/scrolling-nav.js")
