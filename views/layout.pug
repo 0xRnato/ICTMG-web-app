@@ -2,6 +2,15 @@ doctype html
 html
   head
     title= title
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    meta(name='description' content='')
+    meta(name='author' content='')
+    link(rel="shortcut icon" href="/images/guiga.ico")
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap-select.min.css')
+    link(rel='stylesheet', href='/stylesheets/scrolling-nav.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
-  body
+  body(id="page-top" data-spy="scroll" data-target=".navbar-fixed-top")
     block content
+    
