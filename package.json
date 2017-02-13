@@ -6,7 +6,8 @@
     "start": "node ./bin/www",
     "forever-start": "forever start ./bin/www",
     "forever-stop": "forever stopall",
-    "forever-list": "forever list"
+    "forever-list": "forever list",
+    "nodemon": "nodemon ./bin/www"
   },
   "dependencies": {
     "body-parser": "~1.16.0",
