@@ -44,9 +44,8 @@ block content
           hr
           h4 Cursos
           select(class='selectpicker', data-live-search='true')
-            option(data-tokens='primeiro') categoria 1
-            option(data-tokens='segundo') categoria 2
-            option(data-tokens='terceiro') categoria 3
+            each category in results
+              option= category.name
           
           select(class='selectpicker', data-live-search='true')
             option(data-tokens='primeiro') curso 1
