@@ -1,7 +1,43 @@
 extends layout
 
 block content
-    h1 Course page
-    h3 Not implemented yet
-    a(href='/')
-        button(class='btn') back
+  nav(class="navbar navbar-default navbar-fixed-top" role="navigation")
+    div(class="container")
+      div(class="navbar-header page-scroll")
+        button(type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse")
+          span(class="sr-only") Toggle navigation
+          span(class="icon-bar")
+          span(class="icon-bar")
+          span(class="icon-bar")
+        a(class="navbar-brand page-scroll" href="#page-top")
+          img(src="images/banner_ictmg.png" alt="ICTMG" style="margin-top: -15px; margin-left: -50px; width: 150px;")
+      
+      div(class="collapse navbar-collapse navbar-ex1-collapse")
+        ul(class="nav navbar-nav")
+          //- Hidden li included to remove active class from about link when scrolled up past about section
+          li(class="hidden")
+            a(class="page-scroll" href="#page-top")
+          li
+            a(class="page-scroll" href='/') Voltar ao Início
+          
+      //- /.navbar-collapse
+    //- /.counteiner
+  
+  //- Describe Section
+  section(id="describe" class="describe-section")
+    div(class="container")
+      div(class="row" style="margin-top: 50px;")
+        div(class="col-lg-7" style="margin-top: 50px;")
+            h2.subtitle-font Exatas
+            br 
+            h3.title-font ENGENHARIA DE CONTROLE E AUTOMAÇÃO
+            h4.subtitle-font ECA
+            br
+            h5.text-font Então, esse curso é muito bom. Acontece que o início é que é uma bosta. O mercado de trabalho também atualmente tá uma merda, mas num da nada não que depois melhora. Foque em ser contratado como engenheiro, analista é furada.
+            br
+            p
+             strong Início do curso previsto para agora.
+            p
+             strong Término para depois.
+        div(class="col-lg-5" style="margin-top: 50px;")
+            img(src="images/3d.PNG" alt="ICTMG3D")

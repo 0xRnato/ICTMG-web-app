@@ -1,3 +1,29 @@
 .btn-group.bootstrap-select{
     margin-top: 5px;
 }
+@font-face {
+
+      font-family: "taz-bold";
+      src: url("./public/font/taz-bold.otf") format("truetype");
+
+      }
+@font-face {
+
+      font-family: "taz-semilight";
+      src: url("./public/font/taz-semilight.otf") format("truetype");
+
+      }
+.margin-fix {
+    margin-top: 50px;
+}
+.title-font{
+     font-size: 55px;
+}
+
+.subtitle-font{
+     font-size: 35px;
+}
+
+.text-font{
+     font-size: 17px;
+}
