@@ -8,7 +8,8 @@ var bodyParser = require('body-parser');
 
 //Routes
 var index = require('./routes/index');
-var courses = require('./routes/courses')
+var courses = require('./routes/courses');
+var register = require('./routes/register');
 
 var app = express();
 
@@ -26,17 +27,18 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //Set routes
 app.use('/', index);
-app.use('/courses', courses)
+app.use('/courses', courses);
+app.use('/register', register);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
