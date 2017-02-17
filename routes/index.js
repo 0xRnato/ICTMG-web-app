@@ -4,7 +4,7 @@ var connection = require('../database');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  connection.query("SELECT id, name from mdl_course_categories", (err, results, fields) => {
+  connection.query("SELECT course.id as 'id', course.fullname as 'name' FROM mdl_course as course;", (err, results, fields) => {
     if(err) throw err;
     res.render('index', {
       title: 'GUIGA',

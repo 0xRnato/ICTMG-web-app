@@ -1,8 +1,6 @@
 extends layout
 
 block content
-  //- h1= title
-  //- p Welcome to #{title}
   nav(class="navbar navbar-default navbar-fixed-top" role="navigation")
     div(class="container")
       div(class="navbar-header page-scroll")
@@ -33,7 +31,7 @@ block content
   //- Intro Section
   section(id="intro" class="intro-section")
     div(class="container")
-      div(class="row")
+      div(class="row" style="margin-top: 50px;")
         div(class="col-lg-8")
           h2 What is Lorem Ipsum?
           p
@@ -43,14 +41,15 @@ block content
         div(class="col-lg-4")
           hr
           h4 Cursos
-          select(class='selectpicker', data-live-search='true')
-            each category in results
-              option= category.name
+          form(action = '/courses', method='get', id='course_form')
+            select(class='selectpicker', data-live-search='true', name='course_select')
+              each course in results
+                option(data-tokens=course.name, value=course.id, name=course.id)= course.name
+              else
+                option(value='-1', disabled)= 'Nenhuma categoria foi cadastrada ate o momento'
+            br
+            input(type='submit', value = 'Mais informações', class='btn', style='margin-top: 10px;')
           
-          select(class='selectpicker', data-live-search='true')
-            option(data-tokens='primeiro') curso 1
-            option(data-tokens='segundo') curso 2
-            option(data-tokens='terceiro') curso 3
           hr
           h4 Acesso Rápido
           div(class="list-group")
@@ -64,7 +63,7 @@ block content
       div(class="row")
         div(class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2")
           h1(style={'font-size': '55px', 'tab-size': 12 }) Quem somos?
-          <br/>
+          br
           h2(style={'font-size': '16px', 'tab-size': 12 }) Uma Instituição educacional e cultural, sem fins lucrativos, que valoriza, estimula, aprimora, integra, difunde e coloca em prática conhecimentos – formais e informais, culturais, artísticos, científicos, tecnológicos, de desenvolvimento e inovação – através de ações educativas, presenciais e a distância, que visam promover transformações sociais que possam favorecer o desenvolvimento humano, social e cultural de pessoas, grupos, comunidades e instituições. 
           
   //- Values Section
@@ -73,8 +72,8 @@ block content
       div(class="row")
         div(class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2")
            h3(style={'font-size': '35px', 'tab-size': 12 }) Princípios e Valores
-            <br/>
-            <br/>
+            br
+            br
             h4(style={'font-size': '16px', 'tab-size': 12 }) Ética
             hr
             h4(style={'font-size': '16px', 'tab-size': 12 }) Busca pelo conhecimento
@@ -86,9 +85,9 @@ block content
             h4(style={'font-size': '16px', 'tab-size': 12 }) Responsabilidade Social e ambiental
             hr
             h4(style={'font-size': '16px', 'tab-size': 12 }) Respeito a todas as formas de conhecimento
-            <br/>
-            <br/>
-            <br/> 
+            br
+            br
+            br
 
   //- Services Section
   section(id="services" class="services-section")
@@ -96,15 +95,15 @@ block content
       div(class="row")
         div(class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2")
           h1(style={'font-size': '55px', 'tab-size': 12 }) Venha Conosco!
-          <br/>
+          br
           div(class="row")
             div(class="col-md-6")
               h2(style={'font-size': '35px', 'tab-size': 12 }) Programas
-              <br/>
+              br
               h3(style={'font-size': '16px', 'tab-size': 12 }) Programa de Formação de Gestores Culturais Públicos Municipais (modalidade à distancia)
             div(class="col-md-6")
               h2(style={'font-size': '35px', 'tab-size': 12 }) Cursos
-              <br/>
+              br
               h3(style={'font-size': '16px', 'tab-size': 12 }) Adesão ao Sistema Nacional de Cultura: Aspectos Jurídicos, Políticos e Práticos - 1ª edição – ano 2017
               
   //- Contact Section
