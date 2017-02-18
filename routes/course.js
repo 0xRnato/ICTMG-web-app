@@ -11,6 +11,7 @@ router.get('/', function (req, res) {
         results[0].enddate = dateformat(results[0].enddate, "dd/mm/yyyy");
         results[0].sumary = results[0].sumary.replace(/<([^>]*script+?)([^>]*?)>(.*?)<\/\1>/g,"").replace(/<(?:.|\n)*?>/g, "").replace(/&(nbsp|amp|quot|lt|gt);/g,"");
         res.render('course',{
+             title: 'GUIGA | Informações',
             course:results[0]
         });
     });
