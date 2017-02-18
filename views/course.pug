@@ -28,16 +28,16 @@ block content
     div(class="container")
       div(class="row margin-fix")
         div(class="col-lg-7 margin-fix")
-            h2.subtitle-font Exatas
+            h2(class="subtitle-font") #{course.category}
             br 
-            h3.title-font ENGENHARIA DE CONTROLE E AUTOMAÇÃO
-            h4.subtitle-font ECA
+            h3(class="title-font") #{course.fullname} - 
+              span(class="subtitle-font") #{course.shortname}
             br
-            h5.text-font Então, esse curso é muito bom. Acontece que o início é que é uma bosta. O mercado de trabalho também atualmente tá uma merda, mas num da nada não que depois melhora. Foque em ser contratado como engenheiro, analista é furada.
+            h5(class="text-font") #{course.sumary}
             br
-            p
-             strong Início do curso previsto para agora.
-            p
-             strong Término para depois.
+            p Data de início: 
+             strong #{course.startdate}
+            p Data de término: 
+             strong #{course.enddate}
         div(class="col-lg-5 margin-fix")
             img(src="images/3d.PNG" alt="ICTMG3D")

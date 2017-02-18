@@ -10,7 +10,7 @@ block content
           span(class="icon-bar")
           span(class="icon-bar")
         a(class="navbar-brand page-scroll" href="#page-top")
-          img(src="images/banner_ictmg.png" alt="ICTMG" style="margin-top: -15px; margin-left: -50px; width: 150px;")
+          img(src="images/banner_ictmg.png" alt="GUIGA" style="margin-top: -15px; margin-left: -50px; width: 150px;")
       
       div(class="collapse navbar-collapse navbar-ex1-collapse")
         ul(class="nav navbar-nav")
@@ -41,7 +41,7 @@ block content
         div(class="col-lg-4")
           hr
           h4 Cursos
-          form(action = '/courses', method='get', id='course_form')
+          form(action = '/course', method='get', id='course_form')
             select(class='selectpicker', data-live-search='true', name='course_select')
               each course in results
                 option(data-tokens=course.name, value=course.id, name=course.id)= course.name
@@ -113,7 +113,7 @@ block content
         div(class="col-md-6")
           h2.subtitle-font CONTATO
         div(class="col-md-6")
-          img(src="images/caras.PNG" alt="ICTMG")
+          img(src="images/caras.PNG" alt="GUIGA")
               
   
   //- jQuery
