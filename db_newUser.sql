@@ -40,7 +40,6 @@ CREATE TABLE IF NOT EXISTS `tbl_user` (
   `cellphone` VARCHAR(11) NULL,
   `webpage` VARCHAR(100) NULL,
   `skype` VARCHAR(100) NULL,
-  `aim` VARCHAR(100) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
