@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var connection = require('../database');
+var database = require('../database');
+var connection = database.createConnection('moodle');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
