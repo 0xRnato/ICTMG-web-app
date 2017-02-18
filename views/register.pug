@@ -1,7 +1,56 @@
 extends layout
 
 block content
-    h1 Register page
-    h3 Not implemented yet
-    a(href='/')
-        button(class='btn') back
+    div(class='container')
+        div(class='row')
+            div(class='col-md-6')
+                h2 Novo Cadastro
+            if popup
+                div(class='col-md-6')
+                    div(class='alert alert-success alert-dismissable fade in')
+                        a(href='#', class='close', data-dismiss='alert', aria-label='close') &times;
+                        p Seu cadastro foi realizado com sucesso.
+                meta(http-equiv="refresh", content="3;url=/")
+        hr
+        form(action='/register',method='POST')
+            p
+                input(type='text', name='user_username', placeholder='Nome usuario', maxlength='100', required)
+            p
+                input(type='text', name='user_email', placeholder='E-mail', maxlength='100', required)
+            p
+                input(type='text', name='user_firstname', placeholder='Primeiro nome', maxlength='100', required)
+            p
+                input(type='text', name='user_lastname', placeholder='Sobrenome', maxlength='100', required)
+            p
+                input(type='text', name='user_cpf', placeholder='CPF', maxlength='11', required)
+            p
+                input(type='text', name='user_phone', placeholder='Telefone', maxlength='11', required)
+            p
+                input(type='text', name='user_street', placeholder='Rua', maxlength='100', required)
+            p
+                input(type='text', name='user_house_number', placeholder='Número', maxlength='100', required)
+            p
+                input(type='text', name='user_city', placeholder='Cidade', maxlength='100', required)
+            p
+                input(type='text', name='user_cep', placeholder='CEP', maxlength='8', required)
+            p
+                input(type='text', name='user_cellphone', placeholder='Celular', maxlength='11')
+            p
+                input(type='text', name='user_webpage', placeholder='Web site', maxlength='100')
+            p
+                input(type='text', name='user_skype', placeholder='Skype', maxlength='100')
+            hr
+            div(class='row')
+                div(class='col-md-2')
+                    input(type='submit', value='Adicionar usuario', class='btn')
+                div(class='col-md-2')
+                    input(type='reset', value='Limpar', class='btn')
+                div(class='col-md-2')
+                    a(href='/')
+                        input(type='button', value='Voltar' class='btn')
+
+    //- jQuery
+    script(src="javascripts/jquery.js")
+
+    //- Bootstrap Code JavaScript
+    script(src="javascripts/bootstrap.min.js")

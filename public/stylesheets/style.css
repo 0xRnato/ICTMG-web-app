@@ -31,3 +31,8 @@ body{
 .text-font{
      font-size: 17px;
 }
+
+.alert{
+    margin-top: 20px;
+    margin-bottom: 0;
+}
