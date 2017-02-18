@@ -1,3 +1,7 @@
+body{
+    overflow-x: hidden;
+}
+
 .btn-group.bootstrap-select{
     margin-top: 5px;
 }
