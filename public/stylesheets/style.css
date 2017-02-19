@@ -1,5 +1,11 @@
-body{
-    overflow-x: hidden;
+body {
+    height: 100%;
+    padding-top: 65px;
+    text-align: center; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 @font-face {
