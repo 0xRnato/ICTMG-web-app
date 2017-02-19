@@ -35,7 +35,7 @@ of those sections to manage the look and feel of the site. */
     height: 100%;
     padding-top: 65px;
     text-align: center;
-    background: url('/images/intro.png') no-repeat center center fixed; 
+    background: url('/images/intro.jpg') no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -46,18 +46,7 @@ of those sections to manage the look and feel of the site. */
     height: 100%;
     padding-top: 65px;
     text-align: center;
-    background: url('/images/about.png') no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
-.values-section{
-    height: 100%;
-    padding-top: 65px;
-    text-align: center;
-    background: url('/images/values.png') no-repeat center center fixed; 
+    background: url('/images/about.jpg') no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -68,7 +57,18 @@ of those sections to manage the look and feel of the site. */
     height: 100%;
     padding-top: 65px;
     text-align: center;
-    background: url('/images/services.png') no-repeat center center fixed; 
+    background: url('/images/services.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.partners-section{
+    height: 100%;
+    padding-top: 65px;
+    text-align: center;
+    background: url('/images/partners.jpg') no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -79,7 +79,7 @@ of those sections to manage the look and feel of the site. */
     height: 100%;
     padding-top: 65px;
     text-align: center;
-    background: url('/images/contact.png') no-repeat center center fixed; 
+    background: url('/images/contact.jpg') no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

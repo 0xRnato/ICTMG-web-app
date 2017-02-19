@@ -34,16 +34,24 @@ body{
     margin-bottom: 0;
 }
 
-.item img{
-    width: 100%;
+img{
+    max-width: 100%;
+}
+
+.col-md-3{
+    margin-top: 5%;
 }
 
 section .container{
     background-color: rgba(255, 255, 255, 0.3);
     padding: 40px;
-    margin-top: -15px;
+    margin-top: -40px;
 }
 
-#course_form .bootstrap-select, #course_form input{
+#course_form .bootstrap-select, #course_form input, #project_form .bootstrap-select, #project_form input{
     width: 100%;
+}
+
+.margin-fix .col-md-8{
+    margin-top: 25px;
 }
