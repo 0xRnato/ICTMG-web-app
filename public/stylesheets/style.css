@@ -1,5 +1,12 @@
-body{
-    overflow-x: hidden;
+body {
+    height: 100%;
+    padding-top: 65px;
+    text-align: center;
+    background: url('/images/info.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 @font-face {
@@ -52,7 +59,12 @@ section .container{
 #course_form .bootstrap-select, #course_form input, #project_form .bootstrap-select, #project_form input{
     width: 100%;
 }
+<<<<<<< HEAD
+input {
+    position: relative;
+=======
 
 .margin-fix .col-md-8{
     margin-top: 25px;
+>>>>>>> e77086f2da6f19d9903ecdf4bad1e4ffa356e911
 }

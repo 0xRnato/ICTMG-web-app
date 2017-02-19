@@ -1,10 +1,29 @@
 extends layout
 
 block content
+  nav(class="navbar navbar-default navbar-fixed-top" role="navigation")
+    div(class="container")
+      div(class="navbar-header page-scroll")
+        button(type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse")
+          span(class="sr-only") Toggle navigation
+          span(class="icon-bar")
+          span(class="icon-bar")
+          span(class="icon-bar")
+        a(class="navbar-brand page-scroll" href="#page-top")
+          img(src="images/banner_ictmg.png" alt="ICTMG" style="margin-top: -15px; margin-left: -50px; width: 150px;")
+      
+      div(class="collapse navbar-collapse navbar-ex1-collapse")
+        ul(class="nav navbar-nav")
+          //- Hidden li included to remove active class from about link when scrolled up past about section
+          li(class="hidden")
+            a(class="page-scroll" href="#page-top")
+          li
+            a(class="page-scroll" href='/') Voltar ao Início
+  section(id="register" class="register-section")              
     div(class='container')
         div(class='row')
-            div(class='col-md-6')
-                h2 Novo Cadastro
+            div(class='col-md-12')
+                h2 NOVO CADASTRO
             if popup
                 div(class='col-md-6')
                     div(class='alert alert-success alert-dismissable fade in')
@@ -13,39 +32,40 @@ block content
                 meta(http-equiv="refresh", content="3;url=/")
         hr
         form(action='/register',method='POST')
-            p
-                input(type='text', name='user_username', placeholder='Nome usuario', maxlength='100', required)
-            p
+            p Nome de usuário: 
+                input(type='text', name='user_username', placeholder='Nome de usuário', maxlength='100', required)
+            p E-mail: 
                 input(type='text', name='user_email', placeholder='E-mail', maxlength='100', required)
-            p
+            p Primeiro nome: 
                 input(type='text', name='user_firstname', placeholder='Primeiro nome', maxlength='100', required)
-            p
+            p Sobrenome: 
                 input(type='text', name='user_lastname', placeholder='Sobrenome', maxlength='100', required)
-            p
+            p CPF: 
                 input(type='text', name='user_cpf', placeholder='CPF', maxlength='11', required)
-            p
+            p Telefone: 
                 input(type='text', name='user_phone', placeholder='Telefone', maxlength='11', required)
-            p
+            p Rua:
                 input(type='text', name='user_street', placeholder='Rua', maxlength='100', required)
-            p
+            p Número da residência: 
                 input(type='text', name='user_house_number', placeholder='Número', maxlength='100', required)
-            p
+            p Cidade:  
                 input(type='text', name='user_city', placeholder='Cidade', maxlength='100', required)
-            p
+            p CEP: 
                 input(type='text', name='user_cep', placeholder='CEP', maxlength='8', required)
-            p
+            p Celular: 
                 input(type='text', name='user_cellphone', placeholder='Celular', maxlength='11')
-            p
+            p Web site: 
                 input(type='text', name='user_webpage', placeholder='Web site', maxlength='100')
-            p
+            p Skype: 
                 input(type='text', name='user_skype', placeholder='Skype', maxlength='100')
             hr
+
             div(class='row')
-                div(class='col-md-2')
+                div(class='col-md-4')
                     input(type='submit', value='Adicionar usuario', class='btn')
-                div(class='col-md-2')
+                div(class='col-md-4')
                     input(type='reset', value='Limpar', class='btn')
-                div(class='col-md-2')
+                div(class='col-md-4')
                     a(href='/')
                         input(type='button', value='Voltar' class='btn')
 
