@@ -33,35 +33,55 @@ of those sections to manage the look and feel of the site. */
 
 .intro-section {
     height: 100%;
-    padding-top: 100px;
+    padding-top: 65px;
     text-align: center;
-    background: #fff;
+    background: url('/images/intro.png') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .about-section {
     height: 100%;
-    padding-top: 100px;
+    padding-top: 65px;
     text-align: center;
-    background: #eee;
+    background: url('/images/about.png') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .values-section{
     height: 100%;
-    padding-top: 100px;
+    padding-top: 65px;
     text-align: center;
-    background: #fff;
+    background: url('/images/values.png') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .services-section {
     height: 100%;
-    padding-top: 100px;
+    padding-top: 65px;
     text-align: center;
-    background: #eee;
+    background: url('/images/services.png') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .contact-section {
     height: 100%;
-    padding-top: 100px;
+    padding-top: 65px;
     text-align: center;
-    background: #fff;
+    background: url('/images/contact.png') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }

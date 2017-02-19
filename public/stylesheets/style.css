@@ -2,9 +2,6 @@ body{
     overflow-x: hidden;
 }
 
-.btn-group.bootstrap-select{
-    margin-top: 5px;
-}
 @font-face {
 
       font-family: "taz-bold";
@@ -35,4 +32,17 @@ body{
 .alert{
     margin-top: 20px;
     margin-bottom: 0;
+}
+
+.item img{
+    width: 100%;
+}
+
+section .container{
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 0 50px 50px 50px;
+}
+
+#course_form .bootstrap-select, #course_form input{
+    width: 100%;
 }

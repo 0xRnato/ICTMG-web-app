@@ -26,19 +26,57 @@ block content
           li
             a(class="page-scroll" href="#contact") Contato
       //- /.navbar-collapse
-    //- /.counteiner
+    //- /.container
   
   //- Intro Section
-  section(id="intro" class="intro-section")
+  section(id="intro", class="intro-section")
     div(class="container")
       div(class="row margin-fix")
-        div(class="col-lg-8")
-          h2 What is Lorem Ipsum?
-          p
-            //- bootstrap carousel for images slides
-            strong Lorem Ipsum
-            |  is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        div(class="col-lg-4")
+        div(class="col-md-8")
+          //- Carousel
+          div(id="myCarousel", class="carousel slide", data-ride="carousel")
+              //- Indicators
+              ol(class="carousel-indicators")
+                  li(data-target="#myCarousel", data-slide-to="0", class="active")
+                  li(data-target="#myCarousel", data-slide-to="1")
+                  li(data-target="#myCarousel", data-slide-to="2")
+                  li(data-target="#myCarousel", data-slide-to="3")
+
+              //- Wrapper for slides
+              div(class="carousel-inner", role="listbox")
+                  div(class="item active")
+                      img(src="/images/slide1.png", alt ="image 1")
+                      div(class="carousel-caption")
+                          h3 Lorem Ipsum
+                          p Torem ipsum dolor sit amet, consectetur adipiscing elit.
+
+                  div(class="item")
+                      img(src="/images/slide2.png", alt="image 2")
+                      div(class="carousel-caption")
+                          h3 Lorem Ipsum
+                          p Torem ipsum dolor sit amet, consectetur adipiscing elit.
+
+                  div(class="item")
+                      img(src="/images/slide3.png", alt="image 3")
+                      div(class="carousel-caption")
+                          h3 Lorem Ipsum
+                          p Torem ipsum dolor sit amet, consectetur adipiscing elit.
+
+                  div(class="item")
+                      img(src="/images/slide4.png", alt="image 4")
+                      div(class="carousel-caption")
+                          h3 Lorem Ipsum
+                          p Torem ipsum dolor sit amet, consectetur adipiscing elit.
+
+                  //- Left and rigth controls
+              a(class="left carousel-control", href="#myCarousel", role="button", data-slide="prev")
+                  span(class="glyphicon glyphicon-chevron-left", aria-hidden="true")
+                  span(class="sr-only") Previus
+              a(class="right carousel-control", href="#myCarousel", role="button", data-slide="next")
+                  span(class="glyphicon glyphicon-chevron-right", aria-hidden="true")
+                  span(class="sr-only") Next
+
+        div(class="col-md-4")
           hr
           h4 Cursos
           form(action = '/course', method='get', id='course_form')
@@ -55,11 +93,12 @@ block content
           div(class="list-group")
             a(class='list-group-item', href="/register") Quero me cadastrar
             a(class='list-group-item', href="http://50.112.26.194:80/moodle/login/index.php") Já sou aluno/funcionário
+            a(class='list-group-item', href='#') Administração
           hr
           
   //- About Section
-  section(id="about" class="about-section" style='background-image: url(./images/SP.png);')
-    div(class="counteiner")
+  section(id="about" class="about-section")
+    div(class="container")
       div(class="row")
         div(class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2")
           h1.title-font QUEM SOMOS?
@@ -67,8 +106,8 @@ block content
           h2.text-font Uma Instituição educacional e cultural, sem fins lucrativos, que valoriza, estimula, aprimora, integra, difunde e coloca em prática conhecimentos – formais e informais, culturais, artísticos, científicos, tecnológicos, de desenvolvimento e inovação – através de ações educativas, presenciais e a distância, que visam promover transformações sociais que possam favorecer o desenvolvimento humano, social e cultural de pessoas, grupos, comunidades e instituições. 
           
   //- Values Section
-  section(id="values" class="values-section" style='background-image: url(./images/livro.png);')
-    div(class="counteiner")
+  section(id="values" class="values-section")
+    div(class="container")
       div(class="row")
         div(class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2")
            h3.subtitle-font PRINCÍPIOS E VALORES
@@ -91,7 +130,7 @@ block content
 
   //- Services Section
   section(id="services" class="services-section")
-    div(class="counteiner")
+    div(class="container")
       div(class="row")
         div(class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2")
           h1(style={'font-size': '55px', 'tab-size': 12 }) VENHA CONOSCO!
@@ -105,17 +144,16 @@ block content
               h2.subtitle-font Cursos
               br
               h3.text-font Adesão ao Sistema Nacional de Cultura: Aspectos Jurídicos, Políticos e Práticos - 1ª edição – ano 2017
-              
+
   //- Contact Section
   section(id="contact" class="contact-section")
-    div(class="counteiner")
+    div(class="container")
       div(class="row")
         div(class="col-md-6")
           h2.subtitle-font CONTATO
-        div(class="col-md-6")
+        div(class="col-md-6", style='margin-top: 40px;')
           img(src="images/caras.PNG" alt="GUIGA")
-              
-  
+
   //- jQuery
   script(src="javascripts/jquery.js")
 
