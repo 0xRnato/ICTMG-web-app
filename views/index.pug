@@ -74,7 +74,8 @@ block content
           form(action = '/course', method='get', id='course_form')
             select(class='selectpicker', data-live-search='true', name='course_select')
               each course in results
-                option(data-tokens=course.name, value=course.id, name=course.id)= course.name
+                if(course.id > 1)
+                  option(data-tokens=course.name, value=course.id, name=course.id)= course.name
               else
                 option(value='-1', disabled)= 'Nenhum curso foi cadastrado ate o momento'
             br
@@ -104,7 +105,7 @@ block content
       hr
       div(class='row')
         div(class='col-md-9')
-          h2 Histórico
+          h2 História
           p GUIGA - Instituto Conhecer e Transformar foi constituído em 20 de fevereiro de 2010, na cidade de Teixeiras/MG. Tem por inspiração a história de vida de Antônio Gregório Pereira, “sô” Guiga (1886-1961), um artista, artesão, educador, mestre escola, que partilhou seus conhecimentos entre vários discípulos daquela cidade e de cidades vizinhas, proporcionando transformações positivas à vida de muitas pessoas.
           hr
           div(class='row')
