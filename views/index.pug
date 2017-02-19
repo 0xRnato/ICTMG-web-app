@@ -84,12 +84,12 @@ block content
           h4 Atividades e Projetos
           form(action = '#', method='get', id='project_form')
             select(class='selectpicker', data-live-search='true', name='project_select')
-              each course in results
-                option(data-tokens=course.name, value=course.id, name=course.id)= course.name
-              else
-                option(value='-1', disabled)= 'Nenhum projeto foi cadastrado ate o momento'
+              //- each course in results
+              //-   option(data-tokens=course.name, value=course.id, name=course.id)= course.name
+              //- else
+              option(value='-1', disabled)= 'Nenhum projeto foi cadastrado ate o momento'
             br
-            input(type='submit', value = 'Mais informações', class='btn', style='margin-top: 10px;')
+            input(type='button', value = 'Mais informações', class='btn', style='margin-top: 10px;')
           hr
           h4 Acesso Rápido
           div(class="list-group")
