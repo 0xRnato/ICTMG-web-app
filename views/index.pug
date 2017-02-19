@@ -11,7 +11,7 @@ block content
           span(class="icon-bar")
           span(class="icon-bar")
         a(class="navbar-brand page-scroll" href="#page-top")
-          img(src="images/banner_ictmg.png" alt="GUIGA" style="margin-top: -15px; margin-left: -50px; width: 150px;")
+          img(src="images/banner_ictmg.png" alt="GUIGA")
       
       div(class="collapse navbar-collapse navbar-ex1-collapse")
         ul(class="nav navbar-nav")
@@ -23,7 +23,7 @@ block content
           li
             a(class="page-scroll" href="#services") O que fazemos
           li
-            a(class="page-scroll" href="#partners") Apoiadores
+            a(class="page-scroll" href="#partners") Parceiros
           li
             a(class="page-scroll" href="#contact") Contato
       //- /.navbar-collapse
@@ -131,6 +131,7 @@ block content
             div(class='col-md-6')
               h3 O que fazemos?
               p Ajudamos pessoas, comunidades e instituições públicas e privadas em seu desenvolvimento cultural e na aquisição e aprimoramento de conhecimentos profissionais.
+              hr
               h3 Visão de futuro
               p Estar entre as maiores instituições de qualidade em educação à distância no país. 
             div(class='col-md-6')
@@ -156,14 +157,41 @@ block content
     div(class="container")
       div(class="row")
         div(class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2")
-           h3.subtitle-font Nossos Apoiadores
+          h3 Apoie você também!
+          p Nossa instituição não tem fins lucrativos e depende de trabalhos voluntários, de apoio do Estado, de Empresas, de grupos e pessoas.
+          p Você também pode ajudar na manutenção de nossas atividades.
+          p Faça uma doação 
+            a(href='#') AQUI
+          p Pedimos também que compartilhe e curta nossa página nas redes sociais.
+          p ICONES AQUI
+          p Agradecemos sua visita!
 
   //- Contact Section
   section(id="contact" class="contact-section")
     div(class="container")
       div(class="row")
         div(class="col-md-6")
-          h2.subtitle-font CONTATO
+          h2 Fale Conosco
+          p Preencha as informações abaixo.
+          p Retornaremos em breve!
+          hr
+          form(action='',method='POST')
+            p
+              input(type='text', name='contact_name', placeholder='Nome', maxlength='100', required)
+            p
+              input(type='text', name='contact_email', placeholder='E-mail', maxlength='100', required)
+            p
+              input(type='text', name='contact_email2', placeholder='Confirmação de E-mail', maxlength='100', required)
+            p
+              input(type='text', name='contact_subject', placeholder='Assunto', maxlength='100', required)
+            p
+              input(type='text', name='contact_name', placeholder='Nome', maxlength='100', required)
+            div(class='row')
+                div(class='col-md-6')
+                    input(type='button', value='Enviar', class='btn')
+                div(class='col-md-6')
+                    input(type='reset', value='Limpar', class='btn')
+          hr
         div(class="col-md-6", style='margin-top: 40px;')
           img(src="images/caras.PNG" alt="GUIGA")
 
