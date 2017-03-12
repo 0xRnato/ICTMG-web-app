@@ -22,7 +22,7 @@ block content
   section(id="register" class="register-section")              
     div(class='container')
         div(class='row')
-            div(class='col-md-12 margin-fix')
+            div(class='col-md-12')
                 h2 NOVO CADASTRO
             if popup
                 div(class='col-md-6')
@@ -59,15 +59,15 @@ block content
             p Skype: 
                 input(type='text', name='user_skype', placeholder='Skype', maxlength='100')
             hr
-        
+
             div(class='row')
                 div(class='col-md-4')
-                    input(type='submit', value='Adicionar usuario', class='btn btn-group btn-group-justified btn-sample')
+                    input(type='submit', value='Adicionar usuario', class='btn')
                 div(class='col-md-4')
-                    input(type='reset', value='Limpar', class='btn btn-group-justified btn-sample')
+                    input(type='reset', value='Limpar', class='btn')
                 div(class='col-md-4')
                     a(href='/')
-                        input(type='button', value='Voltar' class='btn btn-group-justified btn-sample')
+                        input(type='button', value='Voltar' class='btn')
 
     //- jQuery
     script(src="javascripts/jquery.js")

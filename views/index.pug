@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  nav(class="navbar navbar-default navbar-fixed-top btn-sample2" role="navigation")
+  nav(class="navbar navbar-default navbar-fixed-top btn-sample" role="navigation")
     div(class="container")
       div(class="navbar-header page-scroll")
         button(type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse")
@@ -14,34 +14,26 @@ block content
           img(src="images/banner_ictmg.png" alt="GUIGA")
       
       div(class="collapse navbar-collapse navbar-ex1-collapse")
-        //- ul(class="nav navbar-nav")
+        ul(class="nav navbar-nav")
           //- Hidden li included to remove active class from about link when scrolled up past about section
           li(class="hidden")
-            a(class="page-scroll" href="#page-top")
+            a(class="page-scroll btn-sample" href="#page-top")
           li
-            a(class="page-scroll" href="#about") Quem Somos
+            a(class="page-scroll btn-sample" href="#about") Quem Somos
           li
-            a(class="page-scroll" href="#services") O que fazemos
+            a(class="page-scroll btn-sample" href="#services") O que fazemos
           li
-            a(class="page-scroll" href="#partners") Parceiros
+            a(class="page-scroll btn-sample" href="#partners") Parceiros
           li
-            a(class="page-scroll" href="#contact") Contato
-        div(class="nav navbar-nav margin-fix2 btn-group-justified")
-                div(class='col-md-3')
-                    input(type='button', value='Quem somos?', href="#about", class='btn btn-group-justified btn-sample2')
-                div(class='col-md-3')
-                    input(type='reset', value='O que fazemos?', href="#services", class='btn btn-group-justified btn-sample2')
-                div(class='col-md-3')
-                    input(type='button', value='Parceiros', href="#partners", class='btn btn-group-justified btn-sample2')
-                div(class='col-md-3')
-                    input(type='reset', value='Contato', href="#contact", class='btn btn-group-justified btn-sample2')   
+            a(class="page-scroll btn-sample" href="#contact") Contato
       //- /.navbar-collapse
     //- /.container
   
   //- Intro Section
   section(id="intro", class="intro-section")
     div(class="container")
-      div(class="row margin-fix")
+      hr
+      div(class="row")
         div(class="col-md-8")
           //- Carousel
           div(id="myCarousel", class="carousel slide", data-ride="carousel")
@@ -102,15 +94,11 @@ block content
             input(type='button', value = 'Mais informações', class='btn btn-sample', style='margin-top: 10px;')
           hr
           h4 Acesso Rápido
-          //- div(class="list-group btn-sample")
-            a(class='list-group-item btn-sample font-white', href="/register") Quero me cadastrar
-            a(class='list-group-item btn-sample font-white', href="http://50.112.26.194:80/moodle/login/index.php") Já sou aluno/funcionário
-            a(class='list-group-item btn-sample font-white', href='#') Administração
-          div(class="btn-group-vertical btn-block")
-            button(type="button" href="/register", class="btn btn-primary btn-sample") Quero me cadastrar
-            button(type="button" href="http://50.112.26.194:80/moodle/login/index.php", class="btn btn-primary btn-sample") Já sou aluno/funcionário
-            button(type="button" href="#", class="btn btn-primary btn-sample") Administração  
-          hr
+          div(class="list-group")
+            a(class='list-group-item btn-sample', href="/register") Quero me cadastrar
+            a(class='list-group-item btn-sample', href="http://50.112.26.194:80/moodle/login/index.php") Já sou aluno/funcionário
+            a(class='list-group-item btn-sample', href='#') Administração
+      hr
           
   //- About Section
   section(id="about" class="about-section")
@@ -136,6 +124,7 @@ block content
   section(id="services" class="services-section")
     div(class="container")
       div(class="row")
+        hr
         div(class='col-md-8')
           div(class='row')
             h3 Missão
@@ -164,11 +153,13 @@ block content
           p Responsabilidade social e ambiental
           hr
           p Respeito a todas as formas de conhecimento
+      hr
             
           
   //- Partners Section
   section(id="partners" class="partners-section")
     div(class="container")
+      hr
       div(class="row")
         div(class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2")
           h3 Apoie você também!
@@ -177,39 +168,41 @@ block content
           p Faça uma doação 
             a(href='#') AQUI
           p Pedimos também que compartilhe e curta nossa página nas redes sociais.
-          p 
+          p
             img(class='img-fixed', href='/', src='/images/facebook.png')
             img(class='img-fixed', href='/', src='/images/youtube.png')
             img(class='img-fixed', href='/', src='/images/twitter.jpg')
           p Agradecemos sua visita!
+      hr
 
   //- Contact Section
   section(id="contact" class="contact-section")
     div(class="container")
+      hr
       div(class="row")
         div(class="col-md-6")
           h2 Fale Conosco
-          p Preencha as informações abaixo. Retornaremos em breve!
-          hr
-          form(action='', method='POST')
-            p(align='center') Nome:
+          p Preencha as informações abaixo.
+          p Retornaremos em breve!
+          form(action='',method='POST')
+            p
               input(type='text', name='contact_name', placeholder='Nome', maxlength='100', required)
-            p(align='Left') E-mail:
-              input(type='text', name='contact_email', placeholder='E-mail', maxlength='100', required, style='center') 
-            p(align='Left') Confirmação de E-mail:
+            p
+              input(type='text', name='contact_email', placeholder='E-mail', maxlength='100', required)
+            p
               input(type='text', name='contact_email2', placeholder='Confirmação de E-mail', maxlength='100', required)
-            p(align='Left') Assunto:
+            p
               input(type='text', name='contact_subject', placeholder='Assunto', maxlength='100', required)
-            p(align='Left') Mensagem:
-              input(type='text', style="height: 100px;", name='contact_name', placeholder='Mensagem', maxlength='1000', required)
+            p
+              input(type='text', name='contact_name', placeholder='Nome', maxlength='100', required)
             div(class='row')
                 div(class='col-md-6')
-                    input(type='button', value='Enviar', class='btn btn-group-justified btn-sample')
+                    input(type='button', value='Enviar', class='btn btn-sample')
                 div(class='col-md-6')
-                    input(type='reset', value='Limpar', class='btn btn-group-justified btn-sample')
-          hr
+                    input(type='reset', value='Limpar', class='btn btn-sample')
         div(class="col-md-6", style='margin-top: 40px;')
           img(src="images/caras.PNG" alt="GUIGA")
+      hr
 
   //- jQuery
   script(src="javascripts/jquery.js")
