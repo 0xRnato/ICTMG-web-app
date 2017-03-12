@@ -12,6 +12,7 @@ To create the database, just run the following command lines on your terminal:
 Type the root password in your MySQL Server and run:
 
     \. db_newUser.sql
+    \. moodle.sql
 
 To leave from mysql use:
 
