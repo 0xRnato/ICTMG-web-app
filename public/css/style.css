@@ -8,9 +8,15 @@
     src: url('./../font/TazWt06-SemiBold.otf');
 }
 
+@font-face{
+    font-family: 'Taz-regular';
+    src: url()'./../font/TazWt05-Regular.otf';
+}
+
 html, body {
     max-width: 100%;
     overflow-x: hidden;
+    font-family: 'Taz-regular';
 }
 
 .page-header{
