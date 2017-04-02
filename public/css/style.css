@@ -1,0 +1,50 @@
+@font-face{
+    font-family: 'Taz-semilight';
+    src: url('./../font/TazWt04-SemiLight.otf');
+}
+
+@font-face{
+    font-family: 'Taz-semibold';
+    src: url('./../font/TazWt06-SemiBold.otf');
+}
+
+.page-header{
+    margin-bottom: 0;
+}
+
+.page-header img{
+    margin-top: -15px;
+}
+
+.page-header h3{
+    font-family: 'Taz-semilight';
+    margin-bottom: auto;
+    margin-top: auto;
+    padding-left: 30px;
+    border-left: 2px solid #1572b9;
+}
+
+.page-header ul{
+    margin-top: -15px;
+}
+
+.menu-header a{
+    color: #fff;
+}
+.menu-header a:hover{
+    opacity: 0.6;
+}
+
+.menu-header .col-md-2{
+    height: 35px;
+    font-family: 'Taz-semibold';
+    padding-top: 7px;
+}
+
+#footer-bar{
+    background-color: #58585a;
+    height: 40px;
+}
+#footer-bar .row{
+    margin-top: 3px;
+}

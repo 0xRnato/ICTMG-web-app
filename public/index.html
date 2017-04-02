@@ -4,23 +4,69 @@
 <head>
 	<meta charset="UTF-8">
 	<base href="/">
-	<title></title>
+	<title>GUIGA</title>
 	<!-- CSS -->
 	<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body ng-app="app" ng-controller="MainController">
-	<div class="container">
+	<div class="">
 		<!-- HEADER -->
-		<nav class="navbar navbar-inverse">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="/">Home</a>
+		<div class="page-header">
+			<div class="row">
+				<div class="col-md-1"></div>
+				<div class="col-md-2">
+					<a href="/"><img class="img-responsive" src="./img/banner_ictmg.png" alt="GUIGA"></a>
+				</div>
+				<div class="col-md-5">
+					<h3>INSTITUTO CONHECER E TRANSFORMAR</h3>
+				</div>
+				<div class="col-md-3">
+					<div class="navbar-collapse collapse">
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="http://50.112.26.194/moodle/login/index.php">Área do aluno</a></li>
+							<li><a href="/singin">Administração</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-1"></div>
 			</div>
-			<ul class="nav navbar-nav">
-				<li><a href="/users">Users</a></li>
-			</ul>
-		</nav>
+		</div>
+		<div class="menu-header">
+			<div class="container-fluid text-center">
+				<div class="row">
+					<div class="col-md-1"></div>
+					<a href="/about">
+						<div class="col-md-2" style="background-color: #1572b9;">
+							CONHEÇA O GUIGA
+						</div>
+					</a>
+					<a href="/course">
+						<div class="col-md-2" style="background-color: #fdb813;">
+							CURSOS
+						</div>
+					</a>
+					<a href="/registration">
+						<div class="col-md-2" style="background-color: #69be55;">
+							INSCRIÇÃO
+						</div>
+					</a>
+					<a href="/content">
+						<div class="col-md-2" style="background-color: #58585a;">
+							CONTEÚDO
+						</div>
+					</a>
+					<a href="/services">
+						<div class="col-md-2" style="background-color: #9fbbe2;">
+							SERVIÇOS
+						</div>
+					</a>
+					<div class="col-md-1"></div>
+				</div>
+			</div>
+		</div>
 
 		<!-- ANGULAR DYNAMIC CONTENT -->
 		<div ng-view></div>
@@ -29,10 +75,17 @@
 	<!-- JS -->
 	<script src="libs/angular/angular.min.js"></script>
 	<script src="libs/angular-route/angular-route.min.js"></script>
+	<script src="libs/jquery/dist/jquery.min.js"></script>
+	<script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
 
 	<!-- ANGULAR CUSTOM -->
 	<script src="js/controllers/main.controller.js"></script>
-	<script src="js/controllers/user.controller.js"></script>
+	<script src="js/controllers/about.controller.js"></script>
+	<script src="js/controllers/course.controller.js"></script>
+	<script src="js/controllers/registration.controller.js"></script>
+	<script src="js/controllers/content.controller.js"></script>
+	<script src="js/controllers/services.controller.js"></script>
+	<script src="js/controllers/singin.controller.js"></script>
 	<script src="js/services/user.service.js"></script>
 	<script src="js/app.routes.js"></script>
 	<script src="js/app.js"></script>
