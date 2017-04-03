@@ -17,6 +17,8 @@ html, body {
     max-width: 100%;
     overflow-x: hidden;
     font-family: 'Taz-regular';
+    text-align: justify;
+    font-size: 13pt;
 }
 
 .page-header{
@@ -50,7 +52,7 @@ html, body {
     margin-bottom: 0;
 }
 
-.menu-header .col-md-2, h3{
+.menu-header .col-md-2, h1, h2, h3, h4, h5, h6{
     height: 35px;
     font-family: 'Taz-semibold';
     padding-top: 7px;
@@ -65,7 +67,7 @@ html, body {
 }
 
 .panel-aside{
-    min-height: 360px;
+    min-height: 400px;
 }
 
 .panel-aside h1{
@@ -86,4 +88,31 @@ html, body {
     color: #1572b9;
     font-family: 'Taz-semibold';
     font-size: 13pt;
+}
+
+.footer a, .footer a:active{
+    color: slategray;
+    text-decoration: none;
+}
+.footer a:hover{
+    opacity: 0.6;
+}
+
+.wow{
+    -webkit-animation-delay: 0.5s;
+    -ms-animation-delay: 0.5s;
+    mso-animation-delay: 0.5s;
+    -moz-animation-delay: 0.5s;
+    -o-animation-delay: 0.5s;
+    -xv-animation-delay: 0.5s;
+    -atsc-animation-delay: 0.5s;
+    -wap-animation-delay: 0.5s;
+    -khtml-animation-delay: 0.5s;
+    -apple-animation-delay: 0.5s;
+    prince-animation-delay: 0.5s;
+    -ah-animation-delay: 0.5s;
+    -hp-animation-delay: 0.5s;
+    -ro-animation-delay: 0.5s;
+    -rim-animation-delay: 0.5s;
+    -tc-animation-delay: 0.5s;
 }
