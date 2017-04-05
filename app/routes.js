@@ -5,11 +5,19 @@ module.exports = (app, db) => {
     // Backend routes ======================================
     // Example find all users with ORM
     app.get('/api/users', (req, res) => {
-        User.get((err, users) => {
+        User.find({}, (err, users) => {
             if (err) res.send(err);
             res.json(users);
         });
     });
+
+    app.post('/api/users', (req, res) => {
+        User.find({}, (err, users) => {
+            if (err) res.send(err);
+            res.json(users);
+        });
+    });
+
     // Frontend routes ====================================
     // route to handle all angular requests
     app.get('*', (req, res) => {
