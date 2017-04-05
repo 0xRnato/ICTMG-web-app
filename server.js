@@ -20,7 +20,9 @@ app.use(express.static(__dirname + '/public')); // set the static files location
 // Database ===============================================
 var db = orm.connect(configs.DB, (err) => {// database connected instance
     if(err) return console.error('Connection error: ' + err);
-    else console.log('Connection with database successfully completed.');
+    else {
+    	console.log('Connection with database successfully completed.');
+	}
 });
 
 // Routes =================================================
