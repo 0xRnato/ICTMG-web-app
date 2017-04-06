@@ -134,20 +134,12 @@
 					<h3>CALENDÁRIO</h3>
 				</div>
 			</div>
-			<div class="row">
+			<div class="row" ng-repeat="event in calendar">
 				<div class="col-md-2">
-					<h1>02</h1>
-					<br>
-					<h1>03</h1>
-					<br>
-					<h1>04</h1>
+					<h1>{{event.id}}</h1>
 				</div>
 				<div class="col-md-10">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, culpa itaque odio similique suscipit</p>
-					<hr>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, culpa itaque odio similique suscipit</p>
-					<hr>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, culpa itaque odio similique suscipit</p>
+					<p>{{event.name}}</p>
 				</div>
 			</div>
 		</div>

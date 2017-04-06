@@ -1,5 +1,6 @@
 module.exports = (app, db) => {
 	var Users = require('./manipulation/user')(db);
+	var DataRecords = require('./manipulation/data_records')(db);
 	var Courses = require('./manipulation/course')(db);
 
 	// Backend routes ======================================
@@ -44,6 +45,43 @@ module.exports = (app, db) => {
 	app.post('/api/courses', (req, res) => {
 		// check if object have id to replace data in db
 		Courses.save(req.body)
+			.then(data => {
+				res.send(data);
+			})
+			.catch(error => {
+				console.log(error);
+				res.send(error);
+			});
+	});
+
+	// get events
+	app.get('/api/events', (req, res) => {
+		DataRecords.get(req.body)
+			.then(data => {
+				res.send(data);
+			})
+			.catch(error => {
+				console.log(error);
+				res.send(error);
+			});
+	});
+
+	// new/edit events
+	app.post('/api/events', (req, res) => {
+		// check if object have id to replace data in db
+		DataRecords.save(req.body)
+			.then(data => {
+				res.send(data);
+			})
+			.catch(error => {
+				console.log(error);
+				res.send(error);
+			});
+	});
+
+	// get events
+	app.get('/api/caledar', (req, res) => {
+		DataRecords.getCalendar()
 			.then(data => {
 				res.send(data);
 			})
