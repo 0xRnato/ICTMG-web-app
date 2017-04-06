@@ -1,11 +1,11 @@
 module.exports = (app, db) => {
 	var Users = require('./manipulation/user')(db);
 	var DataRecords = require('./manipulation/data_records')(db);
+	var Courses = require('./manipulation/course')(db);
 
 	// Backend routes ======================================
-	// Example find all users with ORM
+	// get users
 	app.get('/api/users', (req, res) => {
-
 		// load user
 		Users.getUser(req.body)
 			.then(data => {
@@ -16,8 +16,8 @@ module.exports = (app, db) => {
 			});
 	});
 
+	// new/edit user
 	app.post('/api/users', (req, res) => {
-
 		// check if object have id to replace data in db
 		Users.save(req.body)
 			.then(data => {
@@ -28,27 +28,53 @@ module.exports = (app, db) => {
 			});
 	});
 
-
-	app.get('/api/events', (req, res) => {
-
-		// load user
-		DataRecords.getUser(req.body)
+	// get courses
+	app.get('/api/courses', (req, res) => {
+		// check if object have id to replace data in db
+		Courses.getCourses(req.body)
 			.then(data => {
 				res.send(data);
 			})
 			.catch(error => {
+				console.log(error);
 				res.send(error);
 			});
 	});
 
-	app.post('/api/events', (req, res) => {
+	// new/edit course
+	app.post('/api/courses', (req, res) => {
+		// check if object have id to replace data in db
+		Courses.save(req.body)
+			.then(data => {
+				res.send(data);
+			})
+			.catch(error => {
+				console.log(error);
+				res.send(error);
+			});
+	});
 
+	// get events
+	app.get('/api/events', (req, res) => {
+		DataRecords.get(req.body)
+			.then(data => {
+				res.send(data);
+			})
+			.catch(error => {
+				console.log(error);
+				res.send(error);
+			});
+	});
+
+	// new/edit events
+	app.post('/api/events', (req, res) => {
 		// check if object have id to replace data in db
 		DataRecords.save(req.body)
 			.then(data => {
 				res.send(data);
 			})
 			.catch(error => {
+				console.log(error);
 				res.send(error);
 			});
 	});
