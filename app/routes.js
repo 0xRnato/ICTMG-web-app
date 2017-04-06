@@ -1,5 +1,6 @@
 module.exports = (app, db) => {
 	var Users = require('./manipulation/user')(db);
+	var DataRecords = require('./manipulation/data_records')(db);
 
 	// Backend routes ======================================
 	// Example find all users with ORM
@@ -19,6 +20,31 @@ module.exports = (app, db) => {
 
 		// check if object have id to replace data in db
 		Users.save(req.body)
+			.then(data => {
+				res.send(data);
+			})
+			.catch(error => {
+				res.send(error);
+			});
+	});
+
+
+	app.get('/api/events', (req, res) => {
+
+		// load user
+		DataRecords.getUser(req.body)
+			.then(data => {
+				res.send(data);
+			})
+			.catch(error => {
+				res.send(error);
+			});
+	});
+
+	app.post('/api/events', (req, res) => {
+
+		// check if object have id to replace data in db
+		DataRecords.save(req.body)
 			.then(data => {
 				res.send(data);
 			})
