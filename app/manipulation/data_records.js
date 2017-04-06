@@ -27,7 +27,7 @@ class DataRecords {
 		});
 	}
 
-	static getDataRecord(objt) {
+	static get(objt) {
 		return new Promise(function(fulfill, reject) {
 			if(objt) {
 				DataRecord.find(objt, function(err, data) {
@@ -42,6 +42,15 @@ class DataRecords {
 			}
 		});
 	}
+
+    static getCalendar() {
+        return new Promise(function(fulfill, reject) {
+            DataRecord.find({}, 3, function(err, data) {
+                if (err) reject(err);
+                fulfill(data);
+            });
+		});
+    }
 }
 
 module.exports = (db) => {

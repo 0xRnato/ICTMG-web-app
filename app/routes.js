@@ -79,6 +79,18 @@ module.exports = (app, db) => {
 			});
 	});
 
+	// get events
+	app.get('/api/caledar', (req, res) => {
+		DataRecords.getCalendar()
+			.then(data => {
+				res.send(data);
+			})
+			.catch(error => {
+				console.log(error);
+				res.send(error);
+			});
+	});
+
 	// Frontend routes ====================================
 	// route to handle all angular requests
 	app.get('*', (req, res) => {

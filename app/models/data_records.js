@@ -1,9 +1,7 @@
-// define our model
-// user table example
 module.exports = (db) => {
-    return DataRecords = db.define('mdl_data_records', {
-        id: { type: 'serial', key: true },//Auto_increment key
-        courseÍndice: Number,
+    return DataRecord = db.define('mdl_data', {
+        id: { type: 'serial', key: true },
+        course: Number,
         name: String,
         intro: String,
         introformat: Number,
