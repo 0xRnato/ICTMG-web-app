@@ -1,15 +1,26 @@
-angular.module('CourseCtrl', []).controller('CourseController', function ($scope, $http) {
-    var init;
+(function() {
+    'use strict';
 
-    init = function() {
-        $scope.courses = [];
-        $http.get('api/courses')
-	  		.then(function sucessCallback(data) {
-                  $scope.courses = data.data;
-			}, function errorCallback(error){
-                console.log(error);
-			});
-    };
+    angular
+        .module('CourseCtrl', [])
+        .controller('CourseController', CourseController);
 
-    return init();
-});
+    CourseController.inject = ['$scope', '$log', '$http'];
+    function CourseController($scope, $log, $http) {
+        let vm = this;
+        activate();
+
+        // Do something
+        vm.courses;
+
+        function activate() {
+            vm.courses = [];
+            $http.get('api/courses')
+                .then(function sucessCallback(data) {
+                    vm.courses = data.data;
+                }, function errorCallback(error) {
+                    $log.error(error);
+                });
+        }
+    }
+})();

@@ -2,9 +2,9 @@
 // user table example
 module.exports = (db) => {
     return User = db.define('user', {
-        id: { type: 'serial', key: true },//Auto_increment key
+        id: {type: 'serial', key: true}, // Auto_increment key
         name: String,
         email: String,
-        password: String
+        password: String,
     });
 };
