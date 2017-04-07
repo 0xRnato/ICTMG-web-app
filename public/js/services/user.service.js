@@ -1,20 +1,29 @@
-angular.module('UserService', []).factory('User', ['$http', function($http) {
+(function() {
+    'use strict';
 
-	return {
-        // call to GET all users
-        get: function () {
+    angular
+        .module('UserService', [])
+        .factory('User', User);
+
+    User.inject = ['$http'];
+    function User($http) {
+        let service = {
+            get: _get,
+            create: _create,
+            delete: _delete,
+        };
+
+        return service;
+
+        // Do something
+        function _get() {
             return $http.get('/api/users');
-        },
-
-        // these will work when more API routes are difined on the Node site of thins
-        // call to POST and create a new user
-        create: function (userData) {
-            return $http.post('/api/users', userData)
-        },
-
-        //call to DELETE a user
-        delete: function (id) {
+        }
+        function _create() {
+            return $http.post('/api/users', userData);
+        }
+        function _delete() {
             return $http.delete('/api/users' + id);
         }
     }
-}]);
+})();

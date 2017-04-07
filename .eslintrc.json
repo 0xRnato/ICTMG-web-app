@@ -12,7 +12,14 @@
         "sourceType": "module"
     },
     "extends": [
-        "google"
+        "google",
+        "angular"
     ],
-    "rules": {}
+    "rules": {},
+    "globals": {
+        "angular": true
+    },
+    "settings": {
+        "angular": 1
+    }
 }

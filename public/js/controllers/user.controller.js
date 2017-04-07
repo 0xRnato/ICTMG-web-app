@@ -1,3 +1,17 @@
-angular.module('UserCtrl', []).controller('UserController', function($scope) {
-    $scope.tagline = 'This is the user page';
-});
+(function() {
+    'use strict';
+
+    angular
+        .module('UserCtrl', [])
+        .controller('UserController', UserController);
+
+    UserController.inject = ['$scope'];
+    function UserController($scope) {
+        let vm = this;
+        activate();
+
+        // Do something
+
+        function activate() { }
+    }
+})();
