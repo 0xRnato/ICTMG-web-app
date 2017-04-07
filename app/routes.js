@@ -1,17 +1,17 @@
 module.exports = (app, db) => {
-	var Users = require('./manipulation/user')(db);
-	var DataRecords = require('./manipulation/data_records')(db);
-	var Courses = require('./manipulation/course')(db);
+	const Users = require('./manipulation/user')(db);
+	const DataRecords = require('./manipulation/data_records')(db);
+	const Courses = require('./manipulation/course')(db);
 
 	// Backend routes ======================================
 	// get users
 	app.get('/api/users', (req, res) => {
 		// load user
 		Users.getUser(req.body)
-			.then(data => {
+			.then((data) => {
 				res.send(data);
 			})
-			.catch(error => {
+			.catch((error) => {
 				res.send(error);
 			});
 	});
@@ -20,10 +20,10 @@ module.exports = (app, db) => {
 	app.post('/api/users', (req, res) => {
 		// check if object have id to replace data in db
 		Users.save(req.body)
-			.then(data => {
+			.then((data) => {
 				res.send(data);
 			})
-			.catch(error => {
+			.catch((error) => {
 				res.send(error);
 			});
 	});
@@ -32,10 +32,10 @@ module.exports = (app, db) => {
 	app.get('/api/courses', (req, res) => {
 		// check if object have id to replace data in db
 		Courses.getCourses(req.body)
-			.then(data => {
+			.then((data) => {
 				res.send(data);
 			})
-			.catch(error => {
+			.catch((error) => {
 				console.log(error);
 				res.send(error);
 			});
@@ -45,10 +45,10 @@ module.exports = (app, db) => {
 	app.post('/api/courses', (req, res) => {
 		// check if object have id to replace data in db
 		Courses.save(req.body)
-			.then(data => {
+			.then((data) => {
 				res.send(data);
 			})
-			.catch(error => {
+			.catch((error) => {
 				console.log(error);
 				res.send(error);
 			});
@@ -57,10 +57,10 @@ module.exports = (app, db) => {
 	// get events
 	app.get('/api/events', (req, res) => {
 		DataRecords.get(req.body)
-			.then(data => {
+			.then((data) => {
 				res.send(data);
 			})
-			.catch(error => {
+			.catch((error) => {
 				console.log(error);
 				res.send(error);
 			});
@@ -70,10 +70,10 @@ module.exports = (app, db) => {
 	app.post('/api/events', (req, res) => {
 		// check if object have id to replace data in db
 		DataRecords.save(req.body)
-			.then(data => {
+			.then((data) => {
 				res.send(data);
 			})
-			.catch(error => {
+			.catch((error) => {
 				console.log(error);
 				res.send(error);
 			});
@@ -82,10 +82,10 @@ module.exports = (app, db) => {
 	// get events
 	app.get('/api/caledar', (req, res) => {
 		DataRecords.getCalendar()
-			.then(data => {
+			.then((data) => {
 				res.send(data);
 			})
-			.catch(error => {
+			.catch((error) => {
 				console.log(error);
 				res.send(error);
 			});

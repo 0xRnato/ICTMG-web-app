@@ -1,6 +1,6 @@
 module.exports = (db) => {
     return DataRecord = db.define('mdl_data', {
-        id: { type: 'serial', key: true },
+        id: {type: 'serial', key: true},
         course: Number,
         name: String,
         intro: String,
@@ -35,6 +35,6 @@ module.exports = (db) => {
         editany: Number,
         notification: Number,
         timemodified: Number,
-        config: String
+        config: String,
     });
 };

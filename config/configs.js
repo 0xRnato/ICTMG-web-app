@@ -4,7 +4,7 @@ module.exports = {
         database: 'test',
         user: 'root',
         protocol: 'mysql',
-        port: '3306'
+        port: '3306',
     },
-    PORT: 8080
-}
+    PORT: 8080,
+};
