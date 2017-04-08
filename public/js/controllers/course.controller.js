@@ -2,11 +2,11 @@
     'use strict';
 
     angular
-        .module('CourseCtrl', [])
+        .module('CourseCtrl')
         .controller('CourseController', CourseController);
 
-    CourseController.inject = ['$scope', '$log', '$http'];
-    function CourseController($scope, $log, $http) {
+    CourseController.inject = ['$scope', '$log', '$http', 'Course'];
+    function CourseController($scope, $log, $http, Course) {
         let vm = this;
         activate();
 
@@ -15,7 +15,7 @@
 
         function activate() {
             vm.courses = [];
-            $http.get('api/courses')
+            Course.get()
                 .then(function sucessCallback(data) {
                     vm.courses = data.data;
                 }, function errorCallback(error) {
