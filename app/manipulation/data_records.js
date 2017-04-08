@@ -44,7 +44,7 @@ class DataRecords {
 
 	static getCalendar() {
 		return new Promise(function(fulfill, reject) {
-			DataRecord.find({}, 3, function(err, data) {
+			DataRecord.find({ eventtype: 'site' }, 3, function(err, data) {
 				if (err) reject(err);
 				fulfill(data);
 			});
