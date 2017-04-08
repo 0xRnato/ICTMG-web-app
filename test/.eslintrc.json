@@ -1,0 +1,25 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es6": true,
+        "node": true
+    },
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "sourceType": "module"
+    },
+    "plugins": [
+        "mocha"
+    ],
+    "extends": [
+        "google"
+    ],
+    "rules": {
+        "no-console": "off",
+        "no-unused-vars": "warn",
+        "mocha/no-exclusive-tests": "error"
+    }
+}
