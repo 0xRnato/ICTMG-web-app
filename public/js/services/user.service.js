@@ -7,7 +7,7 @@
 
     User.inject = ['$http'];
     function User($http) {
-        let service = {
+        var service = {
             get: _get,
             create: _create,
             delete: _delete,
@@ -19,10 +19,10 @@
         function _get() {
             return $http.get('/api/users');
         }
-        function _create() {
+        function _create(userData) {
             return $http.post('/api/users', userData);
         }
-        function _delete() {
+        function _delete(id) {
             return $http.delete('/api/users' + id);
         }
     }

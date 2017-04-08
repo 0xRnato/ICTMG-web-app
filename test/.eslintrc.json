@@ -11,11 +11,15 @@
         },
         "sourceType": "module"
     },
+    "plugins": [
+        "mocha"
+    ],
     "extends": [
-        "eslint:recommended"
+        "google"
     ],
     "rules": {
         "no-console": "off",
-        "no-unused-vars": "warn"
+        "no-unused-vars": "warn",
+        "mocha/no-exclusive-tests": "error"
     }
 }

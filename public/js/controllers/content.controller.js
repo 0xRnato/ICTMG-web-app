@@ -7,7 +7,7 @@
 
     ContentController.inject = ['$scope'];
     function ContentController($scope) {
-        let vm = this;
+        var vm = this;
         activate();
 
         // Do something

@@ -7,7 +7,7 @@
 
     SinginController.inject = ['$scope'];
     function SinginController($scope) {
-        let vm = this;
+        var vm = this;
         activate();
 
         // Do something

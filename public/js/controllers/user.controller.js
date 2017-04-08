@@ -7,7 +7,7 @@
 
     UserController.inject = ['$scope'];
     function UserController($scope) {
-        let vm = this;
+        var vm = this;
         activate();
 
         // Do something

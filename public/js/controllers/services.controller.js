@@ -7,7 +7,7 @@
 
     ServicesController.inject = ['$scope'];
     function ServicesController($scope) {
-        let vm = this;
+        var vm = this;
         activate();
 
         // Do something

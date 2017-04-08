@@ -12,10 +12,15 @@
         "sourceType": "module"
     },
     "extends": [
-        "eslint:recommended"
+        "angular"
     ],
     "rules": {
-        "no-console": "off",
         "no-unused-vars": "warn"
+    },
+    "globals": {
+        "angular": true
+    },
+    "settings": {
+        "angular": 1
     }
 }
