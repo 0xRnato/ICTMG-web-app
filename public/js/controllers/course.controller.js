@@ -7,7 +7,7 @@
 
     CourseController.inject = ['$scope', '$log', '$http'];
     function CourseController($scope, $log, $http) {
-        let vm = this;
+        var vm = this;
         activate();
 
         // Do something

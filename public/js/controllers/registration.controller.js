@@ -7,7 +7,7 @@
 
     RegistrationController.inject = ['$scope'];
     function RegistrationController($scope) {
-        let vm = this;
+        var vm = this;
         activate();
 
         // Do something

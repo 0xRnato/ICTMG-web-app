@@ -7,7 +7,7 @@
 
     AboutController.inject = ['$scope'];
     function AboutController($scope) {
-        let vm = this;
+        var vm = this;
         activate();
 
         // Do something

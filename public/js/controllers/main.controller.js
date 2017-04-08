@@ -5,9 +5,9 @@
         .module('MainCtrl', [])
         .controller('MainController', MainController);
 
-    MainController.inject = ['$scope', '$http'];
-    function MainController($scope, $http) {
-        let vm = this;
+    MainController.inject = ['$scope', '$http', '$log'];
+    function MainController($scope, $http, $log) {
+        var vm = this;
         activate();
 
         // Do something
