@@ -12,6 +12,7 @@
 
         // Do something
         vm.calendar;
+        vm.gfr = 676;
 
         function activate() {
             vm.calendar = [];
