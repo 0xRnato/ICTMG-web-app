@@ -8,7 +8,7 @@ const favicon = require('serve-favicon');
 const app = express();
 
 // Settings ===============================================
-const configs = require('./config/configs');// config file
+const configs = require('./app/configs');// config file
 const port = process.env.PORT || configs.PORT;
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 // parse application/json

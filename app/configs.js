@@ -1,7 +1,7 @@
 module.exports = {
     DB: {
         host: 'localhost',
-        database: 'test',
+        database: 'moodle',
         user: 'root',
         protocol: 'mysql',
         port: '3306',

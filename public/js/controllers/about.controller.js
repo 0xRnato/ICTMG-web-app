@@ -2,12 +2,12 @@
     'use strict';
 
     angular
-        .module('AboutCtrl', [])
+        .module('app.about')
         .controller('AboutController', AboutController);
 
-    AboutController.inject = ['$scope'];
-    function AboutController($scope) {
-        var vm = this;
+    AboutController.inject = [];
+    function AboutController() {
+        // var vm = this;
         activate();
 
         // Do something
