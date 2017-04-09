@@ -2,6 +2,6 @@
 
 let lint = require('mocha-eslint');
 let paths = ['.'];
-let options = {formatter: 'stylish'};
+let options = {formatter: 'html'};
 
 lint(paths, options);
