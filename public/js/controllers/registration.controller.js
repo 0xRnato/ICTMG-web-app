@@ -2,12 +2,12 @@
     'use strict';
 
     angular
-        .module('RegistrationCtrl', [])
+        .module('app.registration', [])
         .controller('RegistrationController', RegistrationController);
 
-    RegistrationController.inject = ['$scope'];
-    function RegistrationController($scope) {
-        var vm = this;
+    RegistrationController.inject = [];
+    function RegistrationController() {
+        // var vm = this;
         activate();
 
         // Do something

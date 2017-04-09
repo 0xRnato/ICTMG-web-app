@@ -2,15 +2,13 @@
     'use strict';
 
     angular
-        .module('CourseCtrl', [])
-        .factory('Course', Course);
+        .module('app.course', [])
+        .factory('CourseService', CourseService);
 
-    Course.inject = ['$http'];
-    function Course($http) {
-        let service = {
-            get: _get,
-            create: _create,
-            delete: _delete,
+    CourseService.inject = ['$http'];
+    function CourseService($http) {
+        var service = {
+            get: _get
         };
 
         return service;
@@ -18,12 +16,6 @@
         // Do something
         function _get() {
             return $http.get('/api/courses');
-        }
-        function _create() {
-            return $http.post('/api/courses', userData);
-        }
-        function _delete() {
-            return $http.delete('/api/courses' + id);
         }
     }
 })();

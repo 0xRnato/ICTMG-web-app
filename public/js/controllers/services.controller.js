@@ -2,12 +2,12 @@
     'use strict';
 
     angular
-        .module('ServicesCtrl', [])
+        .module('app.services', [])
         .controller('ServicesController', ServicesController);
 
-    ServicesController.inject = ['$scope'];
-    function ServicesController($scope) {
-        var vm = this;
+    ServicesController.inject = [];
+    function ServicesController() {
+        // var vm = this;
         activate();
 
         // Do something

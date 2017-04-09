@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular
-		.module('appRoutes', [])
+		.module('app.routes')
 		.config(RoutesConfig);
 
 	RoutesConfig.$inject = ['$routeProvider', '$locationProvider'];
@@ -17,13 +17,9 @@
 			})
 			.when('/about', {
 				templateUrl: 'views/about.html',
-				controller: 'AboutController',
-				controllerAs: 'aboutController',
 			})
 			.when('/course', {
 				templateUrl: 'views/course.html',
-				controller: 'CourseController',
-				controllerAs: 'courseController',
 			})
 			.when('/registration', {
 				templateUrl: 'views/registration.html',

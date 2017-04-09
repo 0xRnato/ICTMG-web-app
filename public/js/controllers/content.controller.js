@@ -2,12 +2,12 @@
     'use strict';
 
     angular
-        .module('ContentCtrl', [])
+        .module('app.content', [])
         .controller('ContentController', ContentController);
 
-    ContentController.inject = ['$scope'];
-    function ContentController($scope) {
-        var vm = this;
+    ContentController.inject = [];
+    function ContentController() {
+        // var vm = this;
         activate();
 
         // Do something

@@ -2,12 +2,12 @@
     'use strict';
 
     angular
-        .module('SinginCtrl', [])
+        .module('app.user', [])
         .controller('SinginController', SinginController);
 
-    SinginController.inject = ['$scope'];
-    function SinginController($scope) {
-        var vm = this;
+    SinginController.inject = [];
+    function SinginController() {
+        // var vm = this;
         activate();
 
         // Do something

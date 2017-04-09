@@ -2,11 +2,11 @@
     'use strict';
 
     angular
-        .module('UserService', [])
-        .factory('User', User);
+        .module('app.user', [])
+        .factory('UserService', UserService);
 
-    User.inject = ['$http'];
-    function User($http) {
+    UserService.inject = ['$http'];
+    function UserService($http) {
         var service = {
             get: _get,
             create: _create,
