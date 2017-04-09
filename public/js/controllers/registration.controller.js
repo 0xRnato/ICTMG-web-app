@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app.registration', [])
+        .module('app.registration')
         .controller('RegistrationController', RegistrationController);
 
     RegistrationController.inject = [];

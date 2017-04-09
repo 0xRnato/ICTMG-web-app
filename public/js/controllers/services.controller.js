@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app.services', [])
+        .module('app.services')
         .controller('ServicesController', ServicesController);
 
     ServicesController.inject = [];

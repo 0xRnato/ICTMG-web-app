@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app.content', [])
+        .module('app.content')
         .controller('ContentController', ContentController);
 
     ContentController.inject = [];
