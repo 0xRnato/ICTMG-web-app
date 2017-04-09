@@ -3,6 +3,7 @@ module.exports = {
         host: 'localhost',
         database: 'moodle',
         user: 'root',
+        password: 'root',
         protocol: 'mysql',
         port: '3306',
     },
