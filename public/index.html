@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
 	<meta charset="UTF-8">
@@ -7,6 +7,7 @@
 	<title>GUIGA</title>
 	<!-- CSS -->
 	<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="libs/bootstrap-select/dist/css/bootstrap-select.min.css">
 	<link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="libs/animate.css/animate.min.css">
 	<link rel="stylesheet" href="css/style.css">
@@ -35,7 +36,7 @@
 				<div class="col-md-1"></div>
 			</div>
 		</div>
-		<div class="menu-header">
+		<div class="menu-header" ng-controller="NavbarController as navbarController">
 			<div class="container-fluid text-center">
 				<div class="row">
 					<div class="col-md-1"></div>
@@ -44,11 +45,19 @@
 							CONHEÇA O GUIGA
 						</div>
 					</a>
-					<a href="#/course">
-						<div class="col-md-2" style="background-color: #fdb813;">
-							CURSOS
-						</div>
-					</a>
+					<div class="col-md-2" style="padding:0; ">
+						<select class="selectpicker"
+								data-style="btn-warning"
+								data-live-search="true"
+								data-width="100%"
+								data-size="10"
+								title="CURSOS"
+								ng-model="navbarController.selectedCourse"
+								ng-options="course.fullname for course in navbarController.courses | orderBy:'fullname'"
+								ng-change="navbarController.showCourse()">
+							<option disabled value="">CURSOS</option>
+						</select>
+					</div>
 					<a href="#/registration">
 						<div class="col-md-2" style="background-color: #69be55;">
 							INSCRIÇÃO
@@ -87,6 +96,7 @@
 	<script src="libs/angular-route/angular-route.min.js"></script>
 	<script src="libs/jquery/dist/jquery.min.js"></script>
 	<script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="libs/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
 
 	<!-- ANGULAR CUSTOM -->
 	<script src="js/app.js"></script>
@@ -95,9 +105,8 @@
 	<script src="js/services/main.service.js"></script>
 	<script src="js/services/user.service.js"></script>
 	<!--controllers-->
+	<script src="js/controllers/navbar.controller.js"></script>
 	<script src="js/controllers/main.controller.js"></script>
-	<script src="js/controllers/about.controller.js"></script>
-	<script src="js/controllers/course.controller.js"></script>
 	<script src="js/controllers/registration.controller.js"></script>
 	<script src="js/controllers/content.controller.js"></script>
 	<script src="js/controllers/services.controller.js"></script>
