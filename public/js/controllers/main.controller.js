@@ -13,6 +13,9 @@
         vm.calendar;
 
         vm.getDate = function(date) {
+            if(Number.isInteger(date)) {
+                return new Date(date * 1000);
+            }
             return new Date(date);
         };
 

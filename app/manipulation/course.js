@@ -34,7 +34,7 @@ class Courses {
 					fulfill(data);
 				});
 			} else {
-				Course.find({}, function(err, data) {
+				Course.find({ category: orm.gt(0) }, function(err, data) {
 					if (err) reject(err);
 					fulfill(data);
 				});

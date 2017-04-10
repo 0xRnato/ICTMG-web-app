@@ -10,8 +10,8 @@
 		<hr>
 		<div class="row wow fadeInUp">
 			<div class="col-md-3">
-				<p style="font-family: 'Taz-semibold'">Inicio: {{selectedCourse.startdate | date:'dd/MM/yy'}}</p>
-				<p style="font-family: 'Taz-semibold'">Fim: {{selectedCourse.enddate | date:'dd/MM/yy'}}</p>	
+				<p style="font-family: 'Taz-semibold'">Inicio: {{ mainController.getDate(selectedCourse.startdate) | date:'dd/MM/yy'}}</p>
+				<p style="font-family: 'Taz-semibold'">Fim: {{mainController.getDate(selectedCourse.enddate) | date:'dd/MM/yy'}}</p>	
 			</div>
 			<div class="col-md-9">
 				<a href="#/registration" style="border-radius: 4px;font-size: 14px;padding: 6px 12px;" class="btn btn-primary" role="button">Inscrições Abertas</a>
