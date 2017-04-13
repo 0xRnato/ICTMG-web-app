@@ -2,6 +2,7 @@ module.exports = (app, db) => {
 	const Users = require('./manipulation/user')(db);
 	const DataRecords = require('./manipulation/data_records')(db);
 	const Courses = require('./manipulation/course')(db);
+	const Register = require('./manipulation/register')(db);
 
 	// Backend routes ======================================
 	// get users
@@ -82,6 +83,18 @@ module.exports = (app, db) => {
 	// get events
 	app.get('/api/caledar', (req, res) => {
 		DataRecords.getCalendar()
+			.then((data) => {
+				res.send(data);
+			})
+			.catch((error) => {
+				console.log(error);
+				res.send(error);
+			});
+	});
+
+	// post registrations
+	app.post('/api/register', (req, res) => {
+		Register.save(req.body)
 			.then((data) => {
 				res.send(data);
 			})

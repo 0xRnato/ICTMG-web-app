@@ -154,3 +154,22 @@ a:hover{
     font-size: 16pt;
     margin-top: 30px;
 }
+
+.form-content {
+    padding: 10px;
+    text-align: left;
+}
+
+.form-content .label-form {
+    width: 100%;
+    font-size: 16px;
+}
+
+.form-content .input {
+    width: 80%;
+}
+
+.footer-form {
+    padding-bottom: 40px;
+    padding-top: 30px;
+}
