@@ -16,7 +16,186 @@
 					<label class="label-form">Data de Nascimento</label>
 					<input class="input" type="text" name="date" ng-model="registrationController.selected.birthDate" placeholder="Nascimento...">
 				</div>
-				<div class="col-md-6"></div>
+				<div class="col-md-6">
+					<label class="label-form">Identidade</label>
+					<input class="input" type="text" name="date" ng-model="registrationController.selected.register" placeholder="Identidade...">
+				</div>
+			</div>
+			<div class="row form-content">
+				<div class="col-md-6">
+					<label class="label-form">Email</label>
+					<input class="input" type="text" name="email" ng-model="registrationController.selected.email" placeholder="Email...">
+				</div>
+				<div class="col-md-6">
+					<label class="label-form">Telefone</label>
+					<input class="input" type="text" name="phone" ng-model="registrationController.selected.phone" placeholder="Telefone...">
+				</div>
+			</div>
+			<div class="row form-content">
+				<div class="col-md-12">
+					<label class="label-form">Endereço residencial</label>
+				</div>
+			</div>
+			<div class="row form-content">
+				<div class="col-md-6">
+					<label class="label-form">Cidade</label>
+					<input class="input" type="text" name="email" ng-model="registrationController.selected.homeCity" placeholder="Cidade...">
+				</div>
+				<div class="col-md-6">
+					<label class="label-form">Estado</label>
+					<input class="input" type="text" name="phone" ng-model="registrationController.selected.homeState" placeholder="Estado...">
+				</div>
+			</div>
+			<div class="row form-content">
+				<div class="col-md-12">
+					<label class="label-form">Endereço comercial</label>
+				</div>
+			</div>
+			<div class="row form-content">
+				<div class="col-md-6">
+					<label class="label-form">Cidade</label>
+					<input class="input" type="text" name="email" ng-model="registrationController.selected.workCity" placeholder="Cidade...">
+				</div>
+				<div class="col-md-6">
+					<label class="label-form">Estado</label>
+					<input class="input" type="text" name="phone" ng-model="registrationController.selected.workState" placeholder="Estado...">
+				</div>
+			</div>
+			<div class="row form-content">
+				<div class="col-md-1">
+					<input class="input" type="checkbox" ng-model="registrationController.selected.publicWork">
+				</div>
+				<div class="col-md-5">
+					<label class="label-form">Trabalha ou participa de instituição publica?</label>
+				</div>
+				<div class="col-md-1" ng-if="registrationController.selected.publicWork">
+					<input class="input" type="checkbox" ng-model="registrationController.selected.bag">
+				</div>
+				<div class="col-md-5" ng-if="registrationController.selected.publicWork">
+					<label class="label-form">Quer solicitar bolsa?</label>
+				</div>
+			</div>
+			<div class="row form-content" ng-if="registrationController.selected.publicWork && registrationController.selected.bag">
+				<div class="col-md-6">
+					<label class="label-form">Anexar carta de identificação</label>
+				</div>
+				<div class="col-md-6">
+					<input class="input" type="file">
+				</div>
+			</div>
+			<div class="row form-content">
+				<div class="col-md-6">
+					<label class="label-form">Escolaridade</label>
+				</div>
+			</div>
+			<div class="row form-content">
+				<div class="col-md-1">
+					<input class="input" type="checkbox">
+				</div>
+				<div class="col-md-3">
+					<label class="label-form">Ensino Fundamental</label>
+				</div>
+				<div class="col-md-1">
+					<input class="input" type="checkbox">
+				</div>
+				<div class="col-md-3">
+					<label class="label-form">Ensino Medio</label>
+				</div>
+				<div class="col-md-1">
+					<input class="input" type="checkbox">
+				</div>
+				<div class="col-md-3">
+					<label class="label-form">Ensino Superior</label>
+				</div>
+			</div>
+			<div class="row form-content">
+				<div class="col-md-1">
+					<input class="input" type="checkbox">
+				</div>
+				<div class="col-md-3">
+					<label class="label-form">Especialização</label>
+				</div>
+				<div class="col-md-1">
+					<input class="input" type="checkbox">
+				</div>
+				<div class="col-md-3">
+					<label class="label-form">Mestrado</label>
+				</div>
+				<div class="col-md-1">
+					<input class="input" type="checkbox">
+				</div>
+				<div class="col-md-3">
+					<label class="label-form">Doutorado</label>
+				</div>
+			</div>
+			<div class="row form-content">
+				<div class="col-md-1">
+					<input class="input" type="checkbox">
+				</div>
+				<div class="col-md-3">
+					<label class="label-form">Pós Doutorado</label>
+				</div>
+			</div>
+			<div class="row form-content">
+				<div class="col-md-12">
+					<label class="label-form">Quantos cursos ja fez na area de politica cultura?</label>
+				</div>
+			</div>
+			<div class="row form-content">
+				<div class="col-md-1">
+					<input class="input" type="checkbox">
+				</div>
+				<div class="col-md-3">
+					<label class="label-form">Nenhum</label>
+				</div>
+				<div class="col-md-1">
+					<input class="input" type="checkbox">
+				</div>
+				<div class="col-md-3">
+					<label class="label-form">Um a dois</label>
+				</div>
+				<div class="col-md-1">
+					<input class="input" type="checkbox">
+				</div>
+				<div class="col-md-3">
+					<label class="label-form">Acima de dois</label>
+				</div>
+			</div>
+			<div class="row form-content">
+				<div class="col-md-12">
+					<label class="label-form">Porque possui interensse em participa do curso?</label>
+				</div>
+			</div>
+			<div class="row form-content">
+				<div class="col-md-1">
+					<input class="input" type="checkbox">
+				</div>
+				<div class="col-md-3">
+					<label class="label-form"></label>
+				</div>
+				<div class="col-md-1">
+					<input class="input" type="checkbox">
+				</div>
+				<div class="col-md-3">
+					<label class="label-form"></label>
+				</div>
+				<div class="col-md-1">
+					<input class="input" type="checkbox">
+				</div>
+				<div class="col-md-3">
+					<label class="label-form"></label>
+				</div>
+			</div>
+			<div class="row form-content">
+				<div class="col-md-1">
+					<input class="input" type="checkbox" ng-model="registrationController.selected.textArea">
+				</div>
+				<div class="col-md-5">
+					<label class="label-form">Habilitar text area</label>
+				</div>
+				<div class="col-md-6" ng-if="registrationController.selected.textArea">
+					<textarea></textarea>
+				</div>
 			</div>
 			<div class="row footer-form">
 				<div class="col-md-12">
