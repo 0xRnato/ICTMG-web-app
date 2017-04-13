@@ -1,6 +1,7 @@
 
 module.exports = (db) => {
-    return Course = db.define('mdl_course', {
+    let Course;
+    Course = db.define('mdl_course', {
         id: {type: 'serial', key: true},
         category: Number,
         sortorder: Number,
@@ -33,4 +34,5 @@ module.exports = (db) => {
         completionnotify: Number,
         cacherev: Number,
     });
+    return Course;
 };

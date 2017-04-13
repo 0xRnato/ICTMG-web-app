@@ -1,9 +1,10 @@
 class Courses {
 
 	static save(objt) {
+		var self = this;
 		return new Promise(function(fulfill, reject) {
 			if (objt.id) {
-				Course.get(objt.id, function(err, data) {
+				self.Course.get(objt.id, function(err, data) {
 					// replace data of db object
 					for (let i in data) {
 						if(data.hasOwnProperty(i))
@@ -18,7 +19,7 @@ class Courses {
 				});
 			} else {
 				// create a new object in db and save
-				Course.create(objt, function(err) {
+				self.Course.create(objt, function(err) {
 					if (err) reject(err);
 					fulfill(true);
 				});
@@ -26,24 +27,29 @@ class Courses {
 		});
 	}
 
-	static getCourses(objt) {
+	getCourses(objt) {
+		var self = this;
 		return new Promise(function(fulfill, reject) {
 			if (objt) {
-				Course.find(objt, function(err, data) {
+				self.Course.find(objt, function(err, data) {
 					if (err) reject(err);
 					fulfill(data);
 				});
 			} else {
-				Course.find({ category: orm.gt(0) }, function(err, data) {
+				self.Course.find({ category: orm.gt(0) }, function(err, data) {
 					if (err) reject(err);
 					fulfill(data);
 				});
 			}
 		});
 	}
+
+	constructor(Course) {
+		this.Course = Course;
+	}
 }
 
 module.exports = (db) => {
 	let Course = require('../models/course')(db);
-	return Courses;
+	return new Courses(Course);
 };

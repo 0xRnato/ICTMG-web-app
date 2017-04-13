@@ -1,6 +1,31 @@
 <div class="jumbotron text-center">
-	<h1>Registration Page</h1>
-</div>
-<div class="container" style="margin-top: 20px;">
-	<a href="./"><i class="fa fa-arrow-left fa-2x" aria-hidden="true"> Voltar</i></a>
+	<div class="container" style="margin-top: 20px;">
+		<form>
+			<div class="row form-content">
+				<div class="col-md-6">
+					<label class="label-form">Nome</label>
+					<input class="input" type="text" name="name" ng-model="registrationController.selected.name" placeholder="Nome...">
+				</div>
+				<div class="col-md-6">
+					<label class="label-form">CPF</label>
+					<input class="input" type="text" name="cpf" ng-model="registrationController.selected.registration" placeholder="CPF...">
+				</div>
+			</div>
+			<div class="row form-content">
+				<div class="col-md-6">
+					<label class="label-form">Data de Nascimento</label>
+					<input class="input" type="text" name="date" ng-model="registrationController.selected.birthDate" placeholder="Nascimento...">
+				</div>
+				<div class="col-md-6"></div>
+			</div>
+			<div class="row footer-form">
+				<div class="col-md-12">
+					<button type="button" ng-click="registrationController.register()">Inscrever</button>
+				</div>
+			</div>
+		</form>
+		<a href="./"><i class="fa fa-arrow-left fa-2x" aria-hidden="true"> Voltar</i></a>
+
+
+	</div>
 </div>
