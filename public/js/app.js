@@ -5,7 +5,7 @@
         'app.routes',
         'app.main',
         'app.about',
-        'app.content',
+        'app.products',
         'app.course',
         'app.registration',
         'app.services',
@@ -15,7 +15,7 @@
     angular.module('app.routes', ['ngRoute']);
     angular.module('app.main', []);
     angular.module('app.about', []);
-    angular.module('app.content', []);
+    angular.module('app.products', []);
     angular.module('app.course', []);
     angular.module('app.registration', []);
     angular.module('app.services', []);

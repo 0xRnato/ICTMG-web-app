@@ -26,10 +26,10 @@
 				controller: 'RegistrationController',
 				controllerAs: 'registrationController',
 			})
-			.when('/content', {
-				templateUrl: 'views/content.html',
-				controller: 'ContentController',
-				controllerAs: 'contentController',
+			.when('/products', {
+				templateUrl: 'views/products.html',
+				controller: 'ProductsController',
+				controllerAs: 'productsController',
 			})
 			.when('/services', {
 				templateUrl: 'views/services.html',

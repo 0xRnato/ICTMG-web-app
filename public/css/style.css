@@ -90,12 +90,13 @@ html, body {
     font-size: 13pt;
 }
 
-.footer a, .footer a:active{
+a, a:active{
     color: slategray;
     text-decoration: none;
 }
-.footer a:hover{
+a:hover{
     opacity: 0.6;
+    text-decoration: none;
 }
 
 .wow{
@@ -147,6 +148,11 @@ html, body {
 .dropdown-menu>.active>a, .dropdown-menu>.active>a:focus, .dropdown-menu>.active>a:hover {
     color: rgba(0,0,0,.6);
     background-color: rgba(255,255,255,.6);
+}
+
+#services{
+    font-size: 16pt;
+    margin-top: 30px;
 }
 
 .form-content {
