@@ -1,14 +1,14 @@
 <div class="row" style="margin-top: 20px;">
 	<div class="col-md-1"></div>
 	<div class="col-md-10">
-		<h3 class="wow fadeInDown">{{selectedCourse.category}}</h3>
-		<h1 class="wow fadeInDown">{{selectedCourse.fullname}}
+		<h3 class="">{{selectedCourse.category}}</h3>
+		<h1 class="">{{selectedCourse.fullname}}
 			<span style="font-size: 15pt;">| {{selectedCourse.shortname}}</span>
 		</h1>
 		<hr>
-		<p class="wow fadeIn">{{selectedCourse.summary}}</p>
+		<p class="">{{selectedCourse.summary}}</p>
 		<hr>
-		<div class="row wow fadeInUp">
+		<div class="row">
 			<div class="col-md-3">
 				<p style="font-family: 'Taz-semibold'">Inicio: {{ mainController.getDate(selectedCourse.startdate) | date:'dd/MM/yy'}}</p>
 				<p style="font-family: 'Taz-semibold'">Fim: {{mainController.getDate(selectedCourse.enddate) | date:'dd/MM/yy'}}</p>	

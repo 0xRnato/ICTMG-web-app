@@ -22,20 +22,16 @@
 
         vm.courses;
 
-        // vm.showCourse = function(){
-        //     $rootScope.selectedCourse = vm.selectedCourse;
-        //     $window.location.href = '#/course';
-        // }
+        vm.showCourse = function(){
+            $rootScope.selectedCourse = vm.selectedCourse;
+            $window.location.href = '#/course';
+        }
 
         vm.removeTags = function(string){
             return string
                 .replace(/<([^>]*script|a+?)([^>]*?)>(.*?)<\/\1>/g, '')
                 .replace(/<(?:.|\n)*?>/g, '')
                 .replace(/&(nbsp|amp|quot|lt|gt);/g, '');
-        }
-
-        vm.updateContent = function() {
-            $('.fontsize').selectpicker('refresh');
         }
 
         function activate() {
@@ -47,7 +43,6 @@
                         var course = vm.courses[i];
                         course.summary = vm.removeTags(course.summary);
                     }
-                    $('.fontsize').selectpicker('refresh');
                 }, function errorCallback(error){
                     $log.error(error);
                 });

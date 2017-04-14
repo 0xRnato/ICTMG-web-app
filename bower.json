@@ -4,10 +4,10 @@
   "dependencies": {
     "bootstrap": "latest",
     "font-awesome": "latest",
-    "animate.css": "latest",
     "angular": "latest",
     "angular-route": "latest",
-    "wow": "latest",
-    "bootstrap-select": "latest"
+    "angular-bootstrap": "latest",
+    "angular-animate": "latest",
+    "angular-touch": "latest"
   }
 }
