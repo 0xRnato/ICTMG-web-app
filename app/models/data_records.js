@@ -1,5 +1,5 @@
 module.exports = (db) => {
-    return DataRecord = db.define('mdl_event', {
+    const DataRecord = db.define('mdl_event', {
         id: {type: 'serial', key: true},
         name: Number,
         description: String,
@@ -19,4 +19,5 @@ module.exports = (db) => {
         timemodified: Number,
         subscriptionid: Number,
     });
+    return DataRecord;
 };

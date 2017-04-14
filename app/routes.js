@@ -1,4 +1,4 @@
-module.exports = (app, db) => {
+module.exports = (app, db, orm) => {
 	const Users = require('./manipulation/user')(db);
 	const DataRecords = require('./manipulation/data_records')(db);
 	const Courses = require('./manipulation/course')(db);
@@ -32,7 +32,7 @@ module.exports = (app, db) => {
 	// get courses
 	app.get('/api/courses', (req, res) => {
 		// check if object have id to replace data in db
-		Courses.getCourses(req.body)
+		Courses.getCourses(req.body, orm)
 			.then((data) => {
 				res.send(data);
 			})

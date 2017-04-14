@@ -1,12 +1,13 @@
 class Users {
 
 	static save(objt) {
+		const self = this;
 		return new Promise(function(fulfill, reject) {
 			if (objt.id) {
-				User.get(objt.id, function(err, data) {
+				self.User.get(objt.id, function(err, data) {
 					// replace data of db object
 					for (let i in data) {
-						if (datahasOwnProperty(i))
+						if (data.hasOwnProperty(i))
 							data[i] = objt[i];
 					}
 
@@ -18,7 +19,7 @@ class Users {
 				});
 			} else {
 				// create a new object in db and save
-				User.create(objt, function(err) {
+				self.User.create(objt, function(err) {
 					if (err) reject(err);
 					fulfill(true);
 				});
@@ -27,23 +28,28 @@ class Users {
 	}
 
 	static getUser(objt) {
+		const self = this;
 		return new Promise(function(fulfill, reject) {
 			if (objt) {
-				User.find(objt, function(err, data) {
+				self.User.find(objt, function(err, data) {
 					if (err) reject(err);
 					fulfill(data);
 				});
 			} else {
-				User.find({}, function(err, data) {
+				self.User.find({}, function(err, data) {
 					if (err) reject(err);
 					fulfill(data);
 				});
 			}
 		});
 	}
+
+	constructor(User) {
+		this.User = User;
+	}
 }
 
 module.exports = (db) => {
-	let User = require('../models/user')(db);
-	return Users;
+	const User = require('../models/user')(db);
+	return new Users(User);
 };

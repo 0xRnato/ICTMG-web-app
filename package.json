@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "scripts": {
     "start": "node server.js",
-    "test": "mocha",
+    "test": "./node_modules/mocha/bin/_mocha",
     "forever-start": "forever start server.js",
     "forever-stop": "forever stopall",
     "forever-list": "forever list",

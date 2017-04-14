@@ -5,8 +5,8 @@
         .module('app.registration')
         .controller('RegistrationController', RegistrationController);
 
-    RegistrationController.inject = ['RegisterService'];
-    function RegistrationController(RegisterService) {
+    RegistrationController.inject = ['RegisterService', '$log'];
+    function RegistrationController(RegisterService, $log) {
         var vm = this;
         activate();
 
@@ -20,9 +20,9 @@
         vm.register = function() {
             RegisterService.post(vm.selected)
                 .then(function sucessCallback(data) {
-                   console.log(data);
+                   $log.debug(data);
                 }, function errorCallback(error) {
-                    console.log(error);
+                    $log.error(error);
                 });
         }
     }
