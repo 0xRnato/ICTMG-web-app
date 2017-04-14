@@ -7,7 +7,8 @@
     "forever-start": "forever start server.js",
     "forever-stop": "forever stopall",
     "forever-list": "forever list",
-    "nodemon": "nodemon server.js"
+    "nodemon": "nodemon server.js",
+    "deploy": "git pull && npm install && ./node_modules/forever/bin/forever stopall && bower install --allow-root && ./node_modules/gulp/bin/gulp.js deploy && ./node_modules/forever/bin/forever start server.js"
   },
   "main": "server.js",
   "repository": {
