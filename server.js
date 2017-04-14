@@ -31,7 +31,7 @@ const db = orm.connect(configs.DB, (err) => {// database connected instance
 });
 
 // Routes =================================================
-require('./app/routes')(app, db); // load routes
+require('./app/routes')(app, db, orm); // load routes
 
 // Start app ==============================================
 app.listen(port);

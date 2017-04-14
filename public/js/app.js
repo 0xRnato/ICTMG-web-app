@@ -2,6 +2,9 @@
     'use strict';
 
     angular.module('app', [
+        'ngAnimate',
+        'ngTouch',
+
         'app.routes',
         'app.main',
         'app.about',
@@ -10,6 +13,8 @@
         'app.registration',
         'app.services',
         'app.user',
+
+        'ui.bootstrap',
     ]);
 
     angular.module('app.routes', ['ngRoute']);

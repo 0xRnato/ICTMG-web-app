@@ -1,25 +1,26 @@
-var gulp   = require('gulp');
-var gutil  = require('gulp-util');
-var uglify = require('gulp-uglify');
-var watch  = require('gulp-watch');
-var rename = require('gulp-rename');
-var concat = require('gulp-concat');
-var replace = require('gulp-replace');
+const gulp   = require('gulp');
+const concat = require('gulp-concat');
+const replace = require('gulp-replace');
 const babel = require('gulp-babel');
+// const rename = require('gulp-rename');
+// const gutil  = require('gulp-util');
+// const uglify = require('gulp-uglify');
+// const watch  = require('gulp-watch');
 
-gulp.task('default', ['watch', 'replace', 'minify', 'minify-services']);
+gulp.task('default', ['watch', 'replace', 'minify-controllers', 'minify-services']);
 
 gulp.task('watch', function() {
-	gulp.watch('public/js/controllers/*.js', ['replace', 'minify', 'minify-services']);
+	gulp.watch('public/js/controllers/*.js', ['replace', 'minify-controllers']);
+	gulp.watch('public/js/services/*.js', ['replace', 'minify-services']);
 });
 
-gulp.task('deploy', ['replace', 'minify']);
+gulp.task('deploy', ['replace', 'minify-controllers', 'minify-services']);
 
-gulp.task('minify', function() {
+gulp.task('minify-controllers', function() {
 	return gulp
 		.src([ 'public/js/controllers/*.js' ])
-		.pipe(concat('all.js'))
-		.pipe(rename({ suffix: '.min' }))
+		.pipe(concat('controllers.js'))
+		// .pipe(rename({ suffix: '.min' }))
 		.pipe(babel({
 			presets: ['es2015']
 		}))
@@ -30,6 +31,7 @@ gulp.task('minify-services', function() {
 	return gulp
 		.src([ 'public/js/services/*.js' ])
 		.pipe(concat('services.js'))
+		// .pipe(rename({ suffix: '.min' }))
 		.pipe(babel({
 			presets: ['es2015']
 		}))

@@ -1,7 +1,6 @@
 
 module.exports = (db) => {
-    let Course;
-    Course = db.define('mdl_course', {
+    const Course = db.define('mdl_course', {
         id: {type: 'serial', key: true},
         category: Number,
         sortorder: Number,

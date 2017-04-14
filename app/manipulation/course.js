@@ -1,7 +1,7 @@
 class Courses {
 
 	static save(objt) {
-		var self = this;
+		const self = this;
 		return new Promise(function(fulfill, reject) {
 			if (objt.id) {
 				self.Course.get(objt.id, function(err, data) {
@@ -27,8 +27,8 @@ class Courses {
 		});
 	}
 
-	getCourses(objt) {
-		var self = this;
+	getCourses(objt, orm) {
+		const self = this;
 		return new Promise(function(fulfill, reject) {
 			if (objt) {
 				self.Course.find(objt, function(err, data) {
@@ -36,7 +36,7 @@ class Courses {
 					fulfill(data);
 				});
 			} else {
-				self.Course.find({ category: orm.gt(0) }, function(err, data) {
+				self.Course.find({category: orm.gt(0)}, function(err, data) {
 					if (err) reject(err);
 					fulfill(data);
 				});
@@ -50,6 +50,6 @@ class Courses {
 }
 
 module.exports = (db) => {
-	let Course = require('../models/course')(db);
+	const Course = require('../models/course')(db);
 	return new Courses(Course);
 };

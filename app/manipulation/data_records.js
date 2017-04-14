@@ -1,9 +1,10 @@
 class DataRecords {
 
 	static save(objt) {
+		const self = this;
 		return new Promise(function(fulfill, reject) {
 			if (objt.id) {
-				DataRecord.get(objt.id, function(err, data) {
+				self.DataRecord.get(objt.id, function(err, data) {
 					// replace data of db object
 					for (let i in data) {
 						if (data.hasOwnProperty(i))
@@ -18,7 +19,7 @@ class DataRecords {
 				});
 			} else {
 				// create a new object in db and save
-				DataRecord.create(objt, function(err) {
+				self.DataRecord.create(objt, function(err) {
 					if (err) reject(err);
 					fulfill(true);
 				});
@@ -29,12 +30,12 @@ class DataRecords {
 	static get(objt) {
 		return new Promise(function(fulfill, reject) {
 			if (objt) {
-				DataRecord.find(objt, function(err, data) {
+				self.DataRecord.find(objt, function(err, data) {
 					if (err) reject(err);
 					fulfill(data);
 				});
 			} else {
-				DataRecord.find({}, function(err, data) {
+				self.DataRecord.find({}, function(err, data) {
 					if (err) reject(err);
 					fulfill(data);
 				});
@@ -44,15 +45,21 @@ class DataRecords {
 
 	static getCalendar() {
 		return new Promise(function(fulfill, reject) {
-			DataRecord.find({ eventtype: 'site' }, [ "timestart", "Z" ], 3, function(err, data) {
+			self.DataRecord.find(
+				{eventtype: 'site'}, ['timestart', 'Z'], 3,
+				function(err, data) {
 				if (err) reject(err);
 				fulfill(data);
 			});
 		});
 	}
+
+	constructor(DataRecord) {
+		this.DataRecord = DataRecord;
+	}
 }
 
 module.exports = (db) => {
-	let DataRecord = require('../models/data_records')(db);
-	return DataRecords;
+	const DataRecord = require('../models/data_records')(db);
+	return new DataRecords(DataRecord);
 };
