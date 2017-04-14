@@ -122,11 +122,6 @@ a:hover{
     margin-top: 20px;
 }
 
-.btn{
-    border-radius: 0;
-    font-size: 13pt;
-    padding: 4.5px 0;
-}
 .bootstrap-select.btn-group .dropdown-toggle .filter-option{
     text-align: center;
 }
@@ -172,4 +167,24 @@ a:hover{
 .footer-form {
     padding-bottom: 40px;
     padding-top: 30px;
+}
+
+.thumbnail{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.col-md-6 .thumbnail{
+    max-width: 60%;
+}
+.col-md-4 .thumbnail{
+    max-width: 90%;
+}
+.thumbnail img{
+    width: 70%;
+}
+
+.soldOut{
+    color: red;
+    font-weight: bold;
 }
