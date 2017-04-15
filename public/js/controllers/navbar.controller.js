@@ -22,8 +22,8 @@
 
         vm.courses;
 
-        vm.showCourse = function(){
-            $rootScope.selectedCourse = vm.selectedCourse;
+        vm.showCourse = function(course){
+            $rootScope.selectedCourse = course;
             $window.location.href = '#/course';
         }
 

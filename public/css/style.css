@@ -125,9 +125,22 @@ a:hover{
 .bootstrap-select.btn-group .dropdown-toggle .filter-option{
     text-align: center;
 }
-.dropdown-menu{
+.aboutMenu{
+    background-color: #1572b9;
+}
+.contentMenu{
+    background-color: #69be55;
+}
+.coursesMenu{
     background-color: #ec971f;
 }
+.dropdown-toggle{
+    width: 100%;
+    background-color: rgba(0,0,0,0);
+    border: none;
+    color: white;
+}
+
 .bs-searchbox input{
     background-color: #f0ad4e;
     border-bottom-color: #eea236;
