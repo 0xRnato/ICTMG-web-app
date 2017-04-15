@@ -15,8 +15,20 @@
 				controller: 'MainController',
 				controllerAs: 'mainController',
 			})
-			.when('/about', {
-				templateUrl: 'views/about.html',
+			.when('/about1', {
+				templateUrl: 'views/about1.html',
+			})
+			.when('/about2', {
+				templateUrl: 'views/about2.html',
+			})
+			.when('/about3', {
+				templateUrl: 'views/about3.html',
+			})
+			.when('/about4', {
+				templateUrl: 'views/about4.html',
+			})
+			.when('/about5', {
+				templateUrl: 'views/about5.html',
 			})
 			.when('/course', {
 				templateUrl: 'views/course.html',
@@ -26,20 +38,20 @@
 				controller: 'RegistrationController',
 				controllerAs: 'registrationController',
 			})
-			.when('/products', {
-				templateUrl: 'views/products.html',
-				controller: 'ProductsController',
-				controllerAs: 'productsController',
+			.when('/free', {
+				templateUrl: 'views/free-products.html',
+			})
+			.when('/paid', {
+				templateUrl: 'views/paid-products.html',
 			})
 			.when('/services', {
 				templateUrl: 'views/services.html',
-				controller: 'ServicesController',
-				controllerAs: 'servicesController',
+			})
+			.when('/donation', {
+				templateUrl: 'views/donation.html',
 			})
 			.when('/singin', {
 				templateUrl: 'views/singin.html',
-				controller: 'SinginController',
-				controllerAs: 'singinController',
 			})
 			.otherwise({redirectTo: '/'});
 	}

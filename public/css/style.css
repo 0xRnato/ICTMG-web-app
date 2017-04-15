@@ -44,9 +44,6 @@ html, body {
 .menu-header a{
     color: #fff;
 }
-.menu-header a:hover{
-    opacity: 0.6;
-}
 
 .panel{
     margin-bottom: 0;
@@ -94,9 +91,18 @@ a, a:active{
     color: slategray;
     text-decoration: none;
 }
-a:hover{
-    opacity: 0.6;
+a:hover, .dropdown-toggle:hover{
+    color: rgba(255, 255, 255, .6);
     text-decoration: none;
+}
+p a:hover{
+    text-decoration: none !important;
+    color: slategray !important;
+    opacity: .6 !important;
+}
+.nav a:hover, .container a:hover{
+    color: slategray;
+    opacity: .6;
 }
 
 .wow{
@@ -125,9 +131,22 @@ a:hover{
 .bootstrap-select.btn-group .dropdown-toggle .filter-option{
     text-align: center;
 }
-.dropdown-menu{
+.aboutMenu{
+    background-color: #1572b9;
+}
+.contentMenu{
+    background-color: #69be55;
+}
+.coursesMenu{
     background-color: #ec971f;
 }
+.dropdown-toggle{
+    width: 100%;
+    background-color: rgba(0,0,0,0);
+    border: none;
+    color: white;
+}
+
 .bs-searchbox input{
     background-color: #f0ad4e;
     border-bottom-color: #eea236;
@@ -140,7 +159,11 @@ a:hover{
 .dropdown-menu>li>a, .bootstrap-select>.dropdown-toggle.bs-placeholder, .bootstrap-select>.dropdown-toggle.bs-placeholder:active, .bootstrap-select>.dropdown-toggle.bs-placeholder:focus, .bootstrap-select>.dropdown-toggle.bs-placeholder:hover{
     color: #fff;
 }
-.dropdown-menu>.active>a, .dropdown-menu>.active>a:focus, .dropdown-menu>.active>a:hover {
+.dropdown-menu>.active>a,
+.dropdown-menu>.active>a:focus,
+.dropdown-menu>.active>a:hover, 
+.dropdown-menu>li>a:focus,
+.dropdown-menu>li>a:hover{
     color: rgba(0,0,0,.6);
     background-color: rgba(255,255,255,.6);
 }
