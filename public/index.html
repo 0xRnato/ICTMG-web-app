@@ -56,7 +56,7 @@
 							CURSOS <span class="caret"></span>
 						</button>
 						<ul class="dropdown-menu coursesMenu" uib-dropdown-menu role="menu" aria-labelledby="contentMenu">
-							<li role="menuitem" ng-repeat="course in navbarController.courses"><a ng-click="navbarController.showCourse(course)" href="">{{course.fullname}}</a></li>
+							<li role="menuitem" ng-repeat="course in navbarController.courses"><a ng-click="navbarController.showCourse(course)" href="">{{course.shortname}}</a></li>
 						</ul>
 					</div>
 					<div class="btn-group col-md-2" style="background-color: #69be55;" uib-dropdown is-open="contentMenu.status.isopen">
@@ -105,8 +105,8 @@
 
 	<!-- ANGULAR CUSTOM -->
 	<script src="js/app.js"></script>
-	<script src="dist/services.js?v=1492230157592"></script>
-	<script src="dist/controllers.js?v=1492230157592"></script>
+	<script src="dist/services.js?v=1492622516191"></script>
+	<script src="dist/controllers.js?v=1492622516191"></script>
 	<script src="js/app.routes.js"></script>
 
 </body>
