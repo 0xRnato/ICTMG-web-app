@@ -281,3 +281,9 @@ p{
 .contact-section li a:hover{
     color: #000;
 }
+
+.carousel-caption{
+    background-color: rgba(0,0,0,.2);
+    padding: 20px;
+    border-radius: 100px;
+}

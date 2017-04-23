@@ -11,6 +11,11 @@
         activate();
 
         vm.calendar;
+        vm.myInterval;
+        vm.noWrapSlides;
+        vm.active;
+        vm.currIndex;
+        vm.slides;
 
         vm.getDate = function(date) {
             if(Number.isInteger(date)) {
@@ -38,6 +43,27 @@
                 }, function errorCallback(error) {
                     $log.error(error);
                 });
+            vm.myInterval = 5000;
+            vm.noWrapSlides = false;
+            vm.active = 0;
+            vm.currIndex = 0;
+            vm.slides = [
+                {
+                    id: 0,
+                    text: 'GUIGA é uma organização comprometida com o fomento e difusão da cultura e da educação, por isso realiza e o apoia ações, projetos e programas nessas áreas.',
+                    image: './../img/slide1.jpg',
+                },
+                {
+                    id: 1,
+                    text: 'Formamos e capacitamos pessoas para o desenvolvimento do protagonismo, da responsabilidade e aprimoramento profissional, visando a busca de resultados efetivos.',
+                    image: './../img/slide2.jpg',
+                },
+                {
+                    id: 2,
+                    text: 'Disponibilizamos capacitações profissionalizantes de qualidade, à distância, à preços acessíveis e com certificação.',
+                    image: './../img/slide3.jpg',
+                }
+            ];
         }
     }
 })();
