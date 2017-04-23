@@ -15,6 +15,11 @@
 				controller: 'MainController',
 				controllerAs: 'mainController',
 			})
+			.when('/contact', {
+				templateUrl: 'views/contact.html',
+				controller: 'ContactController',
+				controllerAs: 'contactController',
+			})
 			.when('/about1', {
 				templateUrl: 'views/about1.html',
 			})
@@ -38,11 +43,20 @@
 				controller: 'RegistrationController',
 				controllerAs: 'registrationController',
 			})
+			.when('/terms', {
+				templateUrl: 'views/terms.html',
+				controller: 'TermsController',
+				controllerAs: 'termsController',
+			})
 			.when('/free', {
 				templateUrl: 'views/free-products.html',
+				controller: 'FreeProductsController',
+				controllerAs: 'freeProductsController',
 			})
 			.when('/paid', {
 				templateUrl: 'views/paid-products.html',
+				controller: 'PaidProductsController',
+				controllerAs: 'paidProductsController',
 			})
 			.when('/services', {
 				templateUrl: 'views/services.html',

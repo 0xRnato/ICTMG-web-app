@@ -1,0 +1,22 @@
+<div class="row">
+	<div class="col-md-2"></div>
+	<div class="col-md-8">
+		<h1>Atenção</h1>
+		<h4>Para contnuar com a inscrição neste curso, você deve ler atentamente as informações a seguir e concordar com os termos:</h4>
+		<ol>
+			<li><p>O Curso é voltado especificamente para gestores públicos;</p></li>
+			<li><p>O aluno deve ter cursado, no mínimo, o Ensino Médio;</p></li>
+			<li><p>O curso tem o valor de R$ 268,00</p></li>
+			<li><p>Haverá distribuição de bolsas de estudo de 100% para gestores públicos do Poder Executivo, conforme contrato firmado com o governo do Estado de Minas Gerais, no ano 2016. Se você é gestor público, providencie Carta de Recomendação da chefia imediata <a href="">(Modelo da Carta)</a>, para fins de solicitação de bolsa. Se você exerce cargos de Diretor, Chefe, Coordenador, Secretário ou Prefeito, anexe o ato da sua nomeação ao cargo.</p></li>
+		</ol>
+		<p>Selecione a caixa abaixo para confirmar que você aceita com todos os requisitos citados acima:</p>
+		<div class="checkbox">
+			<label><input type="checkbox" ng-model="termsController.agreed" value="">Eu concordo com todos os requisitos citados acima.</label>
+		</div>
+		<a ng-disabled="!termsController.agreed" href="#/registration" class="btn btn-success" role="button">Continuar</a>
+	</div>
+	<div class="col-md-2"></div>
+</div>
+<div class="container" style="margin-top: 20px;">
+	<a href="/"><i class="fa fa-arrow-left fa-2x back-button" aria-hidden="true"> Voltar</i></a>
+</div>

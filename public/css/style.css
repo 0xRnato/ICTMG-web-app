@@ -135,10 +135,10 @@ p a:hover{
     background-color: #1572b9;
 }
 .contentMenu{
-    background-color: #69be55;
+    background-color: #58585a;
 }
 .coursesMenu{
-    background-color: #ec971f;
+    background-color: #69be55;
 }
 .dropdown-toggle{
     width: 100%;
@@ -198,10 +198,10 @@ p a:hover{
 }
 
 .col-md-6 .thumbnail{
-    max-width: 60%;
+    max-width: 50%;
 }
 .col-md-4 .thumbnail{
-    max-width: 90%;
+    max-width: 85%;
 }
 .thumbnail-img{
     width: 70%;
@@ -210,4 +210,80 @@ p a:hover{
 .soldOut{
     color: red;
     font-weight: bold;
+}
+
+.back-button{
+    color: #000;
+}
+
+p{
+    font-size: 15pt;
+}
+
+.about-section .col-md-8 h1{
+    color: #1572b9;
+}
+.course-section .col-md-8 h1, .course-section .col-md-8 h3,
+.course-section .col-md-3 p{
+    color: #69be55;
+}
+.course-section .btn{
+    background-color: #69be55;
+    color: #fff;
+}
+.products-section .col-md-8 h1{
+    color: #58585a;
+}
+.products-section .btn{
+    background-color: #58585a;
+    color: #fff;
+}
+.products-section .thumbnail{
+    border: 1px solid #58585a;
+}
+.services-section .col-md-8 h1{
+    color: #9fbbe2;
+}
+.donation-section .col-md-8 h1{
+    color: #ec971f;
+}
+.donation-section .btn{
+    color: #000;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-family: 'Taz-semibold';
+    font-size: 14pt;
+}
+.donation-section .btn5{
+    background-color: #FBEAD2;
+}
+.donation-section .btn10{
+    background-color: #F7D5A5;
+}
+.donation-section .btn20{
+    background-color: #F3C079;
+}
+.donation-section .btn50{
+    background-color: #EFAB4C;
+}
+.donation-section .btn100{
+    background-color: #EB961F;
+}
+.donation-section li a{
+    color: #58585a;
+}
+.donation-section li a:hover{
+    color: #000;
+}
+.contact-section li a{
+    color: #58585a;
+}
+.contact-section li a:hover{
+    color: #000;
+}
+
+.carousel-caption{
+    background-color: rgba(0,0,0,.2);
+    padding: 20px;
+    border-radius: 100px;
 }
