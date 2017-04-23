@@ -50,6 +50,8 @@
 			})
 			.when('/free', {
 				templateUrl: 'views/free-products.html',
+				controller: 'FreeProductsController',
+				controllerAs: 'freeProductsController',
 			})
 			.when('/paid', {
 				templateUrl: 'views/paid-products.html',
