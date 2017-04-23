@@ -55,6 +55,8 @@
 			})
 			.when('/paid', {
 				templateUrl: 'views/paid-products.html',
+				controller: 'PaidProductsController',
+				controllerAs: 'paidProductsController',
 			})
 			.when('/services', {
 				templateUrl: 'views/services.html',
