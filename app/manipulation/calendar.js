@@ -1,10 +1,10 @@
-class DataRecords {
+class Users {
 
 	static save(objt) {
 		const self = this;
 		return new Promise(function(fulfill, reject) {
 			if (objt.id) {
-				self.DataRecord.get(objt.id, function(err, data) {
+				self.Calendar.get(objt.id, function(err, data) {
 					// replace data of db object
 					for (let i in data) {
 						if (data.hasOwnProperty(i))
@@ -19,7 +19,7 @@ class DataRecords {
 				});
 			} else {
 				// create a new object in db and save
-				self.DataRecord.create(objt, function(err) {
+				self.Calendar.create(objt, function(err) {
 					if (err) reject(err);
 					fulfill(true);
 				});
@@ -27,16 +27,16 @@ class DataRecords {
 		});
 	}
 
-	static get(objt) {
+	static load(objt) {
 		const self = this;
 		return new Promise(function(fulfill, reject) {
 			if (objt) {
-				self.DataRecord.find(objt, function(err, data) {
+				self.Calendar.find(objt, function(err, data) {
 					if (err) reject(err);
 					fulfill(data);
 				});
 			} else {
-				self.DataRecord.find({}, function(err, data) {
+				self.Calendar.find({}, function(err, data) {
 					if (err) reject(err);
 					fulfill(data);
 				});
@@ -44,25 +44,12 @@ class DataRecords {
 		});
 	}
 
-	static getCalendar() {
-		const self = this;
-		return new Promise(function(fulfill, reject) {
-			self.DataRecord.find(
-				{eventtype: 'site'},
-				['timestart', 'Z'], 3,
-				function(err, data) {
-				if (err) reject(err);
-				fulfill(data);
-			});
-		});
-	}
-
-		constructor(DataRecord) {
-		this.DataRecord = DataRecord;
+	constructor(Calendar) {
+		this.Calendar = Calendar;
 	}
 }
 
-module.exports = (db) => {
-	const DataRecord = require('../models/data_records')(db);
-	return DataRecords;
+module.exports = (modelDB) => {
+	const Calendar = require('../models/calendar')(modelDB);
+	return new Users(Calendar);
 };

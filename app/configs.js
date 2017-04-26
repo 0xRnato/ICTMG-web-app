@@ -1,5 +1,5 @@
 module.exports = {
-    DB: {
+    DB_MOODLE: {
         host: 'localhost',
         database: 'moodle',
         user: 'root',
@@ -7,5 +7,12 @@ module.exports = {
         protocol: 'mysql',
         port: '3306',
     },
-    PORT: 8080,
+    DB_MODELDB: {
+        host: 'localhost',
+        database: 'modelDB',
+        user: 'root',
+        protocol: 'mysql',
+        port: '3306',
+    },
+    SV_PORT: 8080,
 };

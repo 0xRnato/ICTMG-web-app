@@ -1,14 +1,17 @@
-module.exports = (app, db, orm) => {
-	const Users = require('./manipulation/user')(db);
-	const DataRecords = require('./manipulation/data_records')(db);
-	const Courses = require('./manipulation/course')(db);
-	const Register = require('./manipulation/register')(db);
+module.exports = (app, orm, moodleDB, modelDB) => {
+	const Course = require('./manipulation/course')(moodleDB);
+	const Calendar = require('./manipulation/calendar')(modelDB);
+	const Candidate = require('./manipulation/candidate')(modelDB);
+	const News = require('./manipulation/news')(modelDB);
+	const Note = require('./manipulation/note')(modelDB);
+	const Slide = require('./manipulation/slide')(modelDB);
+	const User = require('./manipulation/user')(modelDB);
 
 	// Backend routes ======================================
-	// get users
+	// load users
 	app.get('/api/users', (req, res) => {
 		// load user
-		Users.getUser(req.body)
+		User.load(req.body)
 			.then((data) => {
 				res.send(data);
 			})
@@ -20,7 +23,7 @@ module.exports = (app, db, orm) => {
 	// new/edit user
 	app.post('/api/users', (req, res) => {
 		// check if object have id to replace data in db
-		Users.save(req.body)
+		User.save(req.body)
 			.then((data) => {
 				res.send(data);
 			})
@@ -29,10 +32,10 @@ module.exports = (app, db, orm) => {
 			});
 	});
 
-	// get courses
-	app.get('/api/courses', (req, res) => {
+	// load Course
+	app.get('/api/Course', (req, res) => {
 		// check if object have id to replace data in db
-		Courses.getCourses(req.body, orm)
+		Course.load(req.body, orm)
 			.then((data) => {
 				res.send(data);
 			})
@@ -42,10 +45,22 @@ module.exports = (app, db, orm) => {
 			});
 	});
 
-	// new/edit course
-	app.post('/api/courses', (req, res) => {
+	// load calendar
+	app.get('/api/calendar', (req, res) => {
+		Calendar.load(req.body)
+			.then((data) => {
+				res.send(data);
+			})
+			.catch((error) => {
+				console.log(error);
+				res.send(error);
+			});
+	});
+
+	// new/edit calendar
+	app.post('/api/calendar', (req, res) => {
 		// check if object have id to replace data in db
-		Courses.save(req.body)
+		Calendar.save(req.body)
 			.then((data) => {
 				res.send(data);
 			})
@@ -55,54 +70,102 @@ module.exports = (app, db, orm) => {
 			});
 	});
 
-	// get events
-	app.get('/api/events', (req, res) => {
-		DataRecords.get(req.body)
+	// get candidate
+	app.get('/api/candidate', (req, res) => {
+		// load candidate
+		Candidate.load(req.body)
 			.then((data) => {
 				res.send(data);
 			})
 			.catch((error) => {
-				console.log(error);
 				res.send(error);
 			});
 	});
 
-	// new/edit events
-	app.post('/api/events', (req, res) => {
+	// new/edit candidate
+	app.post('/api/candidate', (req, res) => {
 		// check if object have id to replace data in db
-		DataRecords.save(req.body)
+		Candidate.save(req.body)
 			.then((data) => {
 				res.send(data);
 			})
 			.catch((error) => {
-				console.log(error);
 				res.send(error);
 			});
 	});
 
-	// get events
-	app.get('/api/caledar', (req, res) => {
-		DataRecords.getCalendar()
+		// get news
+	app.get('/api/news', (req, res) => {
+		// load news
+		News.load(req.body)
 			.then((data) => {
 				res.send(data);
 			})
 			.catch((error) => {
-				console.log(error);
 				res.send(error);
 			});
 	});
 
-	// post registrations
-	app.post('/api/register', (req, res) => {
-		Register.save(req.body)
+	// new/edit news
+	app.post('/api/news', (req, res) => {
+		// check if object have id to replace data in db
+		News.save(req.body)
 			.then((data) => {
 				res.send(data);
 			})
 			.catch((error) => {
-				console.log(error);
 				res.send(error);
 			});
 	});
+
+		// get notes
+	app.get('/api/notes', (req, res) => {
+		// load notes
+		Note.load(req.body)
+			.then((data) => {
+				res.send(data);
+			})
+			.catch((error) => {
+				res.send(error);
+			});
+	});
+
+	// new/edit notes
+	app.post('/api/notes', (req, res) => {
+		// check if object have id to replace data in db
+		Note.save(req.body)
+			.then((data) => {
+				res.send(data);
+			})
+			.catch((error) => {
+				res.send(error);
+			});
+	});
+
+		// get slides
+	app.get('/api/slides', (req, res) => {
+		// load slides
+		Slide.load(req.body)
+			.then((data) => {
+				res.send(data);
+			})
+			.catch((error) => {
+				res.send(error);
+			});
+	});
+
+	// new/edit slides
+	app.post('/api/slides', (req, res) => {
+		// check if object have id to replace data in db
+		Slide.save(req.body)
+			.then((data) => {
+				res.send(data);
+			})
+			.catch((error) => {
+				res.send(error);
+			});
+	});
+
 
 	// Frontend routes ====================================
 	// route to handle all angular requests

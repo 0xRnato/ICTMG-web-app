@@ -4,7 +4,7 @@ class Users {
 		const self = this;
 		return new Promise(function(fulfill, reject) {
 			if (objt.id) {
-				self.User.get(objt.id, function(err, data) {
+				self.News.get(objt.id, function(err, data) {
 					// replace data of db object
 					for (let i in data) {
 						if (data.hasOwnProperty(i))
@@ -19,7 +19,7 @@ class Users {
 				});
 			} else {
 				// create a new object in db and save
-				self.User.create(objt, function(err) {
+				self.News.create(objt, function(err) {
 					if (err) reject(err);
 					fulfill(true);
 				});
@@ -31,12 +31,12 @@ class Users {
 		const self = this;
 		return new Promise(function(fulfill, reject) {
 			if (objt) {
-				self.User.find(objt, function(err, data) {
+				self.News.find(objt, function(err, data) {
 					if (err) reject(err);
 					fulfill(data);
 				});
 			} else {
-				self.User.find({}, function(err, data) {
+				self.News.find({}, function(err, data) {
 					if (err) reject(err);
 					fulfill(data);
 				});
@@ -44,12 +44,12 @@ class Users {
 		});
 	}
 
-	constructor(User) {
-		this.User = User;
+	constructor(News) {
+		this.News = News;
 	}
 }
 
 module.exports = (modelDB) => {
-	const User = require('../models/user')(modelDB);
-	return new Users(User);
+	const News = require('../models/news')(modelDB);
+	return new Users(News);
 };

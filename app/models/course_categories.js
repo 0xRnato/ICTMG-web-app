@@ -1,5 +1,5 @@
-module.exports = (db) => {
-    const CourseCategorie = db.define('mdl_course_categories', {
+module.exports = (moodleDB) => {
+    const CourseCategorie = moodleDB.define('mdl_course_categories', {
         id: {type: 'serial', key: true},
         name: String,
         idnumber: String,
