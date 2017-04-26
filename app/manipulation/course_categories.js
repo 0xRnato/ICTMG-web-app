@@ -15,7 +15,7 @@ class CourseCategories {
 	}
 }
 
-module.exports = (db) => {
-	const CourseCategorie = require('../models/course_categories')(db);
+module.exports = (moodleDB) => {
+	const CourseCategorie = require('../models/course_categories')(moodleDB);
 	return new CourseCategories(CourseCategorie);
 };

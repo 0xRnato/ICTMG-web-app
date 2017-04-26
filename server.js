@@ -9,7 +9,7 @@ const app = express();
 
 // Settings ===============================================
 const configs = require('./app/configs');// config file
-const port = process.env.PORT || configs.PORT;
+const port = process.env.PORT || configs.SV_PORT;
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 // parse application/json
 app.use(bodyParser.json());
@@ -22,16 +22,22 @@ app.use(methodOverride('X-HTTP-Method-Override')); // simulate DELETE/PUT
 // set the static files location /public/img will be /img for users
 app.use(express.static(__dirname + '/public'));
 
-// Database ===============================================
-const db = orm.connect(configs.DB, (err) => {// database connected instance
-    if (err) return console.error('Connection error: ' + err);
+// Databases ===============================================
+const moodleDB = orm.connect(configs.DB_MOODLE, (err) => {
+    if (err) return console.error('Connection error on MOODLEDB: ' + err);
     else {
-        console.log('Connection with database successfully completed.');
+        console.log('Connection with MOODLE database successfully completed.');
+    }
+});
+const modelDB = orm.connect(configs.DB_MODELDB, (err) => {
+    if (err) return console.error('Connection error on MODELDB: ' + err);
+    else {
+        console.log('Connection with MODELDB database successfully completed.');
     }
 });
 
 // Routes =================================================
-require('./app/routes')(app, db, orm); // load routes
+require('./app/routes')(app, orm, moodleDB, modelDB); // load routes
 
 // Start app ==============================================
 app.listen(port);
