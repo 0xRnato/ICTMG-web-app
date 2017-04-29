@@ -1,6 +1,8 @@
 # ICTMG-web-app
 Website for presentation and registration of new GUIGA students with *NodeJs*, *ExpressJs*, *MySQL* and *AngularJs*.
 
+[![Coverage Status](https://coveralls.io/repos/github/zRnatoNeto/ICTMG-web-app/badge.svg?branch=master)](https://coveralls.io/github/zRnatoNeto/ICTMG-web-app?branch=master)
+
 This app are running at: [http://50.112.26.194:8080/](http://50.112.26.194:8080/ "GUIGA")
 
 ## Installing and running locally
