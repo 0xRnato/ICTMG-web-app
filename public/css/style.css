@@ -269,6 +269,9 @@ p{
 .donation-section .btn100{
     background-color: #EB961F;
 }
+.donation-section .btn100mais{
+    background-color: #c1760d;
+}
 .donation-section li a{
     color: #58585a;
 }
@@ -286,4 +289,11 @@ p{
     background-color: rgba(0,0,0,.2);
     padding: 20px;
     border-radius: 100px;
+}
+
+/*MOBILE*/
+@media only screen and (max-width: 599px){
+}
+/*DESKTOP*/
+@media only screen and (min-width: 600px){
 }
