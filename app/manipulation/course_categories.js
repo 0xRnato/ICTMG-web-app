@@ -10,6 +10,10 @@ class CourseCategories {
 		});
 	}
 
+	sendCallback(callback, data) {
+		callback(data);
+	}
+
 	constructor(CourseCategorie) {
 		this.CourseCategorie = CourseCategorie;
 	}
