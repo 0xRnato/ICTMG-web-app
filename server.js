@@ -37,7 +37,7 @@ const modelDB = orm.connect(configs.DB_MODELDB, (err) => {
 });
 
 // Routes =================================================
-require('./app/routes')(app, orm, moodleDB, modelDB); // load routes
+require('./app/routes')(app, orm, moodleDB, modelDB, path); // load routes
 
 // Start app ==============================================
 app.listen(port);

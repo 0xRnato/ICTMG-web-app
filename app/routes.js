@@ -1,17 +1,17 @@
-module.exports = (app, orm, moodleDB, modelDB) => {
-	const Course = require('./manipulation/course')(moodleDB);
-	const Calendar = require('./manipulation/calendar')(modelDB);
-	const Candidate = require('./manipulation/candidate')(modelDB);
-	const News = require('./manipulation/news')(modelDB);
-	const Note = require('./manipulation/note')(modelDB);
-	const Slide = require('./manipulation/slide')(modelDB);
-	const User = require('./manipulation/user')(modelDB);
+module.exports = (app, orm, moodleDB, modelDB, path) => {
+	const Courses = require('./manipulation/course')(moodleDB);
+	const Calendars = require('./manipulation/calendar')(modelDB);
+	const Candidates = require('./manipulation/candidate')(modelDB);
+	const Newss = require('./manipulation/news')(modelDB);
+	const Notes = require('./manipulation/note')(modelDB);
+	const Slides = require('./manipulation/slide')(modelDB);
+	const Users = require('./manipulation/user')(modelDB);
 
 	// Backend routes ======================================
 	// load users
 	app.get('/api/users', (req, res) => {
 		// load user
-		User.load(req.body)
+		Users.load(req.body)
 			.then((data) => {
 				res.send(data);
 			})
@@ -23,7 +23,7 @@ module.exports = (app, orm, moodleDB, modelDB) => {
 	// new/edit user
 	app.post('/api/users', (req, res) => {
 		// check if object have id to replace data in db
-		User.save(req.body)
+		Users.save(req.body)
 			.then((data) => {
 				res.send(data);
 			})
@@ -35,7 +35,7 @@ module.exports = (app, orm, moodleDB, modelDB) => {
 	// load Course
 	app.get('/api/Course', (req, res) => {
 		// check if object have id to replace data in db
-		Course.load(req.body, orm)
+		Courses.load(req.body, orm)
 			.then((data) => {
 				res.send(data);
 			})
@@ -47,7 +47,7 @@ module.exports = (app, orm, moodleDB, modelDB) => {
 
 	// load calendar
 	app.get('/api/calendar', (req, res) => {
-		Calendar.load(req.body)
+		Calendars.load(req.body)
 			.then((data) => {
 				res.send(data);
 			})
@@ -60,7 +60,7 @@ module.exports = (app, orm, moodleDB, modelDB) => {
 	// new/edit calendar
 	app.post('/api/calendar', (req, res) => {
 		// check if object have id to replace data in db
-		Calendar.save(req.body)
+		Calendars.save(req.body)
 			.then((data) => {
 				res.send(data);
 			})
@@ -73,7 +73,7 @@ module.exports = (app, orm, moodleDB, modelDB) => {
 	// get candidate
 	app.get('/api/candidate', (req, res) => {
 		// load candidate
-		Candidate.load(req.body)
+		Candidates.load(req.body)
 			.then((data) => {
 				res.send(data);
 			})
@@ -85,7 +85,7 @@ module.exports = (app, orm, moodleDB, modelDB) => {
 	// new/edit candidate
 	app.post('/api/candidate', (req, res) => {
 		// check if object have id to replace data in db
-		Candidate.save(req.body)
+		Candidates.save(req.body)
 			.then((data) => {
 				res.send(data);
 			})
@@ -97,7 +97,7 @@ module.exports = (app, orm, moodleDB, modelDB) => {
 		// get news
 	app.get('/api/news', (req, res) => {
 		// load news
-		News.load(req.body)
+		Newss.load(req.body)
 			.then((data) => {
 				res.send(data);
 			})
@@ -109,7 +109,7 @@ module.exports = (app, orm, moodleDB, modelDB) => {
 	// new/edit news
 	app.post('/api/news', (req, res) => {
 		// check if object have id to replace data in db
-		News.save(req.body)
+		Newss.save(req.body)
 			.then((data) => {
 				res.send(data);
 			})
@@ -121,7 +121,7 @@ module.exports = (app, orm, moodleDB, modelDB) => {
 		// get notes
 	app.get('/api/notes', (req, res) => {
 		// load notes
-		Note.load(req.body)
+		Notes.load(req.body)
 			.then((data) => {
 				res.send(data);
 			})
@@ -133,7 +133,7 @@ module.exports = (app, orm, moodleDB, modelDB) => {
 	// new/edit notes
 	app.post('/api/notes', (req, res) => {
 		// check if object have id to replace data in db
-		Note.save(req.body)
+		Notes.save(req.body)
 			.then((data) => {
 				res.send(data);
 			})
@@ -145,7 +145,7 @@ module.exports = (app, orm, moodleDB, modelDB) => {
 		// get slides
 	app.get('/api/slides', (req, res) => {
 		// load slides
-		Slide.load(req.body)
+		Slides.load(req.body)
 			.then((data) => {
 				res.send(data);
 			})
@@ -157,7 +157,7 @@ module.exports = (app, orm, moodleDB, modelDB) => {
 	// new/edit slides
 	app.post('/api/slides', (req, res) => {
 		// check if object have id to replace data in db
-		Slide.save(req.body)
+		Slides.save(req.body)
 			.then((data) => {
 				res.send(data);
 			})
@@ -170,6 +170,6 @@ module.exports = (app, orm, moodleDB, modelDB) => {
 	// Frontend routes ====================================
 	// route to handle all angular requests
 	app.get('*', (req, res) => {
-		res.sendFile('./public/index.html'); // load our public/index.html file
+		res.sendFile(path.resolve('public/index.html'));
 	});
 };

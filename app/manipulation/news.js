@@ -1,4 +1,4 @@
-class Users {
+class Newss {
 
 	static save(objt) {
 		const self = this;
@@ -44,6 +44,10 @@ class Users {
 		});
 	}
 
+	sendCallback(callback, data) {
+		callback(data);
+	}
+
 	constructor(News) {
 		this.News = News;
 	}
@@ -51,5 +55,5 @@ class Users {
 
 module.exports = (modelDB) => {
 	const News = require('../models/news')(modelDB);
-	return new Users(News);
+	return new Newss(News);
 };

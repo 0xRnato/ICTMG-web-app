@@ -41,7 +41,7 @@
                         event.description = vm.removeTags(event.description);
                     }
                 }, function errorCallback(error) {
-                    $log.error(error);
+                    $log.error('Error:' + error.status + ' - Message: ' + error.statusText);
                 });
             vm.myInterval = 5000;
             vm.noWrapSlides = false;
