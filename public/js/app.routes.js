@@ -10,7 +10,7 @@
 	function RoutesConfig($routeProvider, $locationProvider) {
 		$locationProvider.hashPrefix('');
 		$routeProvider
-			.when('/', {
+			.when('/home', {
 				templateUrl: 'views/home.html',
 				controller: 'MainController',
 				controllerAs: 'mainController',
@@ -67,6 +67,6 @@
 			.when('/singin', {
 				templateUrl: 'views/singin.html',
 			})
-			.otherwise({redirectTo: '/'});
+			.otherwise({redirectTo: '/home'});
 	}
 }());
