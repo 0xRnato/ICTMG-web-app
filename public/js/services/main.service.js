@@ -15,7 +15,7 @@
 
         // Do something
         function _getCalendar() {
-            return $http.get('/api/caledar');
+            return $http.get('/api/calendar');
         }
     }
 })();
