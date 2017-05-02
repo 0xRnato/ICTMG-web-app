@@ -2,17 +2,18 @@
 <html lang="pt-br">
 
 <head>
-	<meta charset="UTF-8">
 	<base href="/">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<title>GUIGA | Instituto Conhecer e Transformar</title>
 	<!-- CSS -->
 	<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="libs/angular-bootstrap/ui-bootstrap-csp.css">
 	<link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="dist/main.css">
 </head>
 
-<body ng-app="app">
+<body ng-app="app" ng-cloak>
 	<div class="">
 		<!-- HEADER -->
 		<div class="page-header">
@@ -25,7 +26,7 @@
 					<h3>INSTITUTO CONHECER E TRANSFORMAR</h3>
 				</div>
 				<div class="col-md-4">
-					<div class="navbar-collapse collapse">
+					<div class="nav-container">
 						<ul class="nav navbar-nav navbar-right">
 							<li><a href="#/contact">Fale Conosco</a></li>
 							<li><a href="http://50.112.26.194/moodle/login/index.php">Área do aluno</a></li>
@@ -56,8 +57,9 @@
 						<button id="coursesMenu" type="button" class="" uib-dropdown-toggle ng-disabled="disabled">
 							CURSOS <span class="caret"></span>
 						</button>
-						<ul class="dropdown-menu coursesMenu" uib-dropdown-menu role="menu" aria-labelledby="contentMenu">
-							<li role="menuitem" ng-repeat="course in navbarController.courses"><a ng-click="navbarController.showCourse(course)" href="">{{course.shortname}}</a></li>
+						<ul class="dropdown-menu coursesMenu" uib-dropdown-menu role="menu" aria-labelledby="coursesMenu">
+							<li role="menuitem"><a href="#/freeCourses">Gratuitos</a></li>
+							<li role="menuitem"><a href="#/paidCourses">Pagos</a></li>
 						</ul>
 					</div>
 					<div class="btn-group col-md-2" style="background-color: #58585a;" uib-dropdown is-open="contentMenu.status.isopen">
@@ -65,8 +67,8 @@
 							PRODUTOS <span class="caret"></span>
 						</button>
 						<ul class="dropdown-menu contentMenu" uib-dropdown-menu role="menu" aria-labelledby="contentMenu">
-							<li role="menuitem"><a href="#/free">Gratuítos</a></li>
-							<li role="menuitem"><a href="#/paid">Pagos</a></li>
+							<li role="menuitem"><a href="#/freeProducts">Gratuitos</a></li>
+							<li role="menuitem"><a href="#/paidProducts">Pagos</a></li>
 						</ul>
 					</div>
 					<a href="#/services">
@@ -92,7 +94,7 @@
 		<div class="footer">
 			<div class="container">
 				<img src="./../img/footer.png" class="img-responsive" alt="Fundo estadual de cultura">
-				<p class="footer-text">Instituto Guiga - Av. Conhecimento, 2. 29071 - Minas Gerais - Tel: <a href="tel:+5531989501013">(31) 98950 1013</a> - Email: <a href="mailto:institutoguiga@guiga.com.br">institutoguiga@guiga.com.br</a></p>
+				<p class="footer-text">GUIGA - Instituto Conhecer e Transformar - Tel: <a href="tel:+5531989501013">(31) 98950 1013</a> - Email: <a href="mailto:contato@guigainstituto.org.br">contato@guigainstituto.org.br</a></p>
 			</div>
 		</div>
 	</div>
@@ -108,8 +110,8 @@
 
 	<!-- ANGULAR CUSTOM -->
 	<script src="js/app.js"></script>
-	<script src="dist/services.js?v=1493744011040"></script>
-	<script src="dist/controllers.js?v=1493744011040"></script>
+	<script src="dist/services.js?v=1493746200945"></script>
+	<script src="dist/controllers.js?v=1493746200945"></script>
 	<script src="js/app.routes.js"></script>
 
 </body>

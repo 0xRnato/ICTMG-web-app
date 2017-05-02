@@ -13,6 +13,10 @@
     src: url()'./../font/TazWt05-Regular.otf';
 }
 
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
 html, body {
     max-width: 100%;
     overflow-x: hidden;
@@ -21,50 +25,12 @@ html, body {
     font-size: 13pt;
 }
 
-.page-header{
-    margin-bottom: 0;
-}
-
-.page-header img{
-    margin-top: -15px;
-}
-
-.page-header h3{
-    font-family: 'Taz-semilight';
-    margin-bottom: auto;
-    margin-top: auto;
-    padding-left: 30px;
-    border-left: 3px solid #1572b9;
-}
-
-.page-header ul{
-    margin-top: -15px;
-}
-
 .menu-header a{
     color: #fff;
 }
 
-.panel{
-    margin-bottom: 0;
-}
-
 .menu-header .col-md-2, h1, h2, h3, h4, h5, h6{
-    height: 35px;
     font-family: 'Taz-semibold';
-    padding-top: 7px;
-}
-
-#footer-bar{
-    background-color: #58585a;
-    height: 40px;
-}
-#footer-bar .row{
-    margin-top: 3px;
-}
-
-.panel-aside{
-    min-height: 450px;
 }
 
 .panel-aside h1{
@@ -75,12 +41,9 @@ html, body {
 .footer img{
     margin-left: auto;
     margin-right: auto;
-    max-width: 40%;
 }
 
 .footer-text{
-    margin-top: 20px;
-    margin-bottom: 50px;
     text-align: center;
     color: #1572b9;
     font-family: 'Taz-semibold';
@@ -105,29 +68,6 @@ p a:hover{
     opacity: .6;
 }
 
-.wow{
-    -webkit-animation-delay: 0.5s;
-    -ms-animation-delay: 0.5s;
-    mso-animation-delay: 0.5s;
-    -moz-animation-delay: 0.5s;
-    -o-animation-delay: 0.5s;
-    -xv-animation-delay: 0.5s;
-    -atsc-animation-delay: 0.5s;
-    -wap-animation-delay: 0.5s;
-    -khtml-animation-delay: 0.5s;
-    -apple-animation-delay: 0.5s;
-    prince-animation-delay: 0.5s;
-    -ah-animation-delay: 0.5s;
-    -hp-animation-delay: 0.5s;
-    -ro-animation-delay: 0.5s;
-    -rim-animation-delay: 0.5s;
-    -tc-animation-delay: 0.5s;
-}
-
-#event div h1{
-    margin-top: 20px;
-}
-
 .bootstrap-select.btn-group .dropdown-toggle .filter-option{
     text-align: center;
 }
@@ -141,7 +81,6 @@ p a:hover{
     background-color: #69be55;
 }
 .dropdown-toggle{
-    width: 100%;
     background-color: rgba(0,0,0,0);
     border: none;
     color: white;
@@ -168,43 +107,17 @@ p a:hover{
     background-color: rgba(255,255,255,.6);
 }
 
-#services{
-    font-size: 16pt;
-    margin-top: 30px;
-}
-
 .form-content {
-    padding: 10px;
     text-align: left;
 }
 
 .form-content .label-form {
-    width: 100%;
     font-size: 16px;
-}
-
-.form-content .input {
-    width: 80%;
-}
-
-.footer-form {
-    padding-bottom: 40px;
-    padding-top: 30px;
 }
 
 .thumbnail{
     margin-left: auto;
     margin-right: auto;
-}
-
-.col-md-6 .thumbnail{
-    max-width: 50%;
-}
-.col-md-4 .thumbnail{
-    max-width: 85%;
-}
-.thumbnail-img{
-    width: 70%;
 }
 
 .soldOut{
@@ -269,6 +182,9 @@ p{
 .donation-section .btn100{
     background-color: #EB961F;
 }
+.donation-section .btn100mais{
+    background-color: #c1760d;
+}
 .donation-section li a{
     color: #58585a;
 }
@@ -281,9 +197,159 @@ p{
 .contact-section li a:hover{
     color: #000;
 }
-
+.panel-aside{
+    min-height: 450px;
+}
 .carousel-caption{
     background-color: rgba(0,0,0,.2);
-    padding: 20px;
-    border-radius: 100px;
+}
+
+/*MOBILE*/
+@media only screen and (max-width: 599px){
+    .page-header{
+        margin: 0;
+        border-bottom: none;
+    }
+    .page-header img{
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+    }
+    .page-header h3{
+        font-size: 18px;
+        text-align:center;
+    }
+    .navbar-nav{
+        display: inline-flex;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0;
+        margin: 0 auto 0 auto !important;
+    }
+    .menu-header .dropdown, .menu-header .col-md-2{
+        width: 100%;
+        height: 30px;
+    }
+    .carousel-inner{
+        height: 160px;
+    }
+    .carousel-caption{
+        position: relative;
+        right: 0; 
+        bottom: 0; 
+        left: 0; 
+        z-index: 10;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        height: 10em;
+        color: #fff;
+        text-align: center;
+        text-shadow: 0 1px 2px rgba(0,0,0,.6);
+        background-color: rgba(0,0,0,.4);
+    }
+    .carousel-caption p{
+        font-size: 13px
+    }
+    .carousel-indicators{
+        bottom: 55px
+    }
+    #footer-bar ul{
+        width: 63%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .footer-text{
+        font-size: 10pt;
+    }
+    .contact-section , .singin-section, .about-section,
+    .course-section, .donation-section, .products-section,
+    .services-section, .registration-section{
+        margin: 0 30px;
+    }
+    .thumbnail-img{
+        width: 40%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .thumbnail h4, .thumbnail .soldOut,
+    .modal-header h3, .modal-body p{
+        font-size: 12pt;
+    }
+}
+/*DESKTOP*/
+@media only screen and (min-width: 600px){
+    .page-header{
+        margin-bottom: 0;
+    }
+    .page-header img{
+    margin-top: -15px;
+    }
+    .page-header h3{
+        font-family: 'Taz-semilight';
+        margin-bottom: auto;
+        margin-top: auto;
+        padding-left: 30px;
+        border-left: 3px solid #1572b9;
+    }
+    .page-header ul{
+        margin-top: -15px;
+    }
+    .panel{
+        margin-bottom: 0;
+    }
+    .menu-header .col-md-2, h1, h2, h3, h4, h5, h6{
+        height: 35px;
+        padding-top: 7px;
+    }
+    #footer-bar{
+        background-color: #58585a;
+        height: 40px;
+    }
+    #footer-bar .row{
+        margin-top: 3px;
+    }
+    .footer img{
+        max-width: 40%;
+    }
+    .footer-text{
+        margin-top: 20px;
+        margin-bottom: 50px;
+    }
+    #event div h1{
+        margin-top: 20px;
+    }
+    .dropdown-toggle{
+        width: 100%;
+    }
+    #services{
+        font-size: 16pt;
+        margin-top: 30px;
+    }
+    .form-content {
+        padding: 10px;
+    }
+    .form-content .label-form {
+        width: 100%;
+    }
+    .form-content .input {
+        width: 80%;
+    }
+    .footer-form {
+        padding-bottom: 40px;
+        padding-top: 30px;
+    }
+    .col-md-6 .thumbnail{
+        max-width: 50%;
+    }
+    .col-md-4 .thumbnail{
+        max-width: 85%;
+    }
+    .thumbnail-img{
+        width: 70%;
+    }
+    .carousel-caption{
+        padding: 20px;
+        border-radius: 100px;
+    }
 }
