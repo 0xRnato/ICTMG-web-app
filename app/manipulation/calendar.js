@@ -1,6 +1,6 @@
 class Calendars {
 
-	static save(objt) {
+	save(objt) {
 		const self = this;
 		return new Promise(function(fulfill, reject) {
 			if (objt.id) {
@@ -27,7 +27,7 @@ class Calendars {
 		});
 	}
 
-	static load(objt) {
+	load(objt) {
 		const self = this;
 		return new Promise(function(fulfill, reject) {
 			if (objt) {
