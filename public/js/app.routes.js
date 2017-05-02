@@ -35,6 +35,12 @@
 			.when('/about5', {
 				templateUrl: 'views/about5.html',
 			})
+			.when('/freeCourses', {
+				templateUrl: 'views/free-courses.html',
+			})
+			.when('/paidCourses', {
+				templateUrl: 'views/paid-courses.html',
+			})
 			.when('/course', {
 				templateUrl: 'views/course.html',
 			})
@@ -48,12 +54,12 @@
 				controller: 'TermsController',
 				controllerAs: 'termsController',
 			})
-			.when('/free', {
+			.when('/freeProducts', {
 				templateUrl: 'views/free-products.html',
 				controller: 'FreeProductsController',
 				controllerAs: 'freeProductsController',
 			})
-			.when('/paid', {
+			.when('/paidProducts', {
 				templateUrl: 'views/paid-products.html',
 				controller: 'PaidProductsController',
 				controllerAs: 'paidProductsController',
