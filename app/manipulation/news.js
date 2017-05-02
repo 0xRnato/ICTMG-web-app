@@ -1,6 +1,6 @@
 class Newss {
 
-	static save(objt) {
+	save(objt) {
 		const self = this;
 		return new Promise(function(fulfill, reject) {
 			if (objt.id) {
@@ -27,7 +27,7 @@ class Newss {
 		});
 	}
 
-	static load(objt) {
+	load(objt) {
 		const self = this;
 		return new Promise(function(fulfill, reject) {
 			if (objt) {

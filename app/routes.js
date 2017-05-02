@@ -33,7 +33,7 @@ module.exports = (app, orm, moodleDB, modelDB, path) => {
 	});
 
 	// load Course
-	app.get('/api/Course', (req, res) => {
+	app.get('/api/courses', (req, res) => {
 		// check if object have id to replace data in db
 		Courses.load(req.body, orm)
 			.then((data) => {
