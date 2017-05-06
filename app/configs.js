@@ -11,6 +11,7 @@ module.exports = {
         host: 'localhost',
         database: 'modelDB',
         user: 'root',
+        password: 'root',
         protocol: 'mysql',
         port: '3306',
     },
