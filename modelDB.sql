@@ -56,8 +56,7 @@ DROP TABLE IF EXISTS `modelDB`.`tbl_note` ;
 
 CREATE TABLE IF NOT EXISTS `modelDB`.`tbl_note` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `header` VARCHAR(50) NOT NULL,
-  `body` VARCHAR(200) NOT NULL,
+  `text` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -83,8 +82,7 @@ DROP TABLE IF EXISTS `modelDB`.`tbl_slide` ;
 
 CREATE TABLE IF NOT EXISTS `modelDB`.`tbl_slide` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `header` VARCHAR(50) NOT NULL,
-  `body` VARCHAR(200) NOT NULL,
+  `text` VARCHAR(200) NOT NULL,
   `imagePath` VARCHAR(200) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;

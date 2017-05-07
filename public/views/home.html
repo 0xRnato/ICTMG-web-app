@@ -1,12 +1,12 @@
 <div class="">
-    <div uib-carousel active="mainController.active" interval="mainController.myInterval" no-wrap="mainController.noWrapSlides">
-      <div uib-slide ng-repeat="slide in mainController.slides track by slide.id" index="slide.id">
-        <img class="img img-responsive" ng-src="{{slide.image}}" style="margin:auto;">
-        <div class="carousel-caption">
-          <p>{{slide.text}}</p>
-        </div>
-      </div>
-    </div>
+	<div uib-carousel active="mainController.active" interval="mainController.myInterval" no-wrap="mainController.noWrapSlides">
+		<div uib-slide ng-repeat="slide in mainController.slides track by slide.id" index="slide.id">
+			<img class="img img-responsive" ng-src="{{slide.imagePath}}" style="margin:auto;">
+			<div class="carousel-caption">
+				<p>{{slide.text}}</p>
+			</div>
+		</div>
+	</div>
 </div>
 <div class="">
 	<div id="footer-bar">
@@ -25,7 +25,7 @@
 				<div class="col-md-2"></div>
 			</div>
 		</div>
-	</div>	
+	</div>
 </div>
 <div class="">
 	<div class="container panel panel-default">
@@ -34,39 +34,12 @@
 		</div>
 		<div class="panel-body" style="float: left;">
 			<div class="row">
-				<div class="col-md-3">
+				<div class="col-md-3" ng-repeat="item in mainController.news">
 					<div class="thumbnail">
-						<img src="http://placehold.it/320x125/EEE" class="">
+						<img ng-src="{{item.imagePath}}" class="">
 						<div class="caption">
-							<h4 class="">Application</h4>
-							<p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, culpa itaque odio similique suscipit</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="thumbnail">
-						<img src="http://placehold.it/320x125/EEE" class="">
-						<div class="caption">
-							<h4 class="">Application</h4>
-							<p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, culpa itaque odio similique suscipit</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="thumbnail">
-						<img src="http://placehold.it/320x125/EEE" class="">
-						<div class="caption">
-							<h4 class="">Application</h4>
-							<p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, culpa itaque odio similique suscipit</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="thumbnail">
-						<img src="http://placehold.it/320x125/EEE" class="">
-						<div class="caption">
-							<h4 class="">Application</h4>
-							<p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, culpa itaque odio similique suscipit</p>
+							<h4 class="">{{item.header}}</h4>
+							<p class="">{{item.body}}</p>
 						</div>
 					</div>
 				</div>
@@ -87,14 +60,10 @@
 				<div class="row">
 					<div class="col-md-2"></div>
 					<div class="col-md-10">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, culpa itaque odio similique suscipit</p>
-						<hr>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, culpa itaque odio similique suscipit</p>
-						<hr>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, culpa itaque odio similique suscipit</p>
-						<hr>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, culpa itaque odio similique suscipit</p>
-						<hr>
+						<div class="row" ng-repeat="note in mainController.notes">
+							<p>{{ note.text }}</p>
+							<hr>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -109,7 +78,7 @@
 						<h3>CALENDÁRIO</h3>
 					</div>
 				</div>
-				<div id="event" class="row" ng-repeat="event in mainController.calendar">
+				<div class="row" ng-repeat="event in mainController.calendar">
 					<div class="col-md-2">
 						<h1>{{ mainController.getDate(event.timestart) | date:'dd/MM' }}</h1>
 					</div>

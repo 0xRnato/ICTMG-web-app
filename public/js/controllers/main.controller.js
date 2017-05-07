@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
 
     angular
@@ -11,20 +11,23 @@
         activate();
 
         vm.calendar;
+        vm.news;
+        vm.slides;
+        vm.notes;
         vm.myInterval;
         vm.noWrapSlides;
         vm.active;
         vm.currIndex;
         vm.slides;
 
-        vm.getDate = function(date) {
-            if(Number.isInteger(date)) {
+        vm.getDate = function (date) {
+            if (Number.isInteger(date)) {
                 return new Date(date * 1000);
             }
             return new Date(date);
         };
 
-        vm.removeTags = function(string){
+        vm.removeTags = function (string) {
             return string
                 .replace(/<([^>]*script|a+?)([^>]*?)>(.*?)<\/\1>/g, '')
                 .replace(/<(?:.|\n)*?>/g, '')
@@ -33,37 +36,39 @@
 
         function activate() {
             vm.calendar = [];
+            vm.notes = [];
+            vm.news = [];
+            vm.slides = [];
+
             MainService.getCalendar()
                 .then(function sucessCallback(data) {
                     vm.calendar = angular.copy(data.data);
-                    for (var i = 0; i < vm.calendar.length; i++) {
-                        var event = vm.calendar[i];
-                        event.description = vm.removeTags(event.description);
-                    }
                 }, function errorCallback(error) {
                     $log.error('Error:' + error.status + ' - Message: ' + error.statusText);
                 });
+            MainService.getNotes()
+                .then(function sucessCallback(data) {
+                    vm.notes = angular.copy(data.data);
+                }, function errorCallback(error) {
+                    $log.error('Error:' + error.status + ' - Message: ' + error.statusText);
+                });
+            MainService.getNews()
+                .then(function sucessCallback(data) {
+                    vm.news = angular.copy(data.data);
+                }, function errorCallback(error) {
+                    $log.error('Error:' + error.status + ' - Message: ' + error.statusText);
+                });
+            MainService.getSlides()
+                .then(function sucessCallback(data) {
+                    vm.slides = angular.copy(data.data);
+                }, function errorCallback(error) {
+                    $log.error('Error:' + error.status + ' - Message: ' + error.statusText);
+                });
+
             vm.myInterval = 5000;
             vm.noWrapSlides = false;
             vm.active = 0;
             vm.currIndex = 0;
-            vm.slides = [
-                {
-                    id: 0,
-                    text: 'GUIGA é uma organização comprometida com o fomento e difusão da cultura e da educação, por isso realiza e o apoia ações, projetos e programas nessas áreas.',
-                    image: './../img/slide1.jpg',
-                },
-                {
-                    id: 1,
-                    text: 'Formamos e capacitamos pessoas para o desenvolvimento do protagonismo, da responsabilidade e aprimoramento profissional, visando a busca de resultados efetivos.',
-                    image: './../img/slide2.jpg',
-                },
-                {
-                    id: 2,
-                    text: 'Disponibilizamos capacitações profissionalizantes de qualidade, à distância, à preços acessíveis e com certificação.',
-                    image: './../img/slide3.jpg',
-                }
-            ];
         }
     }
 })();
