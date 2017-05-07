@@ -133,7 +133,7 @@ p{
     font-size: 15pt;
 }
 
-.about-section .col-md-8 h1{
+.about-section .col-md-8 h1, .about-section .col-md-8 h4, .blue-title{
     color: #1572b9;
 }
 .course-section .col-md-8 h1, .course-section .col-md-8 h3,
