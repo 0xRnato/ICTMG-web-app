@@ -14,6 +14,17 @@
             history.push($location.$$path);
         });
 
+        $rootScope.$on('$locationChangeStart', function() {
+            var restrictedPages = [
+                '/admin'
+            ];
+            var restrictedPage = restrictedPages.indexOf($location.path()) == -1 ? false : true;
+            var loggedIn = $rootScope.userSession;
+            if (restrictedPage && !loggedIn) {
+                $location.path('/singin');
+            }
+        });
+
         $rootScope.back = function () {
             var prevUrl = history.length > 1 ? history.splice(-2)[0] : "/";
             $location.path(prevUrl);

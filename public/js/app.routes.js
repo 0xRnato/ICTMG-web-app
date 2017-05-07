@@ -72,6 +72,11 @@
 			})
 			.when('/singin', {
 				templateUrl: 'views/singin.html',
+				controller: 'SinginController',
+				controllerAs: 'singinController',
+			})
+			.when('/admin', {
+				templateUrl: 'views/admin.html',
 			})
 			.otherwise({redirectTo: '/home'});
 	}

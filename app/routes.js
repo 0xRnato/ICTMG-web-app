@@ -32,6 +32,16 @@ module.exports = (app, orm, moodleDB, modelDB, path) => {
 			});
 	});
 
+	app.post('/api/singin', (req, res) => {
+		Users.singin(req.body)
+			.then((data) => {
+				res.send(data);
+			})
+			.catch((error) => {
+				res.send(error);
+			});
+	});
+
 	// load Course
 	app.get('/api/courses', (req, res) => {
 		// check if object have id to replace data in db
@@ -94,7 +104,7 @@ module.exports = (app, orm, moodleDB, modelDB, path) => {
 			});
 	});
 
-		// get news
+	// get news
 	app.get('/api/news', (req, res) => {
 		// load news
 		Newss.load(req.body)
@@ -118,7 +128,7 @@ module.exports = (app, orm, moodleDB, modelDB, path) => {
 			});
 	});
 
-		// get notes
+	// get notes
 	app.get('/api/notes', (req, res) => {
 		// load notes
 		Notes.load(req.body)
@@ -142,7 +152,7 @@ module.exports = (app, orm, moodleDB, modelDB, path) => {
 			});
 	});
 
-		// get slides
+	// get slides
 	app.get('/api/slides', (req, res) => {
 		// load slides
 		Slides.load(req.body)

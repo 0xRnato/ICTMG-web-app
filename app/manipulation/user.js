@@ -44,6 +44,35 @@ class Users {
 		});
 	}
 
+	singin(objt) {
+		const self = this;
+		return new Promise(function(fulfill, reject) {
+			self.User.find({username: objt.username}, function(err, data) {
+				if (err) reject(err);
+				if (data.length > 0) {
+					if (objt.password == data[0].password) {
+						fulfill({
+							status: 'success',
+							username: data[0].username,
+							fullname: data[0].fullname,
+							email: data[0].email,
+						});
+					} else {
+						fulfill({
+							status: 'error',
+							error: 'Senha invalida.',
+						});
+					}
+				} else {
+					fulfill({
+						status: 'error',
+						error: 'Usuário invalido ou não cadastrado.',
+					});
+				}
+			});
+		});
+	}
+
 	sendCallback(callback, data) {
 		callback(data);
 	}

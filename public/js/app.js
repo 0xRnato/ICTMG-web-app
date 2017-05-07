@@ -15,7 +15,7 @@
         'app.terms',
         'app.registration',
         'app.services',
-        'app.user',
+        'app.admin',
 
         'ui.bootstrap',
     ]);
@@ -29,5 +29,5 @@
     angular.module('app.registration', []);
     angular.module('app.terms', []);
     angular.module('app.services', []);
-    angular.module('app.user', []);
+    angular.module('app.admin', []);
 })();
