@@ -77,6 +77,8 @@
 			})
 			.when('/admin', {
 				templateUrl: 'views/admin.html',
+				controller: 'AdminController',
+				controllerAs: 'adminController',
 			})
 			.otherwise({redirectTo: '/home'});
 	}

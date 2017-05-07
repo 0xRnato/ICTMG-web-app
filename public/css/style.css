@@ -197,6 +197,13 @@ p{
 .contact-section li a:hover{
     color: #000;
 }
+.admin-section h1{
+    text-align: center;
+    margin-bottom: 40px;
+}
+.admin-section li {
+    cursor: pointer;
+}
 .panel-aside{
     min-height: 450px;
 }

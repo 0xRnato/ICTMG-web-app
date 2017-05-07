@@ -8,18 +8,18 @@
     UserService.inject = ['$http'];
     function UserService($http) {
         var service = {
-            get: _get,
-            create: _create,
+            load: _load,
+            save: _save,
             delete: _delete,
         };
 
         return service;
 
         // Do something
-        function _get() {
+        function _load() {
             return $http.get('/api/users');
         }
-        function _create(userData) {
+        function _save(userData) {
             return $http.post('/api/users', userData);
         }
         function _delete(id) {
