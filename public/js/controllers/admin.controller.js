@@ -12,6 +12,7 @@
         vm.users = [];
         vm.notes = [];
         vm.calendars = [];
+        vm.slides = [];
 
         vm.saveUser = function(){
             UserService.save(angular.copy(vm.user))
@@ -48,6 +49,18 @@
                 });
         };
 
+        vm.saveSlide = function(){
+            AdminService.saveSlide(angular.copy(vm.slide))
+                .then(function sucessCallback(data){
+                    vm.slide = {};
+                    vm.calendarIsSetted = false;
+                    loadSlides();
+                    alert('Slide salvo com sucesso');
+                }, function errorCallback(error){
+                    alert(error);
+                });
+        };
+
         vm.setUser = function(_user){
             vm.user = _user;
         }
@@ -60,6 +73,11 @@
         vm.setCalendar = function(_calendar){
             vm.calendar = _calendar;
             vm.calendarIsSetted = true;
+        }
+
+        vm.setSlide = function(_slide){
+            vm.slide = _slide;
+            vm.slideIsSetted = true;
         }
 
         var loadUsers = function(){
@@ -89,6 +107,15 @@
             });
         }
 
+        var loadSlides = function(){
+            AdminService.loadSlides()
+                .then(function sucessCallback(data) {
+                    vm.slides = angular.copy(data.data);
+                }, function errorCallback(error) {
+                    $log.error('Error:' + error.status + ' - Message: ' + error.statusText);
+            });
+        }
+
         activate();
 
         function activate() {
@@ -96,8 +123,10 @@
             loadUsers();
             loadNotes();
             loadCalendars();
+            loadSlides();
             vm.noteIsSetted = false;
             vm.calendarIsSetted = false;
+            vm.slideIsSetted = false;
         }
     }
 })();

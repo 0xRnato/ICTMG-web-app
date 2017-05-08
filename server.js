@@ -12,7 +12,7 @@ const configs = require('./app/configs');// config file
 const port = process.env.PORT || configs.SV_PORT;
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 // parse application/json
-app.use(bodyParser.json());
+app.use(bodyParser.json({limit: '2mb'}));
 // parse application/vnd.api+json as json
 app.use(bodyParser.json({type: 'application/vnd.api+json'}));
 // parse application/x-www-form-urlencoded

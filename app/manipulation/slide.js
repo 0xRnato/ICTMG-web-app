@@ -4,6 +4,7 @@ class Slides {
 		const self = this;
 		return new Promise(function(fulfill, reject) {
 			if (objt.id) {
+				objt.imagePath = 'data/slides/' + objt.id + '.jpg';
 				self.Slide.get(objt.id, function(err, data) {
 					// replace data of db object
 					for (let i in data) {
@@ -19,9 +20,20 @@ class Slides {
 				});
 			} else {
 				// create a new object in db and save
-				self.Slide.create(objt, function(err) {
+				let lastId;
+				self.Slide.find({}, function(err, data) {
 					if (err) reject(err);
-					fulfill(true);
+					if(data.length > 0) {
+						lastId = data[data.length - 1].id;
+						objt.imagePath = 'data/slides/' + lastId + '.jpg';
+					} else {
+						objt.imagePath = 'data/slides/0.jpg';
+					}
+					self.Slide.create(objt, function(err, data) {
+						if (err) reject(err);
+						data.imagePath = objt.imagePath;
+						fulfill(data);
+					});
 				});
 			}
 		});
