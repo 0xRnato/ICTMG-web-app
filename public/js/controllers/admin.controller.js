@@ -13,6 +13,7 @@
         vm.notes = [];
         vm.calendars = [];
         vm.slides = [];
+        vm.newss = [];
 
         vm.saveUser = function(){
             UserService.save(angular.copy(vm.user))
@@ -61,6 +62,18 @@
                 });
         };
 
+        vm.saveNews = function(){
+            AdminService.saveNews(angular.copy(vm.news))
+                .then(function sucessCallback(data){
+                    vm.news = {};
+                    vm.newsIsSetted = false;
+                    loadNews();
+                    alert('Noticia salvo com sucesso');
+                }, function errorCallback(error){
+                    alert(error);
+                });
+        };
+
         vm.setUser = function(_user){
             vm.user = _user;
         }
@@ -77,6 +90,11 @@
 
         vm.setSlide = function(_slide){
             vm.slide = _slide;
+            vm.slideIsSetted = true;
+        }
+
+        vm.setNews = function(_news){
+            vm.news = _news;
             vm.slideIsSetted = true;
         }
 
@@ -116,6 +134,15 @@
             });
         }
 
+        var loadNews = function(){
+            AdminService.loadNews()
+                .then(function sucessCallback(data) {
+                    vm.newss = angular.copy(data.data);
+                }, function errorCallback(error) {
+                    $log.error('Error:' + error.status + ' - Message: ' + error.statusText);
+            });
+        }
+
         activate();
 
         function activate() {
@@ -124,9 +151,11 @@
             loadNotes();
             loadCalendars();
             loadSlides();
+            loadNews();
             vm.noteIsSetted = false;
             vm.calendarIsSetted = false;
             vm.slideIsSetted = false;
+            vm.newsIsSetted = false;
         }
     }
 })();

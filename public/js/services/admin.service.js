@@ -13,7 +13,9 @@
             loadCalendar: _loadCalendar,
             saveCalendar: _saveCalendar,
             loadSlides: _loadSlides,
-            saveSlide: _saveSlide
+            saveSlide: _saveSlide,
+            loadNews: _loadNews,
+            saveNews: _saveNews
         };
 
         return service;
@@ -42,6 +44,15 @@
 
         function _saveSlide(_slide){
             return $http.post('/api/slides', _slide);
+        }
+
+        function _loadNews() {
+            return $http.get('/api/news');
+        }
+
+        function _saveNews(_news){
+            return $http.post('/api/news', _news);
+            // TODO: fazer o backend salvar as noticias
         }
     }
 })();
