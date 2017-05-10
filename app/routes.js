@@ -134,9 +134,10 @@ module.exports = (app, orm, moodleDB, modelDB, path) => {
 
 	// new/edit news
 	app.post('/api/news', (req, res) => {
-		// check if object have id to replace data in db
+		let imageData = req.body.image;
 		Newss.save(req.body)
 			.then((data) => {
+				decodeBase64Image(imageData, data.imagePath);
 				res.send(data);
 			})
 			.catch((error) => {

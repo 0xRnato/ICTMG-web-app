@@ -4,6 +4,7 @@ class Newss {
 		const self = this;
 		return new Promise(function(fulfill, reject) {
 			if (objt.id) {
+				objt.imagePath = 'data/news/' + objt.id + '.jpg';
 				self.News.get(objt.id, function(err, data) {
 					// replace data of db object
 					for (let i in data) {
@@ -14,14 +15,26 @@ class Newss {
 					// saving changes
 					data.save(function(err) {
 						if (err) reject(err);
+						data.imagePath = objt.imagePath;
 						fulfill(data);
 					});
 				});
 			} else {
 				// create a new object in db and save
-				self.News.create(objt, function(err) {
+				let lastId;
+				self.News.find({}, function(err, data) {
 					if (err) reject(err);
-					fulfill(true);
+					if(data.length > 0) {
+						lastId = data[data.length - 1].id;
+						objt.imagePath = 'data/news/' + lastId + '.jpg';
+					} else {
+						objt.imagePath = 'data/news/0.jpg';
+					}
+					self.News.create(objt, function(err, data) {
+						if (err) reject(err);
+						data.imagePath = objt.imagePath;
+						fulfill(data);
+					});
 				});
 			}
 		});

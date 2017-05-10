@@ -15,6 +15,7 @@ class Slides {
 					// saving changes
 					data.save(function(err) {
 						if (err) reject(err);
+						data.imagePath = objt.imagePath;
 						fulfill(data);
 					});
 				});
