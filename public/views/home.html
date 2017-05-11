@@ -1,6 +1,6 @@
 <div class="">
 	<div uib-carousel active="mainController.active" interval="mainController.myInterval" no-wrap="mainController.noWrapSlides">
-		<div uib-slide ng-repeat="slide in mainController.slides track by slide.id" index="slide.id">
+		<div uib-slide ng-repeat="slide in mainController.slides track by slide.id" index="$index">
 			<img class="img img-responsive" ng-src="{{slide.imagePath}}" style="margin:auto;">
 			<div class="carousel-caption">
 				<p>{{slide.text}}</p>
