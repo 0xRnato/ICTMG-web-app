@@ -37,6 +37,8 @@
 			})
 			.when('/freeCourses', {
 				templateUrl: 'views/free-courses.html',
+				controller: 'CoursesController',
+				controllerAs: 'corusesController',
 			})
 			.when('/paidCourses', {
 				templateUrl: 'views/paid-courses.html',

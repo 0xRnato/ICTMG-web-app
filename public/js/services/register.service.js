@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app.course')
+        .module('app.courses')
         .factory('RegisterService', RegisterService);
 
     RegisterService.inject = ['$http','$log'];

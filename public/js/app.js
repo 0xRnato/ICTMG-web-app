@@ -11,7 +11,7 @@
         'app.contact',
         'app.about',
         'app.products',
-        'app.course',
+        'app.courses',
         'app.terms',
         'app.registration',
         'app.services',
@@ -25,7 +25,7 @@
     angular.module('app.contact', []);
     angular.module('app.about', []);
     angular.module('app.products', []);
-    angular.module('app.course', []);
+    angular.module('app.courses', []);
     angular.module('app.registration', []);
     angular.module('app.terms', []);
     angular.module('app.services', []);

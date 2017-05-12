@@ -1,1 +1,22 @@
-FREE COURSES
+<div class="row products-section">
+	<div class="col-md-2"></div>
+	<div class="col-md-8" style="text-align:center; margin-top:40px;">
+		<div class="row">
+			FIXME:
+			{{coursesController.freeCourses}}
+			<div class="col-md-4" ng-repeat="couse in coursesController.freeCourses">
+				<div class="thumbnail">
+					<div class="caption">
+                        <h4>{{course.category}}</h4>
+						<h3>{{course.fullname}}</h3>
+						<button type="button" class="btn form-control" ng-click="coursesController.setCourse(course);">Mais Informações</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-2"></div>
+</div>
+<div class="container" style="margin-top: 20px;">
+	<a href ng-click="back()"><i class="fa fa-arrow-left fa-2x back-button" aria-hidden="true"> Voltar</i></a>
+</div>
