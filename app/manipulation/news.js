@@ -25,10 +25,10 @@ class Newss {
 				self.News.find({}, function(err, data) {
 					if (err) reject(err);
 					if(data.length > 0) {
-						lastId = data[data.length - 1].id;
+						lastId = data[data.length - 1].id + 1;
 						objt.imagePath = 'data/news/' + lastId + '.jpg';
 					} else {
-						objt.imagePath = 'data/news/0.jpg';
+						objt.imagePath = 'data/news/1.jpg';
 					}
 					self.News.create(objt, function(err, data) {
 						if (err) reject(err);

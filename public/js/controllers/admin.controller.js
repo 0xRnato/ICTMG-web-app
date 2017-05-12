@@ -95,7 +95,7 @@
 
         vm.setNews = function(_news){
             vm.news = _news;
-            vm.slideIsSetted = true;
+            vm.newsIsSetted = true;
         }
 
         var loadUsers = function(){
