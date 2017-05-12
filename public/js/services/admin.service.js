@@ -52,7 +52,6 @@
 
         function _saveNews(_news){
             return $http.post('/api/news', _news);
-            // TODO: fazer o backend salvar as noticias
         }
     }
 })();

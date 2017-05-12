@@ -25,10 +25,10 @@ class Slides {
 				self.Slide.find({}, function(err, data) {
 					if (err) reject(err);
 					if(data.length > 0) {
-						lastId = data[data.length - 1].id;
+						lastId = data[data.length - 1].id + 1;
 						objt.imagePath = 'data/slides/' + lastId + '.jpg';
 					} else {
-						objt.imagePath = 'data/slides/0.jpg';
+						objt.imagePath = 'data/slides/1.jpg';
 					}
 					self.Slide.create(objt, function(err, data) {
 						if (err) reject(err);
