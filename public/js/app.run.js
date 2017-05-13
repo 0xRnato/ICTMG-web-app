@@ -12,6 +12,7 @@
 
         $rootScope.$on('$routeChangeSuccess', function () {
             history.push($location.$$path);
+            $window.scrollTo(0, 0);
         });
 
         $rootScope.$on('$locationChangeStart', function() {
@@ -22,6 +23,7 @@
             var loggedIn = $rootScope.userSession;
             if (restrictedPage && !loggedIn) {
                 $location.path('/singin');
+                $window.scrollTo(0, 0);
             }
         });
 

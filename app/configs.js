@@ -15,5 +15,5 @@ module.exports = {
         protocol: 'mysql',
         port: '3306',
     },
-    SV_PORT: 8080,
+    SV_PORT: 3000,
 };

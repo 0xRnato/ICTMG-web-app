@@ -15,8 +15,7 @@
 		<div class="checkbox">
 			<label><input type="checkbox" ng-model="termsController.agreed" value="">Eu concordo com todos os requisitos citados acima.</label>
 		</div>
-		<a ng-disabled="!termsController.agreed" ng-click="" class="btn btn-success" role="button">Continuar</a>
-		<!--TODO: trocar  href por ngclick com disabled-->
+		<a ng-disabled="!termsController.agreed" ng-click="termsController.goToRegistration()" class="btn btn-success" role="button">Continuar</a>
 	</div>
 	<div class="col-md-2"></div>
 </div>

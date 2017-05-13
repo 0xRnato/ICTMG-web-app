@@ -141,7 +141,7 @@ p{
     color: #1572b9;
 }
 .course-section .col-md-8 h1, .course-section .col-md-8 h3,
-.course-section .col-md-3 p{
+.course-section .col-md-8 h4, .course-section .col-md-5 p{
     color: #69be55;
 }
 .course-section .btn{
@@ -310,7 +310,7 @@ p{
         margin-bottom: 0;
     }
     .menu-header .col-md-2, h1, h2, h3, h4, h5, h6{
-        height: 35px;
+        /*height: 35px;*/
         padding-top: 7px;
     }
     #footer-bar{
