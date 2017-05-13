@@ -1,50 +1,52 @@
 <div class="row" style="margin-top:30px;">
 	<div class="col-md-2"></div>
 	<div class="col-md-8">
-		<form>
+		<form name="registrationForm" ng-submit="registrationController.submit()">
 			<div class="row">
 				<div class="col-md-8">
 					<div class="form-group">
 						<label for="fullname">Nome Completo:</label>
-						<input type="text" class="form-control" id="fullname" placeholder="Nome Completo">
+						<input type="text" ng-model="registrationController.user.fullname" required class="form-control" name="fullname" placeholder="Nome Completo">
 					</div>
 					<div class="form-group">
 						<label for="email">Email:</label>
-						<input type="email" class="form-control" id="email" placeholder="Email">
+						<input type="email" ng-model="registrationController.user.email" required class="form-control" name="email" placeholder="Email">
+					</div>
+					<div class="form-group">
+						<label for="email2">Confirme seu email:</label>
+						<input type="email" ng-model="registrationController.user.email2" required class="form-control" name="email2" placeholder="Confirme seu email">
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="form-group">
 						<label for="birthDate">Data de Nascimento:</label>
-						<input type="text" class="form-control" id="birthDate" placeholder="Data de Nascimento">
+						<input type="date" required ng-model="registrationController.user.birthDate" class="form-control" name="birthDate">
 					</div>
 					<div class="form-group">
 						<label for="phone">Telefone:</label>
-						<input type="text" class="form-control" id="phone" placeholder="Telefone">
+						<input type="number" required ng-model="registrationController.user.phone" class="form-control" name="phone" placeholder="Telefone">
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-6">
 					<div class="form-group">
-						<label for="identidade">Carteira de Identidade:</label>
-						<input type="text" class="form-control" id="identidade" placeholder="Carteira de Identidade">
+						<label for="registerId">Carteira de Identidade:</label>
+						<input type="number" ng-model="registrationController.user.registerId" required class="form-control" name="registerId" placeholder="Carteira de Identidade">
 					</div>
 					<div class="form-group">
-						<label for="identidadeImg">Anexo da Carteira de Identidade:</label>
-						<input type="file" id="identidadeImg">
-						<p class="help-block">Tire uma foto da sua carteira de identidade e anexe aqui.</p>
+						<label for="registerIdImg">Anexe uma imagem da sua Carteira de Identidade aqui:</label>
+						<input type="file" accept="image/*" required fileread="registrationController.user.registerIdImg" name="registerIdImg">
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="form-group">
 						<label for="cpf">CPF:</label>
-						<input type="text" class="form-control" id="cpf" placeholder="CPF">
+						<input type="number" required ng-model="registrationController.user.registerCPF" class="form-control" name="cpf" placeholder="CPF">
 					</div>
 					<div class="form-group">
-						<label for="cpfImg">Anexo do CPF:</label>
-						<input type="file" id="cpfImg">
-						<p class="help-block">Tire uma foto do seu CPF e anexe aqui.</p>
+						<label for="registerCpfImg">Anexe uma imagem do seu CPF aqui:</label>
+						<input type="file" accept="image/*" required fileread="registrationController.user.registerCpfImg" name="registerCpfImg">
 					</div>
 				</div>
 			</div>
@@ -56,25 +58,28 @@
 				<div class="col-md-4">
 					<div class="form-group">
 						<label for="residentialAdress">Endereço:</label>
-						<input type="text" class="form-control" id="residentialAdress" placeholder="Endereço">
+						<input type="text" required ng-model="registrationController.user.residentialAdress" class="form-control" name="residentialAdress"
+						 placeholder="Endereço">
 					</div>
 				</div>
 				<div class="col-md-2">
 					<div class="form-group">
 						<label for="residentialComplement">Complemento:</label>
-						<input type="text" class="form-control" id="residentialComplement" placeholder="Complemento">
+						<input type="text" required ng-model="registrationController.user.residentialComplement" class="form-control" name="residentialComplement"
+						 placeholder="Complemento">
 					</div>
 				</div>
 				<div class="col-md-3">
 					<div class="form-group">
 						<label for="residentialCity">Cidade:</label>
-						<input type="text" class="form-control" id="residentialCity" placeholder="Cidade que você reside">
+						<input type="text" required ng-model="registrationController.user.residentialCity" class="form-control" name="residentialCity"
+						 placeholder="Cidade que você reside">
 					</div>
 				</div>
 				<div class="col-md-3">
 					<div class="form-group">
 						<label for="residentialState">Estado:</label>
-						<select name="residentialState" class="form-control">
+						<select required ng-model="registrationController.user.residentialState" name="residentialState" class="form-control">
 							<option value="AC">Acre</option>
 							<option value="AL">Alagoas</option>
 							<option value="AP">Amapá</option>
@@ -114,25 +119,26 @@
 				<div class="col-md-4">
 					<div class="form-group">
 						<label for="commercialAdress">Endereço:</label>
-						<input type="text" class="form-control" id="commercialAdress" placeholder="Endereço">
+						<input type="text" ng-model="registrationController.user.commercialAdress" class="form-control" name="commercialAdress" placeholder="Endereço">
 					</div>
 				</div>
 				<div class="col-md-2">
 					<div class="form-group">
 						<label for="commercialComplement">Complemento:</label>
-						<input type="text" class="form-control" id="commercialComplement" placeholder="Complemento">
+						<input type="text" ng-model="registrationController.user.commercialComplement" class="form-control" name="commercialComplement"
+						 placeholder="Complemento">
 					</div>
 				</div>
 				<div class="col-md-3">
 					<div class="form-group">
 						<label for="commercialCity">Cidade:</label>
-						<input type="text" class="form-control" id="commercialCity" placeholder="Cidade que você reside">
+						<input type="text" ng-model="registrationController.user.commercialCity" class="form-control" name="commercialCity" placeholder="Cidade que você trabalha">
 					</div>
 				</div>
 				<div class="col-md-3">
 					<div class="form-group">
 						<label for="commercialState">Estado:</label>
-						<select name="commercialState" class="form-control">
+						<select ng-model="registrationController.user.commercialState" name="commercialState" class="form-control">
 							<option value="AC">Acre</option>
 							<option value="AL">Alagoas</option>
 							<option value="AP">Amapá</option>
@@ -168,19 +174,18 @@
 			<hr>
 
 			<div class="checkbox">
-				<label><input type="checkbox" ng-model="registrationController.civilServant" value="">Selecione esta caixa caso você participa/trabalha em Instituição Pública.</label>
+				<label><input type="checkbox" ng-model="registrationController.user.civilServant" value="">Declaro exercer cargo ou função pública.</label>
 			</div>
 
-			<div ng-if="registrationController.civilServant" class="checkbox">
-				<label><input type="checkbox" ng-model="registrationController.wantScholarship" value="">Se participa/trabalha em Instituição Pública do Poder Executivo, você pode solicitar bolsa de estudos. Caso receba a bolsa de estudos integral, deverá cumprir todas as atividades do curso, finalizando-o no tempo previsto. Selecione esta caixa caso deseja fazer essa solicitação.</label>
+			<div class="checkbox">
+				<label><input type="checkbox" ng-model="registrationController.user.wantScholarship" value="">Solicito bolsa de estudos integral e declaro a intenção de empregar zelo e responsabilidade no acesso às aulas e atividades disponíveis na Plataforma on line, para fins de obtenção de certificado ao fim.</label>
 			</div>
 
-			<div ng-if="registrationController.wantScholarship" class="form-group">
-				<label for="recommendationLetter">Carta de Recomendação:</label>
-				<input type="file" id="recommendationLetter">
-				<p class="help-block">Anexe aqui a Carta de Recomendação da chefia imediata, para fins de solicitação de bolsa de estudos. Se você exerce cargos
-					de Diretor, Chefe, Coordenador, Secretário ou Prefeito, para solicitar a bolsa, você deverá anexar o ato de nomeação
-					do cargo.</p>
+			<div class="form-group">
+				<label for="recommendationLetter">Anexe uma imagem do documento que comprova sua função ou cargo público aqui:</label>
+				<input type="file" accept="application/pdf, image/*" fileread="registrationController.user.recommendationLetter" name="recommendationLetter">
+				<p class="help-block">Exemplos: declaração fornecida por órgão ou conselho público, publicação da nomeação, contrato de trabalho, contrato
+					de serviço ou outro documento oficial.</p>
 			</div>
 
 			<hr>
@@ -190,42 +195,42 @@
 					<label for="">Escolaridade:</label>
 					<div class="radio">
 						<label>
-				<input type="radio" name="optionsRadios1" id="optionsRadios1" value="option1" checked>
+				<input type="radio" name="schoolEducation" value="Ensino Fundamental" checked>
 				Ensino Fundamental</label>
 					</div>
 					<div class="radio">
 						<label>
-				<input type="radio" name="optionsRadios1" id="optionsRadios2" value="option2">
+				<input type="radio" name="schoolEducation" value="Ensino Médio">
 				Ensino Médio
 			</label>
 					</div>
 					<div class="radio">
 						<label>
-				<input type="radio" name="optionsRadios1" id="optionsRadios2" value="option2">
+				<input type="radio" name="schoolEducation" value="Ensino Superior">
 				Ensino Superior
 			</label>
 					</div>
 					<div class="radio">
 						<label>
-				<input type="radio" name="optionsRadios1" id="optionsRadios2" value="option2">
+				<input type="radio" name="schoolEducation" value="Especialização">
 				Especialização
 			</label>
 					</div>
 					<div class="radio">
 						<label>
-				<input type="radio" name="optionsRadios1" id="optionsRadios2" value="option2">
+				<input type="radio" name="schoolEducation" value="Mestrado">
 				Mestrado
 			</label>
 					</div>
 					<div class="radio">
 						<label>
-				<input type="radio" name="optionsRadios1" id="optionsRadios2" value="option2">
+				<input type="radio" name="schoolEducation" value="Doutorado">
 				Doutorado
 			</label>
 					</div>
 					<div class="radio">
 						<label>
-				<input type="radio" name="optionsRadios1" id="optionsRadios2" value="option2">
+				<input type="radio" name="schoolEducation" value="Pós-Doutorado">
 				Pós-Doutorado
 			</label>
 					</div>
@@ -234,18 +239,18 @@
 					<label for="">Quantos cursos já fez na área da Política Cultural?</label>
 					<div class="radio">
 						<label>
-				<input type="radio" name="optionsRadios2" id="optionsRadios1" value="option1" checked>
+				<input type="radio" name="numberOfCourses" value="Nenhum" checked>
 				Nenhum</label>
 					</div>
 					<div class="radio">
 						<label>
-				<input type="radio" name="optionsRadios2" id="optionsRadios2" value="option2">
+				<input type="radio" name="numberOfCourses" value="Um a dois">
 				Um a dois
 			</label>
 					</div>
 					<div class="radio">
 						<label>
-				<input type="radio" name="optionsRadios2" id="optionsRadios2" value="option2">
+				<input type="radio" name="numberOfCourses" value="Acima de dois">
 				Acima de dois
 			</label>
 					</div>
@@ -256,32 +261,32 @@
 			<label for="">Por que possui interesse em participar do curso?</label>
 			<div class="radio">
 				<label>
-				<input type="radio" name="optionsRadios3" id="optionsRadios1" value="option1" checked>
+				<input type="radio" name="reasonForEntry" value="Deseja que o município faça a adesão ao Sistema Nacional de Cultura." checked>
 				Deseja que o município faça a adesão ao Sistema Nacional de Cultura.</label>
 			</div>
 			<div class="radio">
 				<label>
-				<input type="radio" name="optionsRadios3" id="optionsRadios2" value="option2">
+				<input type="radio" name="reasonForEntry" value="Deseja que o município aprimore a participação ao Sistema Nacional de Cultura, uma vez que já fez a adesão.">
 				Deseja que o município aprimore a participação ao Sistema Nacional de Cultura, uma vez que já fez a adesão.
 			</label>
 			</div>
 			<div class="radio">
 				<label>
-				<input type="radio" name="optionsRadios3" id="optionsRadios2" value="option2">
+				<input type="radio" name="reasonForEntry" value="Quer conhecer melhor ou aprofundar estudos no setor cultural.">
 				Quer conhecer melhor ou aprofundar estudos no setor cultural.
 			</label>
 			</div>
 			<div class="radio">
 				<label>
-				<input type="radio" ng-model="registrationController.otherReason" name="optionsRadios3" id="optionsRadios2" value="option2">
+				<input type="radio" ng-model="registrationController.user.otherReason" name="reasonForEntry" value="Outro:">
 				Outro:
 			</label>
 			</div>
-			<textarea ng-if="registrationController.otherReason" class="form-control" rows="4"></textarea>
+			<textarea maxlength="100" ng-if="registrationController.user.otherReason" class="form-control" rows="2"></textarea>
 
 			<hr>
 
-			<button type="submit" class="btn btn-success">Salvar</button>
+			<button type="submit" name="send" class="btn btn-success">Enviar</button>
 		</form>
 	</div>
 	<div class="col-md-2"></div>

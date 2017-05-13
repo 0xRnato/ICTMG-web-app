@@ -8,15 +8,13 @@
     RegisterService.inject = ['$http','$log'];
     function RegisterService($http, $log) {
         var service = {
-            post: _post
+            save: _save
         };
 
         return service;
 
-        // Do something
-        function _post(data) {
-            $log.debug(data);
-            return $http.post('/api/register', data);
+        function _save(_data) {
+            return $http.post('/api/candidate', _data);
         }
     }
 })();
