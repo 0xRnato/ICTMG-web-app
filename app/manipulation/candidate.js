@@ -4,6 +4,10 @@ class Candidates {
 		const self = this;
 		return new Promise(function(fulfill, reject) {
 			if (objt.id) {
+				objt.registerIdPath = 'data/id/' + objt.id + '.jpg';
+				objt.registerCpfPath = 'data/cpf/' + objt.id + '.jpg';
+				objt.recommendationLetterPath =
+					'data/recommendationletter/' + objt.id + '.jpg';
 				self.Candidate.get(objt.id, function(err, data) {
 					// replace data of db object
 					for (let i in data) {
@@ -14,14 +18,36 @@ class Candidates {
 					// saving changes
 					data.save(function(err) {
 						if (err) reject(err);
+						data.registerIdPath = objt.registerIdPath;
+						data.registerCpfPath = objt.registerCpfPath;
+						data.recommendationLetterPath = objt.recommendationLetterPath;
 						fulfill(data);
 					});
 				});
 			} else {
 				// create a new object in db and save
-				self.Candidate.create(objt, function(err) {
+				let lastId;
+				self.Candidate.find({}, function(err, data) {
 					if (err) reject(err);
-					fulfill(true);
+					if (data.length > 0) {
+						lastId = data[data.length - 1].id + 1;
+						objt.registerIdPath = 'data/id/' + lastId + '.jpg';
+						objt.registerCpfPath = 'data/cpf/' + lastId + '.jpg';
+						objt.recommendationLetterPath =
+							'data/recommendationletter/' + lastId + '.jpg';
+					} else {
+						objt.registerIdPath = 'data/id/1.jpg';
+						objt.registerCpfPath = 'data/cpf/1.jpg';
+						objt.recommendationLetterPath =
+							'data/recommendationletter/1.jpg';
+					}
+					self.Candidate.create(objt, function(err, data) {
+						if (err) reject(err);
+						data.registerIdPath = objt.registerIdPath;
+						data.registerCpfPath = objt.registerCpfPath;
+						data.recommendationLetterPath = objt.recommendationLetterPath;
+						fulfill(data);
+					});
 				});
 			}
 		});

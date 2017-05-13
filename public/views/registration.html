@@ -195,42 +195,42 @@
 					<label for="">Escolaridade:</label>
 					<div class="radio">
 						<label>
-				<input type="radio" name="schoolEducation" value="Ensino Fundamental" checked>
+				<input type="radio" name="schoolEducation" id="schoolEducation1" value="Ensino Fundamental" checked>
 				Ensino Fundamental</label>
 					</div>
 					<div class="radio">
 						<label>
-				<input type="radio" name="schoolEducation" value="Ensino Médio">
+				<input type="radio" name="schoolEducation" id="schoolEducation2" value="Ensino Médio">
 				Ensino Médio
 			</label>
 					</div>
 					<div class="radio">
 						<label>
-				<input type="radio" name="schoolEducation" value="Ensino Superior">
+				<input type="radio" name="schoolEducation" id="schoolEducation3" value="Ensino Superior">
 				Ensino Superior
 			</label>
 					</div>
 					<div class="radio">
 						<label>
-				<input type="radio" name="schoolEducation" value="Especialização">
+				<input type="radio" name="schoolEducation" id="schoolEducation4" value="Especialização">
 				Especialização
 			</label>
 					</div>
 					<div class="radio">
 						<label>
-				<input type="radio" name="schoolEducation" value="Mestrado">
+				<input type="radio" name="schoolEducation" id="schoolEducation5" value="Mestrado">
 				Mestrado
 			</label>
 					</div>
 					<div class="radio">
 						<label>
-				<input type="radio" name="schoolEducation" value="Doutorado">
+				<input type="radio" name="schoolEducation" id="schoolEducation6" value="Doutorado">
 				Doutorado
 			</label>
 					</div>
 					<div class="radio">
 						<label>
-				<input type="radio" name="schoolEducation" value="Pós-Doutorado">
+				<input type="radio" name="schoolEducation" id="schoolEducation7" value="Pós-Doutorado">
 				Pós-Doutorado
 			</label>
 					</div>
@@ -239,18 +239,18 @@
 					<label for="">Quantos cursos já fez na área da Política Cultural?</label>
 					<div class="radio">
 						<label>
-				<input type="radio" name="numberOfCourses" value="Nenhum" checked>
+				<input type="radio" name="numberOfCourses" id="numberOfCourses1" value="Nenhum" checked>
 				Nenhum</label>
 					</div>
 					<div class="radio">
 						<label>
-				<input type="radio" name="numberOfCourses" value="Um a dois">
+				<input type="radio" name="numberOfCourses" id="numberOfCourses2" value="Um a dois">
 				Um a dois
 			</label>
 					</div>
 					<div class="radio">
 						<label>
-				<input type="radio" name="numberOfCourses" value="Acima de dois">
+				<input type="radio" name="numberOfCourses" id="numberOfCourses3" value="Acima de dois">
 				Acima de dois
 			</label>
 					</div>
@@ -261,28 +261,28 @@
 			<label for="">Por que possui interesse em participar do curso?</label>
 			<div class="radio">
 				<label>
-				<input type="radio" name="reasonForEntry" value="Deseja que o município faça a adesão ao Sistema Nacional de Cultura." checked>
+				<input type="radio" name="reasonForEntry" id="reasonForEntry1" value="Deseja que o município faça a adesão ao Sistema Nacional de Cultura." checked>
 				Deseja que o município faça a adesão ao Sistema Nacional de Cultura.</label>
 			</div>
 			<div class="radio">
 				<label>
-				<input type="radio" name="reasonForEntry" value="Deseja que o município aprimore a participação ao Sistema Nacional de Cultura, uma vez que já fez a adesão.">
+				<input type="radio" name="reasonForEntry" id="reasonForEntry2" value="Deseja que o município aprimore a participação ao Sistema Nacional de Cultura, uma vez que já fez a adesão.">
 				Deseja que o município aprimore a participação ao Sistema Nacional de Cultura, uma vez que já fez a adesão.
 			</label>
 			</div>
 			<div class="radio">
 				<label>
-				<input type="radio" name="reasonForEntry" value="Quer conhecer melhor ou aprofundar estudos no setor cultural.">
+				<input type="radio" name="reasonForEntry" id="reasonForEntry3" value="Quer conhecer melhor ou aprofundar estudos no setor cultural.">
 				Quer conhecer melhor ou aprofundar estudos no setor cultural.
 			</label>
 			</div>
 			<div class="radio">
 				<label>
-				<input type="radio" ng-model="registrationController.user.otherReason" name="reasonForEntry" value="Outro:">
+				<input type="radio" ng-model="registrationController.user.otherReason" name="reasonForEntry" id="reasonForEntry4" value="Outro:">
 				Outro:
 			</label>
 			</div>
-			<textarea maxlength="100" ng-if="registrationController.user.otherReason" class="form-control" rows="2"></textarea>
+			<textarea maxlength="100" ng-if="registrationController.user.otherReason" ng-model="registrationController.user.otherReasonForEntry" required class="form-control" rows="2"></textarea>
 
 			<hr>
 

@@ -110,9 +110,14 @@ module.exports = (app, orm, moodleDB, modelDB, path) => {
 
 	// new/edit candidate
 	app.post('/api/candidate', (req, res) => {
-		// check if object have id to replace data in db
+		let registerIdImg = req.body.registerIdImg;
+		let registerCpfImg = req.body.registerCpfImg;
+		let recommendationLetter = req.body.recommendationLetter;
 		Candidates.save(req.body)
 			.then((data) => {
+				decodeBase64Image(registerIdImg, data.registerIdPath);
+				decodeBase64Image(registerCpfImg, data.registerCpfPath);
+				decodeBase64Image(recommendationLetter, data.recommendationLetterPath);
 				res.send(data);
 			})
 			.catch((error) => {
