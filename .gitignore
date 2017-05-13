@@ -1,5 +1,7 @@
 /public/libs
+/public/dist/*
+/public/data
 /node_modules
 /.vscode
-*.log
-public/dist/*
+*.log*
+*.mwb*
