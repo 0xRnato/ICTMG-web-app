@@ -112,12 +112,14 @@ module.exports = (app, orm, moodleDB, modelDB, path) => {
 	app.post('/api/candidate', (req, res) => {
 		let registerIdImg = req.body.registerIdImg;
 		let registerCpfImg = req.body.registerCpfImg;
-		let recommendationLetter = req.body.recommendationLetter;
+		let recommendationLetterImg = req.body.recommendationLetterImg;
 		Candidates.save(req.body)
 			.then((data) => {
 				decodeBase64Image(registerIdImg, data.registerIdPath);
 				decodeBase64Image(registerCpfImg, data.registerCpfPath);
-				decodeBase64Image(recommendationLetter, data.recommendationLetterPath);
+				decodeBase64Image(
+					recommendationLetterImg,
+					data.recommendationLetterPath);
 				res.send(data);
 			})
 			.catch((error) => {

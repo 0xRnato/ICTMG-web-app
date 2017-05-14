@@ -9,7 +9,7 @@ module.exports = (modelDB) => {
         registerCpf: String,
         registerIdPath: String,
         registerCpfPath: String,
-        adressType: ['Resitencial', 'Comercial'],
+        adressType: String,
         adress: String,
         complement: String,
         city: String,
@@ -17,12 +17,11 @@ module.exports = (modelDB) => {
         civilServant: Boolean,
         wantScholarship: Boolean,
         recommendationLetterPath: String,
-        schoolEducation: [
-            'Ensino Fundamental', 'Ensino Médio',
-            'Ensino Superior', 'Especialização',
-            'Mestrado', 'Doutorado', 'Pós-Doutorado'],
-        numberOfCourses: ['Nenhum', 'Um a dois', 'Acima de dois'],
+        schoolEducation: String,
+        numberOfCourses: String,
         reasonForEntry: String,
+        selectedCourse: String,
+        status: String,
     });
     return Candidate;
 };

@@ -53,92 +53,41 @@
 
 			<hr>
 
-			<label for="">Endereço Residencial</label>
 			<div class="row">
+				<div class="col-md-2">
+					<div class="form-group">
+						<label for="adressType">Tipo de endereço:</label>
+						<select required ng-model="registrationController.user.adressType" name="adressType" class="form-control">
+							<option value="Residencial">Residencial</option>
+							<option value="Comercial">Comercial</option>
+						</select>
+					</div>
+				</div>
 				<div class="col-md-4">
 					<div class="form-group">
-						<label for="residentialAdress">Endereço:</label>
-						<input type="text" required ng-model="registrationController.user.residentialAdress" class="form-control" name="residentialAdress"
+						<label for="adress">Endereço:</label>
+						<input type="text" required ng-model="registrationController.user.adress" class="form-control" name="adress"
 						 placeholder="Endereço">
 					</div>
 				</div>
 				<div class="col-md-2">
 					<div class="form-group">
-						<label for="residentialComplement">Complemento:</label>
-						<input type="text" required ng-model="registrationController.user.residentialComplement" class="form-control" name="residentialComplement"
+						<label for="complement">Complemento:</label>
+						<input type="text" required ng-model="registrationController.user.complement" class="form-control" name="complement"
 						 placeholder="Complemento">
-					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="form-group">
-						<label for="residentialCity">Cidade:</label>
-						<input type="text" required ng-model="registrationController.user.residentialCity" class="form-control" name="residentialCity"
-						 placeholder="Cidade que você reside">
-					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="form-group">
-						<label for="residentialState">Estado:</label>
-						<select required ng-model="registrationController.user.residentialState" name="residentialState" class="form-control">
-							<option value="AC">Acre</option>
-							<option value="AL">Alagoas</option>
-							<option value="AP">Amapá</option>
-							<option value="AM">Amazonas</option>
-							<option value="BA">Bahia</option>
-							<option value="CE">Ceará</option>
-							<option value="DF">Distrito Federal</option>
-							<option value="ES">Espírito Santo</option>
-							<option value="GO">Goiás</option>
-							<option value="MA">Maranhão</option>
-							<option value="MT">Mato Grosso</option>
-							<option value="MS">Mato Grosso do Sul</option>
-							<option value="MG">Minas Gerais</option>
-							<option value="PA">Pará</option>
-							<option value="PB">Paraíba</option>
-							<option value="PR">Paraná</option>
-							<option value="PE">Pernambuco</option>
-							<option value="PI">Piauí</option>
-							<option value="RJ">Rio de Janeiro</option>
-							<option value="RN">Rio Grande do Norte</option>
-							<option value="RS">Rio Grande do Sul</option>
-							<option value="RO">Rondônia</option>
-							<option value="RR">Roraima</option>
-							<option value="SC">Santa Catarina</option>
-							<option value="SP">São Paulo</option>
-							<option value="SE">Sergipe</option>
-							<option value="TO">Tocantins</option>
-						</select>
-					</div>
-				</div>
-			</div>
-
-			<hr>
-
-			<label for="">Endereço Comercial</label>
-			<div class="row">
-				<div class="col-md-4">
-					<div class="form-group">
-						<label for="commercialAdress">Endereço:</label>
-						<input type="text" ng-model="registrationController.user.commercialAdress" class="form-control" name="commercialAdress" placeholder="Endereço">
 					</div>
 				</div>
 				<div class="col-md-2">
 					<div class="form-group">
-						<label for="commercialComplement">Complemento:</label>
-						<input type="text" ng-model="registrationController.user.commercialComplement" class="form-control" name="commercialComplement"
-						 placeholder="Complemento">
+						<label for="city">Cidade:</label>
+						<input type="text" required ng-model="registrationController.user.city" class="form-control" name="city"
+						 placeholder="Cidade que você reside">
 					</div>
 				</div>
-				<div class="col-md-3">
+				<div class="col-md-2">
 					<div class="form-group">
-						<label for="commercialCity">Cidade:</label>
-						<input type="text" ng-model="registrationController.user.commercialCity" class="form-control" name="commercialCity" placeholder="Cidade que você trabalha">
-					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="form-group">
-						<label for="commercialState">Estado:</label>
-						<select ng-model="registrationController.user.commercialState" name="commercialState" class="form-control">
+						<label for="state">Estado:</label>
+						<select required ng-model="registrationController.user.state" name="state" class="form-control">
 							<option value="AC">Acre</option>
 							<option value="AL">Alagoas</option>
 							<option value="AP">Amapá</option>

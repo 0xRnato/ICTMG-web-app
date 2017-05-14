@@ -41,6 +41,19 @@ class Candidates {
 						objt.recommendationLetterPath =
 							'data/recommendationletter/1.jpg';
 					}
+					objt.status = 'Aguardando aprovação';
+					delete objt.email2;
+					objt.registerCpf = objt.registerCPF;
+					delete objt.registerCPF;
+					delete objt.registerCpfImg;
+					delete objt.registerIdImg;
+					delete objt.recommendationLetterImg;
+					delete objt.otherReason;
+					delete objt.otherReasonForEntry;
+					objt.phone = String(objt.phone);
+					objt.registerCpf = String(objt.registerCpf);
+					objt.registerId = String(objt.registerId);
+					objt.selectedCourse = objt.selectedCourse.fullname;
 					self.Candidate.create(objt, function(err, data) {
 						if (err) reject(err);
 						data.registerIdPath = objt.registerIdPath;

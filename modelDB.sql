@@ -103,7 +103,7 @@ CREATE TABLE IF NOT EXISTS `modelDB`.`tbl_candidate` (
   `registerCpf` VARCHAR(11) NOT NULL,
   `registerIdPath` VARCHAR(200) NOT NULL,
   `registerCpfPath` VARCHAR(200) NOT NULL,
-  `adressType` ENUM('Residencial', 'Comercial') NOT NULL,
+  `adressType` VARCHAR(200) NOT NULL,
   `adress` VARCHAR(150) NOT NULL,
   `complement` VARCHAR(20) NULL,
   `city` VARCHAR(50) NOT NULL,
@@ -111,9 +111,11 @@ CREATE TABLE IF NOT EXISTS `modelDB`.`tbl_candidate` (
   `civilServant` TINYINT(1) NULL DEFAULT 0,
   `wantScholarship` TINYINT(1) NULL DEFAULT 0,
   `recommendationLetterPath` VARCHAR(200) NULL,
-  `schoolEducation` ENUM('Ensino Fundamental', 'Ensino Médio', 'Ensino Superior', 'Especialização', 'Mestrado', 'Doutorado', 'Pós-Doutorado') NOT NULL,
-  `numberOfCourses` ENUM('Nenhum', 'Um a dois', 'Acima de dois') NOT NULL,
+  `schoolEducation` VARCHAR(200) NOT NULL,
+  `numberOfCourses` VARCHAR(200) NOT NULL,
   `reasonForEntry` VARCHAR(200) NOT NULL,
+  `selectedCourse` VARCHAR(200) DEFAULT NULL,
+  `status` VARCHAR(200) DEFAULT 'Aguardando aprovação',
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
