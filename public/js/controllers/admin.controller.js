@@ -14,6 +14,7 @@
         vm.calendars = [];
         vm.slides = [];
         vm.newss = [];
+        vm.candidates = [];
 
         vm.saveUser = function(){
             UserService.save(angular.copy(vm.user))
@@ -74,8 +75,23 @@
                 });
         };
 
+        vm.saveCandidate = function(){
+            AdminService.saveCandidates(angular.copy(vm.candidate))
+                .then(function sucessCallback(data){
+                    vm.candidate = {};
+                    loadCandidates();
+                    alert('Candidato salvo com sucesso');
+                }, function errorCallback(error){
+                    alert(error);
+                });
+        };
+
         vm.setUser = function(_user){
             vm.user = _user;
+        }
+
+        vm.setCandidate = function(_candidate){
+            vm.candidate = _candidate;
         }
 
         vm.setNote = function(_note){
@@ -102,6 +118,15 @@
             UserService.load()
                 .then(function sucessCallback(data) {
                     vm.users = angular.copy(data.data);
+                }, function errorCallback(error) {
+                    $log.error('Error:' + error.status + ' - Message: ' + error.statusText);
+            });
+        }
+
+        var loadCandidates = function(){
+            AdminService.loadCandidates()
+                .then(function sucessCallback(data) {
+                    vm.candidates = angular.copy(data.data);
                 }, function errorCallback(error) {
                     $log.error('Error:' + error.status + ' - Message: ' + error.statusText);
             });
@@ -152,10 +177,12 @@
             loadCalendars();
             loadSlides();
             loadNews();
+            loadCandidates();
             vm.noteIsSetted = false;
             vm.calendarIsSetted = false;
             vm.slideIsSetted = false;
             vm.newsIsSetted = false;
+            vm.filterStatus = "Aguardando aprovação";
         }
     }
 })();

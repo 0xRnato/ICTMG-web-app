@@ -15,7 +15,9 @@
             loadSlides: _loadSlides,
             saveSlide: _saveSlide,
             loadNews: _loadNews,
-            saveNews: _saveNews
+            saveNews: _saveNews,
+            loadCandidates: _loadCandidates,
+            saveCandidates: _saveCandidates
         };
 
         return service;
@@ -36,6 +38,15 @@
             _calendar.startdate = $filter('date')(_calendar.startdate, 'yyyy-MM-dd hh:mm');
             _calendar.enddate = $filter('date')(_calendar.enddate, 'yyyy-MM-dd hh:mm');
             return $http.post('/api/calendar', _calendar);
+        }
+
+        function _loadCandidates() {
+            return $http.get('/api/candidate');
+        }
+
+        function _saveCandidates(_candidate){
+            _candidate.birthDate = $filter('date')(_candidate.birthDate, 'yyyy-MM-dd hh:mm');
+            return $http.post('/api/candidate', _calendar);
         }
 
         function _loadSlides() {
