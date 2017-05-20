@@ -195,7 +195,7 @@
 					<div class="form-group">
 						<label for="status" class="col-md-2 control-label">Status:</label>
                         <div class="col-md-10">
-                            <select required ng-model="adminController.filterStatus" ng-change="adminController.updateUsers()" name="status" class="form-control">
+                            <select ng-model="adminController.filterStatus" ng-change="adminController.updateUsers()" name="status" class="form-control">
                                 <option value="Aguardando aprovação">Aguardando aprovação</option>
                                 <option value="Aprovado">Aprovado</option>
                                 <option value="Rejeitado">Rejeitado</option>
@@ -217,7 +217,134 @@
                     </ul>
                 </div>
                 <div class="col-md-6">
-                    
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <label for="fullname">Nome Completo:</label>
+                                <input type="text" ng-model="adminController.candidate.fullname" required readonly class="form-control" name="fullname" placeholder="Nome Completo">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" ng-model="adminController.candidate.email" required readonly class="form-control" name="email" placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="birthDate">Data de Nascimento:</label>
+                                <input type="text" required readonly placeholder="Data de nascimento" ng-model="adminController.candidate.birthDate" class="form-control" name="birthDate">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Telefone:</label>
+                                <input type="text" required readonly ng-model="adminController.candidate.phone" class="form-control" name="phone" placeholder="Telefone">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="registerId">Carteira de Identidade:</label>
+                                <input type="text" ng-model="adminController.candidate.registerId" required readonly class="form-control" name="registerId" placeholder="Carteira de Identidade">
+                            </div>
+                            <div class="form-group">
+                                <label for="registerIdImg">Imagem da identidade:</label>
+                                <button type="button" name="registerIdImgDownload" class="btn btn-info form-control">Download</button>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="cpf">CPF:</label>
+                                <input type="text" required readonly ng-model="adminController.candidate.registerCpf" class="form-control" name="cpf" placeholder="CPF">
+                            </div>
+                            <div class="form-group">
+                                <label for="registerCpfImg">Imagem do CPF:</label>
+                                <button type="button" name="registerCpfImgDownload" class="btn btn-info form-control">Download</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="adressType">Tipo de endereço:</label>
+                                <input type="text" placeholder="Tipo" required readonly ng-model="adminController.candidate.adressType" name="adressType" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <label for="adress">Endereço:</label>
+                                <input type="text" required readonly ng-model="adminController.candidate.adress" class="form-control" name="adress"
+                                placeholder="Endereço">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="complement">Complemento:</label>
+                                <input type="text" required readonly ng-model="adminController.candidate.complement" class="form-control" name="complement"
+                                placeholder="Complemento">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="city">Cidade:</label>
+                                <input type="text" required readonly ng-model="adminController.candidate.city" class="form-control" name="city"
+                                placeholder="Cidade">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="state">Estado:</label>
+                                <input type="text" placeholder="Estado" required readonly ng-model="adminController.candidate.state" name="state" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="checkbox">
+                        <label><input type="checkbox" ng-model="adminController.candidate.civilServant" disabled value="">Declaro exercer cargo ou função pública.</label>
+                    </div>
+
+                    <div class="checkbox">
+                        <label><input type="checkbox" ng-model="adminController.candidate.wantScholarship" disabled value="">Solicito bolsa de estudos integral e declaro a intenção de empregar zelo e responsabilidade no acesso às aulas e atividades disponíveis na Plataforma on line, para fins de obtenção de certificado ao fim.</label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="recommendationLetter">Imagem do documento que comprova função ou cargo público:</label>
+                        <button type="button" name="recommendationImgDownload" class="btn btn-info form-control">Download</button>
+                    </div>
+
+                    <hr>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="">Escolaridade:</label>
+                            <input type="text" required readonly ng-model="adminController.candidate.schoolEducation" class="form-control" placeholder="Escolaridade">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="">Quantidade de cursos já realizados:</label>
+                            <input type="text" required readonly ng-model="adminController.candidate.numberOfCourses" class="form-control" placeholder="Quantidade de cursos">
+                        </div>
+                    </div>
+
+                    <label for="">Por que possui interesse em participar do curso?</label>
+                    <input type="text" required readonly ng-model="adminController.candidate.reasonForEntry" class="form-control" placeholder="Motivo de interesse">
+
+                    <label for="">Curso escolhido:</label>
+                    <input type="text" required readonly ng-model="adminController.candidate.selectedCourse" class="form-control" placeholder="Curso">
+
+                    <hr>
+                    <div class="col-md-6">
+                        <select ng-model="adminController.candidate.status" name="status" class="form-control">
+                            <option value="Aguardando aprovação">Aguardando aprovação</option>
+                            <option value="Aprovado">Aprovado</option>
+                            <option value="Rejeitado">Rejeitado</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" name="send" class="btn btn-success form-control">Salvar</button>
+                    </div>
                 </div>
             </div>
         </uib-tab>

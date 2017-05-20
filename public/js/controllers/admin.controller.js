@@ -5,9 +5,9 @@
         .module('app.admin')
         .controller('AdminController', AdminController)
 
-    AdminController.$inject = ['$log', 'UserService', '$rootScope', 'AdminService'];
+    AdminController.$inject = ['$log', 'UserService', '$rootScope', 'AdminService', '$filter'];
 
-    function AdminController($log, UserService, $rootScope, AdminService) {
+    function AdminController($log, UserService, $rootScope, AdminService, $filter) {
         var vm = this;
         vm.users = [];
         vm.notes = [];
@@ -131,6 +131,9 @@
             AdminService.loadCandidates(angular.copy(vm.filterStatus))
                 .then(function sucessCallback(data) {
                     vm.candidates = angular.copy(data.data);
+                    vm.candidates.forEach(function(_candidate) {
+                        _candidate.birthDate = $filter('date')(new Date(_candidate.birthDate), 'dd/MM/yyyy');
+                    });
                 }, function errorCallback(error) {
                     $log.error('Error:' + error.status + ' - Message: ' + error.statusText);
             });
