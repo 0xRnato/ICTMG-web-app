@@ -18,7 +18,7 @@
 
         vm.saveUser = function(){
             UserService.save(angular.copy(vm.user))
-                .then(function sucessCallback(data){
+                .then(function sucessCallback(){
                     vm.user = {};
                     loadUsers();
                     alert('Usuário salvo com sucesso');
@@ -29,7 +29,7 @@
 
         vm.saveNote = function(){
             AdminService.saveNotes(angular.copy(vm.note))
-                .then(function sucessCallback(data){
+                .then(function sucessCallback(){
                     vm.note = {};
                     vm.noteIsSetted = false;
                     loadNotes();
@@ -41,7 +41,7 @@
 
         vm.saveCalendar = function(){
             AdminService.saveCalendar(angular.copy(vm.calendar))
-                .then(function sucessCallback(data){
+                .then(function sucessCallback(){
                     vm.calendar = {};
                     vm.calendarIsSetted = false;
                     loadCalendars();
@@ -53,7 +53,7 @@
 
         vm.saveSlide = function(){
             AdminService.saveSlide(angular.copy(vm.slide))
-                .then(function sucessCallback(data){
+                .then(function sucessCallback(){
                     vm.slide = {};
                     vm.calendarIsSetted = false;
                     loadSlides();
@@ -65,7 +65,7 @@
 
         vm.saveNews = function(){
             AdminService.saveNews(angular.copy(vm.news))
-                .then(function sucessCallback(data){
+                .then(function sucessCallback(){
                     vm.news = {};
                     vm.newsIsSetted = false;
                     loadNews();
@@ -77,7 +77,7 @@
 
         vm.saveCandidate = function(){
             AdminService.saveCandidates(angular.copy(vm.candidate))
-                .then(function sucessCallback(data){
+                .then(function sucessCallback(){
                     vm.candidate = {};
                     loadCandidates();
                     alert('Candidato salvo com sucesso');
@@ -114,6 +114,10 @@
             vm.newsIsSetted = true;
         }
 
+        vm.updateUsers = function(){
+            loadCandidates();
+        }
+
         var loadUsers = function(){
             UserService.load()
                 .then(function sucessCallback(data) {
@@ -124,7 +128,7 @@
         }
 
         var loadCandidates = function(){
-            AdminService.loadCandidates()
+            AdminService.loadCandidates(angular.copy(vm.filterStatus))
                 .then(function sucessCallback(data) {
                     vm.candidates = angular.copy(data.data);
                 }, function errorCallback(error) {
@@ -172,6 +176,7 @@
 
         function activate() {
             vm.userSession = angular.copy($rootScope.userSession);
+            vm.filterStatus = "Aguardando aprovação";
             loadUsers();
             loadNotes();
             loadCalendars();
@@ -182,7 +187,6 @@
             vm.calendarIsSetted = false;
             vm.slideIsSetted = false;
             vm.newsIsSetted = false;
-            vm.filterStatus = "Aguardando aprovação";
         }
     }
 })();

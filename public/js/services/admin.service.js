@@ -40,13 +40,13 @@
             return $http.post('/api/calendar', _calendar);
         }
 
-        function _loadCandidates() {
-            return $http.get('/api/candidate');
+        function _loadCandidates(_status) {
+            return $http.post('/api/candidate/load', {status: _status });
         }
 
         function _saveCandidates(_candidate){
             _candidate.birthDate = $filter('date')(_candidate.birthDate, 'yyyy-MM-dd hh:mm');
-            return $http.post('/api/candidate', _calendar);
+            return $http.post('/api/candidate', _candidate);
         }
 
         function _loadSlides() {

@@ -170,7 +170,7 @@
                         <div class="form-group">
                             <label for="name" class="col-sm-2 control-label">Nome</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" ng-model="adminController.user.fullname" id="name" placeholder="Nome">
+                                <input type="text" class="form-control" ng-model="adminController.user.fullname" id="userName" placeholder="Nome">
                             </div>
                         </div>
                         <div class="form-group">
@@ -195,7 +195,7 @@
 					<div class="form-group">
 						<label for="status" class="col-md-2 control-label">Status:</label>
                         <div class="col-md-10">
-                            <select required ng-model="adminController.filterStatus" name="status" class="form-control">
+                            <select required ng-model="adminController.filterStatus" ng-change="adminController.updateUsers()" name="status" class="form-control">
                                 <option value="Aguardando aprovação">Aguardando aprovação</option>
                                 <option value="Aprovado">Aprovado</option>
                                 <option value="Rejeitado">Rejeitado</option>

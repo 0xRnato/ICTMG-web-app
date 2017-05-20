@@ -96,18 +96,6 @@ module.exports = (app, orm, moodleDB, modelDB, path) => {
 			});
 	});
 
-	// get candidate
-	app.get('/api/candidate', (req, res) => {
-		// load candidate
-		Candidates.load(req.body)
-			.then((data) => {
-				res.send(data);
-			})
-			.catch((error) => {
-				res.send(error);
-			});
-	});
-
 	// new/edit candidate
 	app.post('/api/candidate', (req, res) => {
 		let registerIdImg = req.body.registerIdImg;
@@ -120,6 +108,18 @@ module.exports = (app, orm, moodleDB, modelDB, path) => {
 				decodeBase64Image(
 					recommendationLetterImg,
 					data.recommendationLetterPath);
+				res.send(data);
+			})
+			.catch((error) => {
+				res.send(error);
+			});
+	});
+
+	// get candidate
+	app.post('/api/candidate/load', (req, res) => {
+		// load candidate
+		Candidates.load(req.body)
+			.then((data) => {
 				res.send(data);
 			})
 			.catch((error) => {
