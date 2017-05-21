@@ -17,7 +17,8 @@
             loadNews: _loadNews,
             saveNews: _saveNews,
             loadCandidates: _loadCandidates,
-            saveCandidates: _saveCandidates
+            saveCandidates: _saveCandidates,
+            saveCandidateStatus: _saveCandidateStatus
         };
 
         return service;
@@ -47,6 +48,10 @@
         function _saveCandidates(_candidate){
             _candidate.birthDate = $filter('date')(_candidate.birthDate, 'yyyy-MM-dd hh:mm');
             return $http.post('/api/candidate', _candidate);
+        }
+
+        function _saveCandidateStatus(_id, _status){
+            return $http.post('/api/candidate/status', { id: _id, status: _status });
         }
 
         function _loadSlides() {

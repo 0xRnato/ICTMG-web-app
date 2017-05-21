@@ -18,6 +18,7 @@
         'app.admin',
 
         'ui.bootstrap',
+        'ngFileSaver',
     ]);
 
     angular.module('app.routes', ['ngRoute']);

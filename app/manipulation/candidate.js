@@ -66,6 +66,20 @@ class Candidates {
 		});
 	}
 
+	saveStatus(id, status) {
+		const self = this;
+		return new Promise((fulfill, reject) => {
+			self.Candidate.get(id, (err, data) => {
+				if(err) reject(err);
+				data.status = status;
+				data.save((err) => {
+					if(err) reject(err);
+					fulfill(data);
+				});
+			});
+		});
+	}
+
 	load(objt) {
 		const self = this;
 		return new Promise(function(fulfill, reject) {

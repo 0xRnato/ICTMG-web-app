@@ -5,9 +5,22 @@
         .module('app.admin')
         .controller('AdminController', AdminController)
 
-    AdminController.$inject = ['$log', 'UserService', '$rootScope', 'AdminService', '$filter'];
+    AdminController.$inject = [
+        '$log',
+        'UserService',
+        '$rootScope',
+        'AdminService',
+        '$filter',
+        '$window'];
 
-    function AdminController($log, UserService, $rootScope, AdminService, $filter) {
+    function AdminController(
+        $log,
+        UserService,
+        $rootScope,
+        AdminService,
+        $filter,
+        $window) {
+
         var vm = this;
         vm.users = [];
         vm.notes = [];
@@ -80,7 +93,20 @@
                 .then(function sucessCallback(){
                     vm.candidate = {};
                     loadCandidates();
+                    $window.scrollTo(0, 0);
                     alert('Candidato salvo com sucesso');
+                }, function errorCallback(error){
+                    alert(error);
+                });
+        };
+
+        vm.saveCandidateStatus = function(){
+            AdminService.saveCandidateStatus(angular.copy(vm.candidate.id), angular.copy(vm.candidate.status))
+                .then(function sucessCallback(){
+                    vm.candidate = {};
+                    loadCandidates();
+                    $window.scrollTo(0, 0);
+                    alert('Candidato atualizado com sucesso');
                 }, function errorCallback(error){
                     alert(error);
                 });
@@ -116,6 +142,10 @@
 
         vm.updateUsers = function(){
             loadCandidates();
+        }
+
+        vm.openImage = function(url){
+            $window.open(url, '_blank');
         }
 
         var loadUsers = function(){

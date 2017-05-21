@@ -115,10 +115,10 @@
                 vm.user.selectedCourse = $rootScope.selectedCourse;
 
                 RegisterService.save(angular.copy(vm.user)).then(
-                    function successCallback(data) {
+                    function successCallback() {
                         alert('Cadastro realizado com sucesso.');
                         $location.path('/home');
-                    }, function errorCallback(data) {
+                    }, function errorCallback() {
                         alert('Falha ao salvar os dados. Tente novamente.')
                     }
                 )
