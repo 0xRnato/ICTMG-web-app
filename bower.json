@@ -9,6 +9,7 @@
     "angular-bootstrap": "latest",
     "angular-animate": "latest",
     "angular-touch": "latest",
-    "angular-sanitize": "latest"
+    "angular-sanitize": "latest",
+    "angular-file-saver": "^1.1.3"
   }
 }
