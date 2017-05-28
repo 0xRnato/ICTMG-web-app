@@ -35,4 +35,4 @@ And in another terminal:
 
     npm start
 
-And the application will be runing at: [http://localhost:8080/](http://localhost:8080/ "Localhost address")
+And the application will be runing at: [http://localhost:3000/](http://localhost:3000/ "Localhost address")
