@@ -14,17 +14,25 @@ To create the database, just run the following command lines on your terminal:
 
 Type the root password in your MySQL Server and run:
 
-    \. users.sql
+    CREATE DATABASE modelDB;
+    USE modelDB;
+    \. modelDB.sql
+    CREATE DATABASE moodle;
+    USE moodle;
     \. moodle.sql
 
-To leave from mysql use:
+To leave from mysql type:
 
-    exit
+    exit;
 
 Then just run:
 
     npm install
     bower install
+    gulp
+    
+And in another terminal:
+
     npm start
 
 And the application will be runing at: [http://localhost:8080/](http://localhost:8080/ "Localhost address")
