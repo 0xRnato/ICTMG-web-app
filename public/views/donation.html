@@ -11,12 +11,15 @@
 			</div>
 			<div class="col-md-4">
 				<h3 style="text-align:center;">FAÇA SUA CONTRIBUIÇÃO</h3>
-				<a href="" class="btn btn5 form-control" role="button">R$ 5,00</a>
-				<a href="" class="btn btn10 form-control" role="button">R$ 10,00</a>
-				<a href="" class="btn btn20 form-control" role="button">R$ 20,00</a>
-				<a href="" class="btn btn50 form-control" role="button">R$ 50,00</a>
-				<a href="" class="btn btn100 form-control" role="button">R$ 100,00</a>
-				<a href="" class="btn btn100mais form-control" role="button">Acima de R$ 100,00</a>
+				<!-- INICIO FORMULARIO BOTAO PAGSEGURO -->
+				<form action="https://pagseguro.uol.com.br/checkout/v2/donation.html" method="post" style="margin-left: auto;margin-right: auto;width: 210px;">
+				<!-- NÃO EDITE OS COMANDOS DAS LINHAS ABAIXO -->
+				<input type="hidden" name="currency" value="BRL" />
+				<input type="hidden" name="receiverEmail" value="celinhoguiga@gmail.com" />
+				<input type="hidden" name="iot" value="button" />
+				<input type="image" src="https://stc.pagseguro.uol.com.br/public/img/botoes/doacoes/209x48-doar-laranja-assina.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
+				</form>
+				<!-- FINAL FORMULARIO BOTAO PAGSEGURO -->
 			</div>
 		</div>
 		<div style="text-align:center;">
